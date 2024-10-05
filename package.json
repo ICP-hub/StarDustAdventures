@@ -14,5 +14,8 @@
   "type": "module",
   "workspaces": [
     "src/StarDustAdventures_frontend"
-  ]
+  ],
+  "dependencies": {
+    "clsx": "^2.1.1"
+  }
 }

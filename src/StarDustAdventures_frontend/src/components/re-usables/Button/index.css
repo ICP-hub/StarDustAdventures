@@ -1,0 +1,32 @@
+
+.primary{
+    @apply 
+}
+
+
+.button {
+  @apply w-1/2 text-white float-left border-x-[10px] border-x-white relative;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing: border-box;
+  box-sizing:border-box;;
+}
+
+.button .button-children {
+  @apply block text-white py-1 -my-[10px] ml-0 border-y-[10px] border-y-white;
+}
+
+.button::before,
+.button::after,
+.button .button-children::before,
+.button .button-children::after{
+  @apply w-[10px] h-[10px] block absolute bg-white;
+  content : ''
+}
+
+.button::before{ top : -5px; left : -5px }
+.button::after{ top : -5px; right: -5px }
+.button .button-children::before{  bottom: -5px; left:-5px }
+.button .button-children::after{
+  bottom:-5px;
+  right:-5px;
+}
