@@ -1,25 +1,32 @@
 
 .primary{
-    @apply 
+    @apply bg-btnLight text-white hover:text-transparent-white;
 }
+
+.secondary{
+    @apply bg-secondary text-white;
+}
+
 
 
 .button {
-  @apply w-1/2 text-white float-left border-x-[10px] border-x-white relative;
+  @apply min-w-[185px] float-left text-[30px] border-x-[10px] border-x-white hover:border-x-btnLight relative font-silkscreen transition-all ease-in;
   -webkit-box-sizing:border-box;
   -moz-box-sizing: border-box;
-  box-sizing:border-box;;
+  box-sizing:border-box;
+  filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 1));
 }
 
+
 .button .button-children {
-  @apply block text-white py-1 -my-[10px] ml-0 border-y-[10px] border-y-white;
+  @apply block py-1 -my-[10px] ml-0 border-y-[10px] border-y-white hover:border-y-btnLight transition-all ease-in;
 }
 
 .button::before,
 .button::after,
 .button .button-children::before,
 .button .button-children::after{
-  @apply w-[10px] h-[10px] block absolute bg-white;
+  @apply w-[10px] h-[10px] block absolute bg-white hover:bg-btnLight transition-all ease-in;
   content : ''
 }
 
