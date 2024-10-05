@@ -1,10 +1,16 @@
 import { useState } from 'react';
 import { StarDustAdventures_backend } from 'declarations/StarDustAdventures_backend';
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+import Landing from './pages/Landing';
 
 function App() {
 
   return (
-    <div className='bg-red-500 app'>Hello</div>
+    <Router className='app'>
+      <Routes>
+        <Route path='/' element={<Landing/>}/>
+      </Routes>
+    </Router>
   );
 }
 

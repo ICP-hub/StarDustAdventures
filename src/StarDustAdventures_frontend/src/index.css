@@ -6,5 +6,8 @@ body {
   
 }
 .app{
-  @apply min-h-screen
+  @apply min-h-screen bg-red-200
+}
+.page{
+  @apply min-h-screen overflow-x-hidden bg-black text-white
 }
