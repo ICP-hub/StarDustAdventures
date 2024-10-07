@@ -15,5 +15,5 @@ body {
   @apply min-h-screen overflow-x-hidden bg-black text-white
 }
 .overlay-black{
-  @apply z-10 w-screen h-[100%] bg-[rgb(0,0,0,0.6)] absolute top-0 min-h-screen
+  @apply z-10 w-screen h-[100%] bg-[rgb(0,0,0,0.65)] absolute top-0 min-h-screen
 }
