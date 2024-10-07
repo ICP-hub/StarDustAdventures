@@ -1,3 +1,19 @@
+/*
+    * Button Component for StarDust Adventures
+    * This is a re-usable button component for the StarDust Adventures project
+    * The button component has the following props:
+        * variant: 'primary' | 'secondary'
+        * size: 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+        * className: string
+    * The button component is styled using Tailwind CSS
+    * The button component is exported as default
+    * clsx is used to combine multiple classes
+    * @param {ButtonProps} props
+    * @returns {JSX.Element}
+    * @author @ArjunQBTech
+    * @version 1.0
+*/
+
 import clsx from "clsx";
 import './index.css';
 
