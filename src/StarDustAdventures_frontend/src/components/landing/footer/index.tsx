@@ -27,14 +27,14 @@ const SOCIAL_ICONS = [
 const Footer = ()=>{
     return(
         <footer className='footer'>
-            <p>All rights reserved @startdustadventures</p>
+            <p className='footer-text'>All rights reserved @startdustadventures</p>
             <div className='social-icons-container'>
-                <p>Follow us on</p>
+                <p className='social-icons-container-text'>Follow us on</p>
                 <div className='social-icons'>
                     {SOCIAL_ICONS.map((icon, index)=>{
                         const {name, icons : Icons} = icon
                         return(
-                            <Icons/>
+                            <Icons key={name}/>
                         )
                     })}
                 </div>

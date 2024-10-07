@@ -1,5 +1,5 @@
 .footer{
-    @apply w-screen lg:min-h-[100px] flex justify-between items-center lg:px-4;
+    @apply w-screen lg:min-h-[100px] flex justify-between items-center lg:px-12;
     background: linear-gradient(97.51deg, rgba(255, 255, 255, 0) -20.85%, rgba(153, 153, 153, 0.17) 86.38%);
 }
 
@@ -7,6 +7,14 @@
     @apply flex items-center justify-around lg:gap-3;
 }
 
+.social-icons-container-text{
+    @apply font-sf-pro-display text-lg;
+}
+
+.footer-text{
+    @apply font-pixelify-sans text-lg;
+}
+
 .social-icons{
-    @apply flex flex-row items-center justify-between lg:gap-2;
+    @apply flex flex-row items-center justify-between lg:gap-2 text-white lg:text-3xl;
 }

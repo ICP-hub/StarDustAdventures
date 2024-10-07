@@ -1,5 +1,5 @@
 .hero-sec{
-    @apply w-screen h-screen flex flex-col  items-center
+    @apply w-screen min-h-screen h-auto flex flex-col  items-center relative
 }
 .hs-top-nav{
     @apply z-20 relative  bg-[rgb(255,255,255,0.2)]  py-8 flex items-center justify-center w-[98%] rounded-2xl

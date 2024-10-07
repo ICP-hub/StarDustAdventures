@@ -13,7 +13,8 @@ export default {
       },
       fontFamily:{
         'silkscreen': ['Silkscreen', 'cursive'],
-        'pixelify-sans': ['Pixelify Sans', 'sans-serif']
+        'pixelify-sans': ['Pixelify Sans', 'sans-serif'],
+        'sf-pro-display': ['SF Pro Display', 'sans-serif'],
       }
     },
   },
