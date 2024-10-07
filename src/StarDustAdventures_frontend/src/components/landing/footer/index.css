@@ -1,0 +1,12 @@
+.footer{
+    @apply w-screen lg:min-h-[100px] flex justify-between items-center lg:px-4;
+    background: linear-gradient(97.51deg, rgba(255, 255, 255, 0) -20.85%, rgba(153, 153, 153, 0.17) 86.38%);
+}
+
+.social-icons-container{
+    @apply flex items-center justify-around lg:gap-3;
+}
+
+.social-icons{
+    @apply flex flex-row items-center justify-between lg:gap-2;
+}
