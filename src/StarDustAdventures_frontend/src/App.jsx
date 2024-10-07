@@ -1,9 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StarDustAdventures_backend } from 'declarations/StarDustAdventures_backend';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import Landing from './pages/Landing';
+import Aos from 'aos';
 
 function App() {
+
+  useEffect(()=>{
+    Aos.init()
+  })
 
   return (
     <Router className='app'>
