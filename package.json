@@ -16,7 +16,9 @@
     "src/StarDustAdventures_frontend"
   ],
   "dependencies": {
-    "react-router-dom": "^6.26.2",
-    "clsx": "^2.1.1"
+    "aos": "^2.3.4",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.11.1",
+    "react-router-dom": "^6.26.2"
   }
 }

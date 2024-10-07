@@ -1,24 +1,40 @@
 .hero-sec{
-    @apply w-screen h-screen flex-col  items-center
+    @apply w-screen h-screen flex flex-col  items-center
 }
 .hs-top-nav{
-    @apply relative  bg-[rgb(255,255,255,0.1)] my-2 py-8 flex items-center justify-center w-[98%] rounded-2xl
+    @apply z-20 relative  bg-[rgb(255,255,255,0.2)]  py-8 flex items-center justify-center w-[98%] rounded-2xl
 }
 .hstp-text{
-    @apply text-4xl font-bold
+    @apply text-4xl font-semibold font-pixelify-sans
 }
 .hstp-btn{
     @apply justify-self-end absolute top-[2rem] right-[5vw] text-xl
 }
 .hs-text-cont{
-    @apply flex flex-col items-center mt-[20vh]
+    @apply flex flex-col items-center mt-[20vh] z-20
 }
 .hstc-title{
-    @apply text-9xl w-[50vw] font-bold text-center mb-6
+    @apply text-9xl w-[50vw] font-medium text-center mb-6 font-pixelify-sans
+}
+.hstc-title1{
+    @apply text-9xl w-[50vw] font-medium text-center mb-0 font-pixelify-sans
 }
 .hstc-text{
     @apply text-xl w-[50vw] text-center my-6
 }
 .hstc-btn{
     @apply text-5xl font-semibold mt-4 border-4 border-white py-3 px-12 bg-btnLight rounded-full
+}
+
+.hs-falling-astro{
+    @apply z-20 w-[30vw] my-12
+}
+.hs-text-cont2{
+    @apply flex flex-col items-center my-4 text-white z-20
+}
+.hstc2-title{
+    @apply text-6xl font-semibold font-pixelify-sans mb-7
+}
+.hstc2-text{
+    @apply text-xl text-center my-4 
 }
