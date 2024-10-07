@@ -8,7 +8,7 @@
     @apply text-4xl font-bold
 }
 .hstp-btn{
-    @apply justify-self-end absolute top-[2rem] right-[5vw] text-xl font-semibold bg-btnLight py-2 px-6 rounded-full border-2 border-white
+    @apply justify-self-end absolute top-[2rem] right-[5vw] text-xl
 }
 .hs-text-cont{
     @apply flex flex-col items-center mt-[20vh]

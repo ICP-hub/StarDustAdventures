@@ -16,13 +16,13 @@ export default function Button(
         ...props
     }: ButtonProps) {
 
-    // const sizes = {
-    //     'sm': 'text-sm px-2 py-1',
-    //     'md': 'text-md px-4 py-1',
-    //     'lg': 'text-base px-6 py-2',
-    //     'xl' : 'text-lg px-8 py-3',
-    //     'xxl' : 'text-xl px-10 py-3'
-    // }
+    const sizes = {
+        'sm': 'text-sm min-w-[100px] text-[20px]',
+        'md': 'min-w-[185px] text-[30px]',
+        'lg': 'text-base px-6 py-2',
+        'xl' : 'text-lg px-8 py-3',
+        'xxl' : 'text-xl px-10 py-3'
+    }
 
     const vSpacing = {
         'sm': 'my-1',
@@ -35,12 +35,14 @@ export default function Button(
     return (
         <button {...props} className={clsx(
             variant,
-            size,
+            sizes[size],
             vSpacing[size],
             className,
             'button'
         )}>
-            <div className="button-children">
+            <div className={clsx(
+                'button-children'
+            )}>
             {children}
             </div>
         </button>
