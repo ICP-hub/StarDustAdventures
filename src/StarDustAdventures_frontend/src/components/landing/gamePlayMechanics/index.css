@@ -1,3 +1,15 @@
 .gameplay-mechanics{
-    @apply w-full bg-black text-white flex flex-col items-center justify-center;
+    @apply w-full bg-black text-white flex flex-col items-center justify-center py-3;
+}
+
+.gameplay-mechanics-cards{
+    @apply flex flex-1 flex-row
+}
+
+.section-title{
+    @apply font-pixelify-sans font-bold lg:text-6xl
+}
+
+.section-caption{
+    @apply font-sf-pro-display text-center lg:text-xl lg:mt-10 lg:mb-4
 }
