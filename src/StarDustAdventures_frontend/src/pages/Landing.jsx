@@ -4,6 +4,7 @@ import Hero from '../components/landing/hero/Hero'
 import Footer from '../components/landing/footer'
 import GamePlayMechanics from '../components/landing/gamePlayMechanics'
 import GameConcept from '../components/landing/gameConcept/GameConcept'
+import Lore from '../components/landing/loreStoryline/Lore'
 
 const Landing = () => {
   return (
@@ -11,6 +12,7 @@ const Landing = () => {
         <Hero/>
         <GameConcept/>
         <GamePlayMechanics/>
+        <Lore/>
         <Footer/>
     </div>
   )

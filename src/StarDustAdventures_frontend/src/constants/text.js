@@ -24,3 +24,29 @@ export const gameConceptText={
         }
     ]
 }
+export const loreText={
+    title:"Lore and Storyline",
+    subHeading:"Explore the Epic Quest for Star Dust in a Distant Future",
+    data:[
+        {
+            title:"Setting in the Distant Future",
+            text:"Humanity embarks on a quest to gather cosmic resources in a vast universe."
+        },
+        {
+            title:"Uncovering Ancient Secrets",
+            text:"The journey reveals the mysteries of the ancient Nebulite Civilization"
+        },
+        {
+            title:"Star Dust as Currency",
+            text:"Star Dust emerges as a vital energy source, becoming the universal currency."
+        },
+        {
+            title:"Challenges Ahead",
+            text:"The mission involves navigating hostile planets& overcoming various obstacles."
+        },
+        {
+            title:"Commander Dom's Mission",
+            text:"Elite astronaut Commander Dom leads a mission to mine Star Dust and upgrade gear."
+        }
+    ]
+}
