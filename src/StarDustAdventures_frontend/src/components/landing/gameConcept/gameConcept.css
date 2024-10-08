@@ -12,7 +12,7 @@
     @apply mb-3 text-3xl font-semibold text-right
 }
 .gcs-sl-text{
-    @apply w-[350px] text-right font-medium
+    @apply w-[350px] text-right font-medium text-lg
 }
 
 /* right  */
@@ -26,7 +26,7 @@
     @apply mb-3 text-3xl font-semibold text-left
 }
 .gcs-sr-text{
-    @apply w-[350px] text-left font-medium
+    @apply w-[350px] text-left font-medium text-lg
 }
 
 /* center  */
@@ -35,13 +35,13 @@
     @apply flex flex-col items-center h-[100%] justify-between mx-20
 }
 .gcs-sc-text-item{
-    @apply flex flex-col items-center mt-20
+    @apply flex flex-col items-center mt-20 mb-20
 }
 .gcs-sc-img{
     @apply w-[25vw] min-w-[450px] 
 }
 .gcs-sc-text{
-    @apply w-[400px] text-center font-medium
+    @apply w-[400px] text-center font-medium text-lg
 }
 .gcs-sc-title{
     @apply mb-3 text-3xl font-semibold text-center
