@@ -1,5 +1,5 @@
 .hero-sec{
-    @apply w-screen min-h-screen h-auto flex flex-col  items-center relative
+    @apply w-screen min-h-screen h-auto relative flex flex-col  items-center overflow-x-hidden
 }
 .hs-top-nav{
     @apply z-20 relative  bg-[rgb(255,255,255,0.2)]  py-8 flex items-center justify-center w-[98%] rounded-2xl
@@ -36,5 +36,5 @@
     @apply text-6xl font-semibold font-pixelify-sans mb-7
 }
 .hstc2-text{
-    @apply text-xl text-center my-4 
+    @apply text-xl text-center mt-4 mb-7
 }

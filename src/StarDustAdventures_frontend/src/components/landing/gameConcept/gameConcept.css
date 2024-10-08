@@ -1,0 +1,48 @@
+.game-concept-sec{
+    @apply  flex w-screen items-start justify-center pt-16
+}
+/* left  */
+.gcs-sub-left{
+    @apply flex flex-col items-start justify-between gap-[20vh]
+}
+.gcs-sl-item{
+    @apply flex flex-col items-end
+}
+.gcs-sl-title{
+    @apply mb-3 text-3xl font-semibold text-right
+}
+.gcs-sl-text{
+    @apply w-[350px] text-right font-medium text-lg
+}
+
+/* right  */
+.gcs-sub-right{
+    @apply flex flex-col items-start justify-between gap-[20vh]
+}
+.gcs-sr-item{
+    @apply flex flex-col items-start 
+}
+.gcs-sr-title{
+    @apply mb-3 text-3xl font-semibold text-left
+}
+.gcs-sr-text{
+    @apply w-[350px] text-left font-medium text-lg
+}
+
+/* center  */
+
+.gcs-sub-center{
+    @apply flex flex-col items-center h-[100%] justify-between mx-20
+}
+.gcs-sc-text-item{
+    @apply flex flex-col items-center mt-20 mb-20
+}
+.gcs-sc-img{
+    @apply w-[25vw] min-w-[450px] 
+}
+.gcs-sc-text{
+    @apply w-[400px] text-center font-medium text-lg
+}
+.gcs-sc-title{
+    @apply mb-3 text-3xl font-semibold text-center
+}
