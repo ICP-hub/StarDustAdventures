@@ -20,7 +20,7 @@
     @apply text-9xl w-[50vw] font-medium text-center mb-0 font-pixelify-sans
 }
 .hstc-text{
-    @apply text-xl w-[50vw] text-center my-6
+    @apply text-xl w-[50vw] text-center my-6 font-sf-pro-display
 }
 .hstc-btn{
     @apply text-5xl font-semibold mt-4 border-4 border-white py-3 px-12 bg-btnLight rounded-full
@@ -36,5 +36,5 @@
     @apply text-6xl font-semibold font-pixelify-sans mb-7
 }
 .hstc2-text{
-    @apply text-xl text-center mt-4 mb-7
+    @apply text-xl text-center mt-4 mb-7 font-sf-pro-display
 }

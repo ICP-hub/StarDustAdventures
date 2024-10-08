@@ -11,8 +11,13 @@ const Lore = () => {
         <p className="ls-text">
             {loreText.subHeading}
         </p>
-        <div className="ls-rotating-astro"></div>
+
         <div className="ls-main">
+        <img 
+            src='rotation.gif' 
+            alt='astronaut adventure' 
+            className="ls-rotating-astro"
+        />
             <div className="lsm-first">
                 <div className="lsm-text-item">
                     <h3 className="lsm-ti-title">{loreText.data[0].title}</h3>

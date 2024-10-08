@@ -3,7 +3,7 @@
 }
 /* left  */
 .gcs-sub-left{
-    @apply flex flex-col items-start justify-between gap-[20vh]
+    @apply flex flex-col items-start justify-between gap-[20vh] font-sf-pro-display
 }
 .gcs-sl-item{
     @apply flex flex-col items-end
@@ -12,12 +12,12 @@
     @apply mb-3 text-3xl font-semibold text-right
 }
 .gcs-sl-text{
-    @apply w-[350px] text-right font-medium text-lg
+    @apply w-[350px] text-right font-medium text-lg 
 }
 
 /* right  */
 .gcs-sub-right{
-    @apply flex flex-col items-start justify-between gap-[20vh]
+    @apply flex flex-col items-start justify-between gap-[20vh] font-sf-pro-display
 }
 .gcs-sr-item{
     @apply flex flex-col items-start 
@@ -32,7 +32,7 @@
 /* center  */
 
 .gcs-sub-center{
-    @apply flex flex-col items-center h-[100%] justify-between mx-20
+    @apply flex flex-col items-center h-[100%] justify-between mx-20 font-sf-pro-display
 }
 .gcs-sc-text-item{
     @apply flex flex-col items-center mt-20 mb-20
