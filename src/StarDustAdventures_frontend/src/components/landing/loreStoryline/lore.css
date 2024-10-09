@@ -1,33 +1,33 @@
 .lore-sec{
-
+    @apply w-screen min-h-screen relative flex flex-col py-10 items-center overflow-x-hidden
 }
 .ls-title{
-
+    @apply text-6xl font-semibold font-pixelify-sans mb-7 z-10
 }
 .ls-text{
-
+    @apply text-xl text-center mt-4 mb-7 font-sf-pro-display z-10
 }
 .ls-main{
-
+    @apply w-screen flex flex-col items-center justify-center relative mb-20
 }
 .ls-rotating-astro{
-
+    @apply w-[50vw] z-0 
 }
 .lsm-first{
-
+    @apply z-10 absolute top-[6%] flex w-full justify-center
 }
 .lsm-second{
-
+    @apply z-10 absolute w-[70%] flex items-center justify-between 
 }
 .lsm-third{
-
+    @apply z-10 absolute bottom-[10%] w-[50%] flex items-center justify-between
 }
 .lsm-text-item{
-
+    @apply flex flex-col items-center w-[300px] 
 }
 .lsm-ti-title{
-
+    @apply mb-3 text-3xl font-semibold text-center
 }
 .lsm-ti-text{
-    
+    @apply w-[250px] text-center font-medium text-lg
 }
