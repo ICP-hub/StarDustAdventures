@@ -11,19 +11,24 @@ import React from 'react';
 import { FaXTwitter, FaDiscord, FaTelegram  } from "react-icons/fa6";
 import './index.css';
 
-
+// Typeof Socials
 type Socials = {
     name: string;
     icons: React.FC;
 }
-
+// SOCIAL ICONS Static Data
 const SOCIAL_ICONS = [
     {name:'discord', icons:FaDiscord},
     {name:'telegram', icons:FaTelegram},
     {name:'twitter', icons:FaXTwitter},
 ] as Socials[]
 
-
+/*
+    * Footer Component
+    * - Component that renders the footer section
+    * - Returns a footer with the text and social media icons
+    * - Used in Landing Page
+*/
 const Footer = ()=>{
     return(
         <footer className='footer'>

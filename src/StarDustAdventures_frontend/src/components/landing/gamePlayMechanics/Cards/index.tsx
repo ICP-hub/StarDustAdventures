@@ -1,9 +1,17 @@
 import './index.css'
+// Card Props
 export type CardProps = {
     title : string;
     description : string;
     image : string;
 }
+
+/*
+    * Card Component
+    * - Component that renders a card with an image, title, and description
+    * - Returns a div with an image, title, and description
+    * - Used in Landing Page
+*/
 
 const Card = ({title, description,image}:CardProps)=>{
     return(
