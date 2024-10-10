@@ -7,6 +7,7 @@ import { motion } from 'framer-motion'
 const Hero = () => {
   return (
     <div className='hero-sec' style={{backgroundImage:'url("hero_bg.png")',backgroundSize:'cover'}}>
+        <img src="hero_bg.png" alt="hero" style={{display:'none'}} fetchPriority='high'/>
         <BgOverlay/>
         <div className="hs-top-nav">
             <h1 className="hstp-text">
