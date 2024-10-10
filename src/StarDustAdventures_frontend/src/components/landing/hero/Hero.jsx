@@ -41,6 +41,7 @@ const Hero = () => {
             src="astronaut.png" 
             alt="falling astronaut" 
             className="hs-falling-astro" 
+            fetchPriority='high'
         />
         <div className="hs-text-cont2">
             <h3 className="hstc2-title">
