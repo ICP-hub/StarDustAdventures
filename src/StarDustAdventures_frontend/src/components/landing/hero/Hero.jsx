@@ -6,8 +6,9 @@ import { motion } from 'framer-motion'
 
 const Hero = () => {
   return (
-    <div className='hero-sec' style={{backgroundImage:'url("hero_bg.png")',backgroundSize:'cover'}}>
-        <img src="hero_bg.png" alt="hero" style={{display:'none'}} fetchPriority='high'/>
+    <div className='hero-sec' style={{backgroundImage:'url("hero_bg.webp")',backgroundSize:'cover'}}>
+        {/* To Optimize Background Image Load */}
+        <img src="hero_bg.webp" alt="hero" style={{display:'none'}} fetchPriority='high'/>
         <BgOverlay/>
         <div className="hs-top-nav">
             <h1 className="hstp-text">
@@ -38,7 +39,7 @@ const Hero = () => {
             initial={{y:-1000}}
             animate={{y:0}}
             transition={{duration:3,type:'tween'}}
-            src="astronaut.png" 
+            src="/assets/images/astronaut.webp" 
             alt="falling astronaut" 
             className="hs-falling-astro" 
             fetchPriority='high'
