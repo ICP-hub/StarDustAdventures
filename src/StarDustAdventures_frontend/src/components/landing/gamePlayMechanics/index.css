@@ -1,5 +1,5 @@
 .gameplay-mechanics {
-    @apply w-full bg-black text-white flex flex-col items-center justify-center py-3 max-h-screen h-auto;
+    @apply w-full bg-transparent text-white flex flex-col items-center justify-center py-3 max-h-screen h-auto;
 }
 
 .gameplay-mechanics-cards {
