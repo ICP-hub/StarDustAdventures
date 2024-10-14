@@ -19,6 +19,7 @@
     "aos": "^2.3.4",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.1",
+    "gsap": "^3.12.5",
     "react-router-dom": "^6.26.2",
     "vite-plugin-compression": "^0.5.1"
   }

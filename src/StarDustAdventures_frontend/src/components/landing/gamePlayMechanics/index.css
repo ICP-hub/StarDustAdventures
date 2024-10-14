@@ -1,9 +1,13 @@
 .gameplay-mechanics {
-    @apply w-full bg-transparent text-white flex flex-col items-center justify-center py-3 max-h-screen h-auto;
+    @apply w-full bg-transparent lg:mt-24 text-white flex flex-col items-center justify-center py-3 max-h-screen h-auto;
+}
+
+.gameplay-mechanics-header{
+    @apply z-10;
 }
 
 .gameplay-mechanics-cards {
-    @apply flex flex-1 flex-row gap-6 relative;
+    @apply flex flex-1 flex-row justify-between items-center gap-6 relative mt-2;
 }
 
 .section-title {
@@ -12,4 +16,14 @@
 
 .section-caption {
     @apply font-sf-pro-display text-center lg:text-xl lg:mt-10 lg:mb-4;
+}
+
+.horizontal-line {
+    @apply absolute z-0 w-full h-[5px] bg-white lg:top-[22.5%] translate-y-[22.5%];
+    transform-origin: left; /* Ensures the line grows from left to right */
+}
+
+.gameplay-card {
+    @apply relative flex flex-col justify-start items-center z-[1];
+    will-change: opacity, transform;
 }

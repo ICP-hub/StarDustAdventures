@@ -1,7 +1,11 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-import Card, { CardProps } from './Cards';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { useRef, useEffect } from 'react';
+import GameplayMechanic, { CardProps } from './Cards';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './index.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Card Static Data
 const CARDS = [
@@ -22,69 +26,59 @@ const CARDS = [
     }
 ] as CardProps[];
 
-/*
-    * GamePlayMechanics Component
-    * - Component that renders the Gameplay Mechanics section
-    * - Uses framer-motion to animate the section in and out of view
-    * - Uses useScroll to track the scroll progress
-    * - Returns a section with the title, caption, and cards
-    * - Used in Landing Page
-*/
-
 const GamePlayMechanics = () => {
-    const ref = useRef(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const sectionRef = useRef<HTMLElement>(null);
+    const linesRef = useRef<HTMLDivElement[]>([]);
 
-    // Track scroll progress
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start end", "end start"] // Ensures it starts when div enters and ends when it leaves
-    });
+    useEffect(() => {
+        if (!containerRef.current || !sectionRef.current) return;
+
+        const cards = containerRef.current.querySelectorAll('.gameplay-card');
+        const lines = linesRef.current;
+
+        gsap.set(cards, { opacity: 0, scale: 0.8 });
+        gsap.set(lines, { scaleX: 0 });
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                start: 'top top',
+                end: 'bottom top',
+                pin: true,
+                pinSpacing: true,
+                scrub: 1,
+            },
+        });
+
+        tl.to(cards, { opacity: 1, scale: 1, stagger: 0.2, duration: 0.5 })
+          .to(lines, { scaleX: 1, duration: 0.5, stagger: 0.2 }, '<');
+
+        return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
+    }, []);
 
     return (
-        <section className="gameplay-mechanics">
-            <div>
+        <section className="gameplay-mechanics" ref={sectionRef}>
+            <div className="gameplay-mechanics-header">
                 <h3 className="section-title">Gameplay Mechanics</h3>
                 <p className="section-caption">Explore the engaging system of Star Dust Adventures</p>
             </div>
-            <motion.div ref={ref} className='gameplay-mechanics-cards' style={{ position: 'relative' }}>
-                {
-                    CARDS.map((card, index) => (
-                        <PinnedCard
-                            key={index}
-                            card={card}
-                            index={index}
-                            scrollYProgress={scrollYProgress}
-                        />
-                    ))
-                }
-            </motion.div>
+            <div ref={containerRef} className="gameplay-mechanics-cards">
+                {CARDS.map((card, index) => (
+                    <>
+                    <GameplayMechanic key={index} {...card} />
+                    {index < CARDS.length - 1 && (
+                            <div 
+                                className="w-1/4 h-0.5 bg-white bg-opacity-50 transform origin-left"
+                                ref={el => el && (linesRef.current[index] = el)}
+                            ></div>
+                        )}
+                    </>
+                ))}
+            </div>
         </section>
-    );
-};
-
-/*
-    * PinnedCard Component
-    * - Component that pins the card to the screen as the user scrolls
-    * - Uses framer-motion to animate the card in and out of view
-    * - Uses useTransform to change the opacity of the card based on scroll progress
-    * - Uses useScroll to track the scroll progress
-    * - Accepts card, index, and scrollYProgress as props
-    * - Returns a motion.div with the card component
-    * - The opacity of the card is animated based on the scroll progress
-    * - The transition duration and delay are set for smooth animation
-*/
-const PinnedCard = ({ card, index, scrollYProgress }: { card: CardProps, index: number, scrollYProgress: any }) => {
-    
-    const opacity = useTransform(scrollYProgress, [index * 0.2, (index + 1) * 0.2], [0, 1]);
-
-    return (
-        <motion.div
-            className="gameplay-card"
-            style={{ opacity }}
-            transition={{ duration: 2.5, delay: 0.5 }}
-        >
-            <Card {...card} />
-        </motion.div>
     );
 };
 
