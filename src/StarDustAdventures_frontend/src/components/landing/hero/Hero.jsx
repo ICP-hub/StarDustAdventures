@@ -10,14 +10,14 @@ const Hero = () => {
         {/* To Optimize Background Image Load */}
         <img src="hero_bg.webp" alt="hero" style={{display:'none'}} fetchPriority='high'/>
         <BgOverlay/>
-        <div className="hs-top-nav">
+        {/* <div className="hs-top-nav">
             <h1 className="hstp-text">
                 Star Dust Adventures
             </h1>
             <div className='hstp-btn'>
             <Button size='sm'>PLAY</Button>
             </div>
-        </div>
+        </div> */}
         <motion.div
             initial={{opacity:0}}
             animate={{opacity:1}}
