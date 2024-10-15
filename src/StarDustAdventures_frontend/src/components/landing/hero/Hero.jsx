@@ -10,14 +10,6 @@ const Hero = () => {
         {/* To Optimize Background Image Load */}
         <img src="hero_bg.webp" alt="hero" style={{display:'none'}} fetchPriority='high'/>
         <BgOverlay/>
-        {/* <div className="hs-top-nav">
-            <h1 className="hstp-text">
-                Star Dust Adventures
-            </h1>
-            <div className='hstp-btn'>
-            <Button size='sm'>PLAY</Button>
-            </div>
-        </div> */}
         <motion.div
             initial={{opacity:0}}
             animate={{opacity:1}}
@@ -33,7 +25,7 @@ const Hero = () => {
             <p className='hstc-text'>
                 A Space Exploration Tap-to-Earn Game Powered By Crypto
             </p>
-            <Button>PLAY</Button>
+            <Button className='play-button'>PLAY</Button>
         </motion.div>
         <motion.img
             initial={{y:-1000}}

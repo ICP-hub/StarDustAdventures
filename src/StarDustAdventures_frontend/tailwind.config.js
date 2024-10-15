@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
 export default {
   content: [
     "./index.html",
@@ -17,6 +18,10 @@ export default {
         'sf-pro-display': ['SF Pro Display', 'sans-serif'],
       }
     },
+    screens:{
+      xs:'420px',
+      ...defaultTheme.screens
+    }
   },
   plugins: [],
 }
