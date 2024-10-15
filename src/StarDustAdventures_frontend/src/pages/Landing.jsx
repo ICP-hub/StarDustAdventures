@@ -6,6 +6,7 @@ import GamePlayMechanics from '../components/landing/gamePlayMechanics'
 import GameConcept from '../components/landing/gameConcept/GameConcept'
 import Lore from '../components/landing/loreStoryline/Lore'
 import GradientCover from '../components/landing/GradientCover'
+import GameConceptM from '../components/landing-mobile/gameConcept/GameConceptM'
 
 const PatternCover = () => {
   return(
@@ -20,7 +21,7 @@ const Landing = () => {
   return (
     <div className='page'>
         <Hero/>
-        <GameConcept/>
+        {window.innerWidth>1024?<GameConcept/>:<GameConceptM/>}
         <PatternCover/>
         <Footer/>
     </div>

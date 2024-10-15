@@ -1,0 +1,47 @@
+.m-game-concept-main{
+    @apply min-h-[100vh] flex flex-col items-center relative
+}
+.mgc-header{
+    @apply flex flex-col items-center w-[80%] mt-32 min-w-[280px]
+}
+.mgc-title{
+    @apply text-center text-3xl mb-4 font-pixelify-sans 
+}
+.mgc-subtext{
+    @apply text-center text-xs font-sf-pro-display
+}
+.mgc-img{
+    @apply absolute w-[200px] -left-[80px] top-[50vh]
+}
+.mgc-info-cont{
+    @apply z-10 mt-16 flex w-[90%] flex-col items-start gap-2
+}
+.mgci-item{
+    @apply flex flex-col items-start w-[200px]
+}
+.mgci-item2{
+    @apply  flex flex-col items-start w-[200px] ml-[110px]
+}
+.mgci-item3{
+    @apply flex flex-col items-start w-[200px] ml-[160px]
+}
+.mgci-title{
+    @apply text-sm font-semibold
+}
+.mgci-text{
+    @apply text-[10px] mb-3
+}
+
+@media only screen and (min-width:450px)and (max-width:700px) {
+
+    .mgc-img{
+        @apply absolute w-[200px] left-[6vw] top-[50vh]
+    }
+    .mgc-info-cont{
+        @apply z-10 mt-[70px] ml-[40vw] flex w-[90%] flex-col items-start gap-4
+    }
+
+}
+@media only screen and (min-width:701px)and (max-width:1024px) {
+    
+}
