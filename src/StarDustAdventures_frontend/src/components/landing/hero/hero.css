@@ -36,7 +36,7 @@
     @apply flex flex-col items-center my-4 text-white z-20
 }
 .hstc2-title{
-    @apply text-6xl font-semibold font-pixelify-sans mb-7
+    @apply text-6xl font-semibold font-pixelify-sans mb-7 text-center
 }
 .hstc2-text{
     @apply text-xl text-center mt-4 mb-7 font-sf-pro-display

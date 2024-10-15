@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from '../../re-usables/Button'
 import './hero.css'
 import BgOverlay from '../../re-usables/BgOverlay'
@@ -36,14 +36,20 @@ const Hero = () => {
             className="hs-falling-astro" 
             fetchPriority='high'
         />
-        <div className="hs-text-cont2">
-            <h3 className="hstc2-title">
-            Overview of Star Dust Adventures
-            </h3>
-            <p className="hstc2-text">
-            A Tap-to-Earn Game Combining Exploration and Blockchain
-            </p>
-        </div>
+        {
+            window.innerWidth>1024?
+            <div className="hs-text-cont2">
+                <h3 className="hstc2-title">
+                Overview of Star Dust Adventures
+                </h3>
+                <p className="hstc2-text">
+                A Tap-to-Earn Game Combining Exploration and Blockchain
+                </p>
+            </div>
+            :
+            <></>
+        }
+
     </div>
   )
 }
