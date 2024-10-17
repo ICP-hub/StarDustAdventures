@@ -2,7 +2,7 @@
     @apply w-screen min-h-screen relative flex flex-col py-10 items-center overflow-x-hidden
 }
 .ls-title{
-    @apply text-6xl font-semibold font-pixelify-sans mb-7 z-10
+    @apply text-6xl font-semibold font-coin mb-7 z-10
 }
 .ls-text{
     @apply text-xl text-center mt-4 mb-7 font-sf-pro-display z-10

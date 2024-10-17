@@ -12,7 +12,7 @@
 }
 
 .footer-text{
-    @apply font-pixelify-sans text-lg;
+    @apply font-coin text-lg;
 }
 
 .social-icons{

@@ -16,6 +16,7 @@ export default {
         'silkscreen': ['Silkscreen', 'cursive'],
         'pixelify-sans': ['Pixelify Sans', 'sans-serif'],
         'sf-pro-display': ['SF Pro Display', 'sans-serif'],
+        'coin':['Coin Ding Dong', 'cursive']
       }
     },
     screens:{

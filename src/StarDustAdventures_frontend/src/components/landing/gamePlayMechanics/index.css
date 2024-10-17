@@ -11,7 +11,7 @@
 }
 
 .section-title {
-    @apply font-pixelify-sans font-bold lg:text-6xl;
+    @apply font-coin font-bold lg:text-6xl;
 }
 
 .section-caption {

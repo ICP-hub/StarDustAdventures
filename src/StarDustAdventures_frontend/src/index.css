@@ -2,32 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @font-face {
-    font-family: 'SF-Pro-Display';
+
+@font-face {
+    font-family: 'SF Pro Display';
     font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(/assets/fonts/SFPRODISPLAYREGULAR.otf) format('otf');
-  }
-  @font-face {
-    font-family: 'SF-Pro-Display';
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url(/assets/fonts/SFPRODISPLAYMEDIUM.otf) format('otf');
-  }
-  @font-face {
-    font-family: 'SF-Pro-Display';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url(/assets/fonts/SFPRODISPLAYBOLD.otf) format('otf');
-  }
+    src: url('/assets/fonts/sf-pro-display/SFPRODISPLAYREGULAR.otf');
 }
 
+  @font-face {
+    font-family: 'Coin Ding Dong';
+    font-style: normal;
+    src: url('/assets/fonts/coin-ding-dong/CoinDingDong.ttf');
+}
+
+
 *{
-  @apply p-0 m-0
+  @apply p-0 m-0 box-border
 }
 
 html{

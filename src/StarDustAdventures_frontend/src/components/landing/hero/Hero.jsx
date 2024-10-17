@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <div className='hero-sec' style={{backgroundImage:'url("hero_bg.webp")',backgroundSize:'cover'}}>
         {/* To Optimize Background Image Load */}
-        <img src="hero_bg.webp" alt="hero" style={{display:'none'}} fetchPriority='high'/>
+        <img src="hero_bg.webp" alt="hero" style={{display:'none'}} fetchpriority='high'/>
         <BgOverlay/>
         <motion.div
             initial={{opacity:0}}
@@ -34,7 +34,7 @@ const Hero = () => {
             src="/assets/images/astronaut.webp" 
             alt="falling astronaut" 
             className="hs-falling-astro" 
-            fetchPriority='high'
+            fetchpriority='high'
         />
         {
             window.innerWidth>1024?
