@@ -4,6 +4,7 @@ import GameplayMechanic, { CardProps } from './Cards';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './index.css';
+import React from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,15 +68,15 @@ const GamePlayMechanics = () => {
             </div>
             <div ref={containerRef} className="gameplay-mechanics-cards">
                 {CARDS.map((card, index) => (
-                    <>
-                    <GameplayMechanic key={index} {...card} />
+                    <React.Fragment key={index}>
+                    <GameplayMechanic {...card} />
                     {index < CARDS.length - 1 && (
                             <div 
                                 className="w-1/4 h-0.5 bg-white bg-opacity-50 transform origin-left"
                                 ref={el => el && (linesRef.current[index] = el)}
                             ></div>
                         )}
-                    </>
+                    </React.Fragment>
                 ))}
             </div>
         </section>
