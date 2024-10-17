@@ -8,7 +8,7 @@
 }
 
 .button {
-  @apply float-left border-x-[10px] border-x-white hover:border-x-btnLight relative font-silkscreen transition-all ease-in;
+  @apply float-left border-x-[10px] border-x-white hover:border-x-btnLight relative font-coin transition-all ease-in;
   -webkit-box-sizing:border-box;
   -moz-box-sizing: border-box;
   box-sizing:border-box;
