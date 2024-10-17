@@ -32,6 +32,7 @@ const SOCIAL_ICONS = [
 const Footer = ()=>{
     return(
         <footer className='footer'>
+            <p className="footer-title">Star Dust Adventures</p>
             <p className='footer-text'>All rights reserved @startdustadventures</p>
             <div className='social-icons-container'>
                 <p className='social-icons-container-text'>Follow us on</p>
