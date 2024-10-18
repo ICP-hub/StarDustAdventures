@@ -1,4 +1,3 @@
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { useRef, useEffect } from 'react';
 import GameplayMechanic, { CardProps } from './Cards';
 import gsap from 'gsap';
@@ -27,10 +26,41 @@ const CARDS = [
     }
 ] as CardProps[];
 
+const Header = () => {
+    return (
+        <div className="gameplay-mechanics-header">
+            <h3 className="section-title">Gameplay Mechanics</h3>
+            <p className="section-caption">Explore the engaging system of Star Dust Adventures</p>
+        </div>
+    )
+}
+
+type GameplayCardsProps = {
+    containerRef : React.RefObject<HTMLDivElement>,
+    linesRef : React.RefObject<HTMLDivElement[]>
+}
+
+const GameplayCards = ({ containerRef, linesRef } : GameplayCardsProps) => {
+    return (
+        <div ref={containerRef} className="gameplay-mechanics-cards">
+            {CARDS.map((card, index) => (
+                <React.Fragment key={index}>
+                    <GameplayMechanic {...card} />
+                    {(index < CARDS.length - 1 && linesRef.current && linesRef.current[index] != null) && ( // Validate `linesRef.current` is not null
+                        <div
+                        className="w-1/4 h-0.5 bg-white bg-opacity-50 transform origin-left"
+                        ref={el => (el && linesRef.current && linesRef.current[index]) && (linesRef.current[index] = el)}></div>    // Assign ref after validating that linesRef.current is not null
+                    )}
+                </React.Fragment>
+            ))}
+        </div>
+    )
+}
+
 const GamePlayMechanics = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const sectionRef = useRef<HTMLElement>(null);
-    const linesRef = useRef<HTMLDivElement[]>([]);
+    const linesRef = useRef<Array<HTMLDivElement>>([]);
 
     useEffect(() => {
         if (!containerRef.current || !sectionRef.current) return;
@@ -53,7 +83,7 @@ const GamePlayMechanics = () => {
         });
 
         tl.to(cards, { opacity: 1, scale: 1, stagger: 0.2, duration: 0.5 })
-          .to(lines, { scaleX: 1, duration: 0.5, stagger: 0.2 }, '<');
+            .to(lines, { scaleX: 1, duration: 0.5, stagger: 0.2 }, '<');
 
         return () => {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -62,23 +92,8 @@ const GamePlayMechanics = () => {
 
     return (
         <section className="gameplay-mechanics" ref={sectionRef}>
-            <div className="gameplay-mechanics-header">
-                <h3 className="section-title">Gameplay Mechanics</h3>
-                <p className="section-caption">Explore the engaging system of Star Dust Adventures</p>
-            </div>
-            <div ref={containerRef} className="gameplay-mechanics-cards">
-                {CARDS.map((card, index) => (
-                    <React.Fragment key={index}>
-                    <GameplayMechanic {...card} />
-                    {index < CARDS.length - 1 && (
-                            <div 
-                                className="w-1/4 h-0.5 bg-white bg-opacity-50 transform origin-left"
-                                ref={el => el && (linesRef.current[index] = el)}
-                            ></div>
-                        )}
-                    </React.Fragment>
-                ))}
-            </div>
+            <Header />
+            <GameplayCards linesRef={linesRef} containerRef={containerRef}/>
         </section>
     );
 };
