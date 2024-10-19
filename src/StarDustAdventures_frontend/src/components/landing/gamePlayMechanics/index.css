@@ -1,5 +1,7 @@
 .gameplay-mechanics {
-    @apply w-full bg-transparent lg:mt-24 text-white flex flex-col items-center justify-center py-3 max-h-screen h-auto;
+    @apply w-full bg-transparent lg:mt-24 mt-12 text-white flex flex-col items-center justify-center py-3 md:min-h-min min-h-screen md:max-h-screen h-auto relative
+    
+    ;
 }
 
 .gameplay-mechanics-header{
@@ -7,15 +9,16 @@
 }
 
 .gameplay-mechanics-cards {
-    @apply flex flex-1 flex-row justify-between items-center gap-6 relative mt-2;
+    @apply flex  md:flex-1 flex-row md:justify-between justify-center md:items-center items-center gap-6 relative mt-2 md:w-full w-[300vw] md:h-auto h-screen
+    overflow-x-hidden px-2 outline outline-red-500 ;
 }
 
 .section-title {
-    @apply font-coin font-bold lg:text-6xl;
+    @apply font-coin font-bold lg:text-6xl text-5xl text-center;
 }
 
 .section-caption {
-    @apply font-sf-pro-display text-center lg:text-xl lg:mt-10 lg:mb-4;
+    @apply font-sf-pro-display text-center lg:text-xl text-base lg:mt-10 mt-5 lg:mb-4 mb-2 ;
 }
 
 .horizontal-line {

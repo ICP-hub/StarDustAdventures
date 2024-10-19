@@ -1,5 +1,5 @@
 .gradient-cover{
-    @apply min-h-screen h-auto w-screen relative bg-black flex flex-col lg:gap-32
+    @apply outline outline-lime-50 md:min-h-screen h-auto w-screen relative bg-black flex flex-col justify-between lg:gap-32
 }
 
 .right-purple-pattern{
