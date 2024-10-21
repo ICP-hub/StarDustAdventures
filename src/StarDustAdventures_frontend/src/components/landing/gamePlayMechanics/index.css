@@ -10,7 +10,7 @@
 
 .gameplay-mechanics-cards {
     @apply flex  md:flex-1 flex-row md:justify-between justify-center md:items-center items-center gap-6 relative mt-2 md:w-full w-[300vw] md:h-auto h-screen
-    overflow-x-hidden px-2 outline outline-red-500 ;
+    overflow-x-hidden px-2 ;
 }
 
 .section-title {
