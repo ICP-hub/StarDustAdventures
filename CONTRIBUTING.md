@@ -1,6 +1,5 @@
-Here’s a `CONTRIBUTING.md` file that includes all the details you mentioned:
 
-```markdown
+
 # Contributing Guidelines
 
 Thank you for your interest in contributing to our project! To maintain consistency and quality across the codebase, please follow these guidelines when contributing.
@@ -81,4 +80,3 @@ src/
 - Add comments where necessary, especially in complex or non-obvious parts of your code.
 
 Thank you for contributing! 
-```
