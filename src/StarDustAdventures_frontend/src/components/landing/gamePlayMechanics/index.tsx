@@ -49,7 +49,7 @@ const GamePlayCardList = ({ containerRef, linesRef } : GamePlayCardListProps) =>
                     {(index < CARDS.length - 1) && ( // Validate `linesRef.current` is not null
                         <div
                         className="w-1/4 h-0.5 bg-white bg-opacity-50 transform origin-left"
-                        ref={el => el && (linesRef.current[index] = el)}></div>    // Assign ref after validating that linesRef.current is not null
+                        ref={el => el && linesRef.current && (linesRef.current[index] = el)}></div>    // Assign ref after validating that linesRef.current is not null
                     )}
                 </React.Fragment>
             ))}
