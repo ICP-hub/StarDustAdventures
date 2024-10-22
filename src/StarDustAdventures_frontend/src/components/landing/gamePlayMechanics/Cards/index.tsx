@@ -15,7 +15,7 @@ export type CardProps = {
 
 const Card = ({title, description,image}:CardProps)=>{
     return(
-        <div aria-roledescription='Gameplay Card' className="gameplay-card">
+        <div aria-roledescription='card' role='section' className="gameplay-card">
             <img src={image} alt={title} title={title} width={86} height={86}/>
             <h4 className='card-title'>{title}</h4>
             <p className='card-description'>{description}</p>
