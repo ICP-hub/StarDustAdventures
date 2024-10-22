@@ -1,6 +1,5 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
 import GameplayMechanic, { CardProps } from './Cards';
-import MobileGameplayView from '../../landing-mobile/gameplayMechanics';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './index.css';
@@ -107,7 +106,7 @@ const GamePlayMechanics = (): JSX.Element => {
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [containerRef, sectionRef, linesRef]);
+  }, []);
 
   // Handle window resize to toggle mobile view
   useEffect(() => {
@@ -122,9 +121,8 @@ const GamePlayMechanics = (): JSX.Element => {
   }, []);
 
   // Render based on screen size
-  return isMobile ? (
-    <MobileGameplayView />
-  ) : (
+  
+    return(
     <section className="gameplay-mechanics" ref={sectionRef}>
       <Header />
       <GamePlayCardList linesRef={linesRef} containerRef={containerRef} />
