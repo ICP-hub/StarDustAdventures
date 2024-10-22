@@ -75,7 +75,6 @@ const GamePlayMechanics = (): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const linesRef = useRef<HTMLDivElement[]>([]);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   // GSAP Animation Hook
   useEffect(() => {
@@ -108,19 +107,6 @@ const GamePlayMechanics = (): JSX.Element => {
     };
   }, []);
 
-  // Handle window resize to toggle mobile view
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize(); // Check on mount
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Render based on screen size
   
     return(
     <section className="gameplay-mechanics" ref={sectionRef}>

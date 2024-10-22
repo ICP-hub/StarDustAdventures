@@ -1,4 +1,4 @@
-import React, { lazy, useEffect, useState } from 'react'
+import React, { lazy, Suspense, useEffect, useState } from 'react'
 import '../components/landing/landing.css'
 import Hero from '../components/landing/hero/Hero'
 import Footer from '../components/landing/footer'
@@ -21,8 +21,10 @@ const PatternCover = () => {
 
   return(
     <GradientCover>
-      {width > 768 ? <GamePlayMechanics/> : <MobileGameplayView/>}
-      <Lore/>
+      <Suspense fallback={<p>Loading...</p>}>
+        {width > 768 ? <GamePlayMechanics/> : <MobileGameplayView/>}
+        <Lore/>
+      </Suspense>
     </GradientCover>
   )
 }
