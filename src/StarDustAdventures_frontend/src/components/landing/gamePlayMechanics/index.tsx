@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState, useCallback } from 'react';
+import { useRef, useEffect} from 'react';
 import GameplayMechanic, { CardProps } from './Cards';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -107,7 +107,7 @@ const GamePlayMechanics = (): JSX.Element => {
     };
   }, []);
 
-  
+
     return(
     <section className="gameplay-mechanics" ref={sectionRef}>
       <Header />
