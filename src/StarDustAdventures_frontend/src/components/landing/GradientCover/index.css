@@ -1,5 +1,6 @@
 .gradient-cover{
-    @apply  md:min-h-screen h-auto w-screen relative bg-black flex flex-col justify-between lg:gap-32
+    @apply  md:min-h-screen h-auto w-screen relative bg-black flex flex-col justify-between lg:gap-32;
+    scroll-snap-type: y mandatory;
 }
 
 .right-purple-pattern{
