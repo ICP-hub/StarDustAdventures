@@ -7,8 +7,8 @@ import Lore from '../components/landing/loreStoryline/Lore';
 import GradientCover from '../components/landing/GradientCover';
 import GameConceptM from '../components/landing-mobile/gameConcept/GameConceptM';
 
-const GamePlayMechanics = lazy(() => import('../components/landing/gamePlayMechanics'));
-const MobileGameplayView = lazy(() => import('../components/landing-mobile/gameplayMechanics'));
+import GamePlayMechanics from '../components/landing/gamePlayMechanics';
+import MobileGameplayView from '../components/landing-mobile/gameplayMechanics';
 
 /**
  * PatternCover component dynamically renders gameplay mechanics based on screen width,
