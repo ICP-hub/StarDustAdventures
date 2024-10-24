@@ -1,6 +1,5 @@
 .gameplay-mechanics {
-    @apply w-full bg-transparent lg:mt-24 mt-12 text-white flex flex-col items-center justify-center py-3 md:min-h-min min-h-screen md:max-h-screen h-auto relative
-    
+    @apply w-full bg-transparent lg:mt-24 mt-12 text-white flex flex-col items-center justify-center py-3 max-h-screen h-auto relative
     ;
 }
 
@@ -9,7 +8,7 @@
 }
 
 .gameplay-mechanics-cards {
-    @apply flex  md:flex-1 flex-row md:justify-between justify-center md:items-center items-center gap-6 relative mt-2 md:w-full w-[300vw] md:h-auto h-screen
+    @apply flex  md:flex-1 flex-row md:justify-between justify-center md:items-center items-center gap-6 relative mt-2 w-full h-auto
     overflow-x-hidden px-2 ;
 }
 
