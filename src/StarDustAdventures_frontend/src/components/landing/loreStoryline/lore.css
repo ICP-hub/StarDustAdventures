@@ -25,11 +25,12 @@
 .lsm-text-item{
     @apply flex flex-col items-center w-[300px] 
 }
-.lsm-ti-title{
-    @apply mb-3 text-3xl font-semibold text-center
+.lsm-ti-title {
+    @apply mb-3 text-3xl font-semibold text-center text-white;
 }
+
 .lsm-ti-text{
-    @apply w-[250px] text-center font-medium text-lg
+    @apply w-[250px] text-center font-medium text-lg text-white;
 }
 
 @media screen and (max-width: 800px) {
@@ -46,7 +47,7 @@
         
     }
     .ls-main img{
-            position: absolute  ;
+        /* position: absolute  ; */
         width: 100vw;
         
     }
@@ -67,6 +68,10 @@
         transform: translateX(20px);
     }
     .lsm-side-left{
-        transform: translateX(-20px);
+        transform: translateX(-1px);
     }
+     .left-blue-pattern{
+        display:none;
+} 
+  
 }

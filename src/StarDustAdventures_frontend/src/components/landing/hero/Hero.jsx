@@ -1,9 +1,9 @@
 import React from 'react';
 import Button from '../../re-usables/Button';
-import BackgroundSection from './BackgroundSection';
-import TextContent from './TextContent';
-import AstronautAnimation from './AstronautAnimation';
-import AdditionalText from './AdditionalText';
+import BackgroundSection from './HeroBackground';
+import TextContent from './HeroTitleSection';
+import AstronautAnimation from './HeroVisual';
+import AdditionalText from './HeroDescription';
 import './hero.css';
 
 const Hero = () => {
