@@ -11,15 +11,30 @@ const LoreM = () => {
   useEffect(() => {
     const applyAnimations = () => {
       if (window.innerWidth <= 768) {
-        
        
+        gsap.fromTo('.ls-title, .ls-text', 
+          { scale: 1.2, opacity: 0 }, 
+          { 
+            scale: 1, 
+            opacity: 1, 
+            duration: 1.5,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '.ls-title',
+              start: 'top 80%', 
+              once: true,
+            }
+          }
+        );
+
+        // Continue other animations below
         gsap.fromTo('.ls-title, .ls-text', 
           { opacity: 1, y: 0 },  
           { 
             scrollTrigger: {
               trigger: '.ls-rotating-astro',
-              start: 'top-=100 top', 
-              end: '+=200', 
+              start: 'top-=50 top', 
+              end: '+=150',
               pin: '.ls-title, .ls-text', 
               pinSpacing: false,
               scrub: true,
@@ -27,14 +42,13 @@ const LoreM = () => {
           }
         );
 
-       
         gsap.fromTo('.ls-rotating-astro', 
           { opacity: 1, scale: 1 },
           {
             scrollTrigger: {
               trigger: '.lsm-first',
-              start: 'top center-=100', 
-              end: '+=300',
+              start: 'top center-=50', 
+              end: '+=200', 
               pin: '.ls-rotating-astro',
               pinSpacing: false,
               scrub: true,
@@ -45,8 +59,6 @@ const LoreM = () => {
         const sections = gsap.utils.toArray('.lsm-text-item');
 
         sections.forEach((section, index) => {
-         
-       
           gsap.fromTo(section, 
             { opacity: 0, y: 100 },  
             { 
@@ -54,39 +66,67 @@ const LoreM = () => {
               y: 0,
               scrollTrigger: {
                 trigger: section,
-                start: 'top 80%',
-                end: 'bottom 60%',
+                start: 'top 85%', 
+                end: 'bottom 70%', 
                 toggleActions: 'play none none none',
                 scrub: true,
               }
             }
           );
 
-         
           gsap.to('.ls-rotating-astro', {
             opacity: 0.2, 
             scrollTrigger: {
               trigger: section,
-              start: 'top 80%',
-              end: 'bottom 60%',
+              start: 'top 85%', 
+              end: 'bottom 70%', 
               scrub: true,
             }
           });
 
-         
           if (index > 1) {
             gsap.to(sections[index - 2], {
               opacity: 0,
               y: -100,
               scrollTrigger: {
                 trigger: section,
-                start: 'top 80%',
-                end: 'top 60%',
+                start: 'top 85%', 
+                end: 'top 70%', 
                 scrub: true,
               }
             });
           }
         });
+
+        gsap.fromTo('.ls-title, .ls-text', 
+          { opacity: 1, y: 0 }, 
+          { 
+            opacity: 0, 
+            y: -100,
+            scrollTrigger: {
+              trigger: '.lore-sec',
+              start: 'top top',
+              end: '+=150',
+              scrub: true,
+              toggleActions: 'play none none none',
+            }
+          }
+        );
+
+        gsap.fromTo('.ls-rotating-astro', 
+          { opacity: 0, scale: 0.8, y: 100 },
+          { 
+            opacity: 1, 
+            scale: 1,
+            y: 0,
+            scrollTrigger: {
+              trigger: '.ls-rotating-astro',
+              start: 'top 75%',
+              end: 'bottom 40%',
+              scrub: true,
+            }
+          }
+        );
       }
     };
 
