@@ -25,9 +25,58 @@
 .lsm-text-item{
     @apply flex flex-col items-center w-[300px] 
 }
-.lsm-ti-title{
-    @apply mb-3 text-3xl font-semibold text-center
+.lsm-ti-title {
+    @apply mb-3 text-3xl font-semibold text-center text-white;
 }
+
 .lsm-ti-text{
-    @apply w-[250px] text-center font-medium text-lg
+    @apply w-[250px] text-center font-medium text-lg text-white;
+}
+.hstc-title1, .hstc-title {
+    background: linear-gradient(90deg, #FFFFFF 0%, #999999 100%);
+    background-clip: text;
+    -webkit-background-clip: text; 
+    color: transparent;
+    width:auto;
+  }
+@media screen and (max-width: 800px) {
+    .lsm-first , .lsm-second , .lsm-third {
+        display: block ;
+        position: sticky;
+        margin-left  : auto  ; 
+        margin-right:  auto ;
+        width: 100%;
+        
+    }
+    .ls-main{
+        display: grid;
+        
+    }
+    .ls-main img{
+        width: 100vw;
+        
+    }
+    .lsm-text-item{
+        margin-top: 100px;
+    }
+    .lore-sec{
+        text-align: center;
+        transform: translateY(-60px)
+    }
+    .ls-text{
+        width: 80%;
+    }
+    .lsm-second{
+        margin-bottom: 100px;
+    }
+    .lsm-side-right{
+        transform: translateX(20px);
+    }
+    .lsm-side-left{
+        transform: translateX(-1px);
+    }
+     .left-blue-pattern{
+        display:none;
+} 
+  
 }

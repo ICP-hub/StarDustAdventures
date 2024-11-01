@@ -6,6 +6,7 @@ import GameConcept from '../components/landing/gameConcept/GameConcept';
 import Lore from '../components/landing/loreStoryline/Lore';
 import GradientCover from '../components/landing/GradientCover';
 import GameConceptM from '../components/landing-mobile/gameConcept/GameConceptM';
+import LoreM from '../components/landing-mobile/lore/LoreM';
 
 import GamePlayMechanics from '../components/landing/gamePlayMechanics';
 import MobileGameplayView from '../components/landing-mobile/gameplayMechanics';
@@ -30,7 +31,8 @@ const PatternCover = ()=> {
     <GradientCover>
       <Suspense fallback={<p>Loading...</p>}>
         {width > 768 ? <GamePlayMechanics /> : <MobileGameplayView />}
-        <Lore />
+        {width > 768 ? <Lore /> : <LoreM />}
+      
       </Suspense>
     </GradientCover>
   );
