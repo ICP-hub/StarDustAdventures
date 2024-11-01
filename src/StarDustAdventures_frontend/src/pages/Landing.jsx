@@ -6,10 +6,14 @@ import GameConcept from '../components/landing/gameConcept/GameConcept';
 import Lore from '../components/landing/loreStoryline/Lore';
 import GradientCover from '../components/landing/GradientCover';
 import GameConceptM from '../components/landing-mobile/gameConcept/GameConceptM';
-import LoreM from '../components/landing-mobile/lore/LoreM';
+import StarDustMobile from '../components/landing-mobile/star-mobile-landing/StarDustMobile';
 
-const GamePlayMechanics = lazy(() => import('../components/landing/gamePlayMechanics'));
-const MobileGameplayView = lazy(() => import('../components/landing-mobile/gameplayMechanics'));
+
+// const GamePlayMechanics = lazy(() => import('../components/landing/gamePlayMechanics'));
+// const MobileGameplayView = lazy(() => import('../components/landing-mobile/gameplayMechanics'));
+
+import GamePlayMechanics from '../components/landing/gamePlayMechanics';
+import MobileGameplayView from '../components/landing-mobile/gameplayMechanics'
 
 /**
  * PatternCover component dynamically renders gameplay mechanics based on screen width,
@@ -57,7 +61,7 @@ const Landing = ()=>{
   return (
     <div className="page">
       <Hero />
-      {width > 1024 ? <GameConcept /> : <GameConceptM />}
+      {width > 1024 ? <GameConcept /> : <StarDustMobile />}
       <PatternCover />
       <Footer />
     </div>
