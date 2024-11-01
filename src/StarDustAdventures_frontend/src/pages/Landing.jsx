@@ -8,6 +8,7 @@ import GradientCover from '../components/landing/GradientCover';
 import GameConceptM from '../components/landing-mobile/gameConcept/GameConceptM';
 import StarDustMobile from '../components/landing-mobile/star-mobile-landing/StarDustMobile';
 
+
 // const GamePlayMechanics = lazy(() => import('../components/landing/gamePlayMechanics'));
 // const MobileGameplayView = lazy(() => import('../components/landing-mobile/gameplayMechanics'));
 
@@ -34,7 +35,8 @@ const PatternCover = ()=> {
     <GradientCover>
       <Suspense fallback={<p>Loading...</p>}>
         {width > 768 ? <GamePlayMechanics /> : <MobileGameplayView />}
-        <Lore />
+        {width > 768 ? <Lore /> : <LoreM />}
+      
       </Suspense>
     </GradientCover>
   );
