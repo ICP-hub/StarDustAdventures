@@ -1,11 +1,5 @@
 import clsx from "clsx";
 import './index.css';
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary';
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
-  className?: string;
-}
 /**
  * Reusable Button Component for StarDust Adventures
  * 
