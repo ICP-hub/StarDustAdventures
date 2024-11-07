@@ -1,0 +1,10 @@
+.modal-container{
+    @apply shadow-md absolute w-full h-full flex justify-center items-center z-50 bg-black bg-opacity-50 focus:ring-slate-950;
+}
+.modal-container-body{
+    @apply bg-brand-blue shadow-lg rounded-lg min-w-32 min-h-40 m-auto md:border-8 border-white;
+}
+
+.modal-close{
+    @apply focus:outline-brand-blue;
+}

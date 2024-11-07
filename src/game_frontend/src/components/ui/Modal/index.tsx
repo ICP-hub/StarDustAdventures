@@ -2,13 +2,14 @@ import { useCallback, useEffect, useRef } from "react";
 import ModalProvider from "../../../hooks/useModal";
 import { motion } from "framer-motion";
 import clsx from "clsx";
+import './index.css';
 
 
 
 const modalVariants = {
-  hidden: { opacity: 0, y: '-100vh' },
-  visible: { opacity: 1, y: '0', transition: { duration: 0.3 } },
-  exit: { opacity: 0, y: '100vh', transition: { duration: 0.3 } },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1,  transition: { duration: 1 } },
+  exit: { opacity: 0, transition: { duration: 0.3 } },
 };
 
 export default function Modal ({children, onClose, size='medium', style={}, ...props} : ModalProps) {
@@ -41,7 +42,7 @@ export default function Modal ({children, onClose, size='medium', style={}, ...p
 
   return (
     <ModalProvider {...props} onClose={onClose}>
-      <motion.div className="modal-container"
+      <motion.div className="modal-container" aria-modal="true" role="dialog"
       initial="hidden"
       animate="visible"
       exit="hidden"
