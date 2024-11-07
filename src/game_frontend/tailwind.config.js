@@ -10,7 +10,8 @@ export default {
       colors:{
         btnLight:'rgb(123,0,255)',
         secondary : 'rgba(225, 24, 51, 1)',
-        'transparent-white':'rgba(255, 255, 255, 0.41)'
+        'transparent-white':'rgba(255, 255, 255, 0.41)',
+        'brand-blue': 'rgba(40, 85, 173, 1)',
       },
       fontFamily:{
         'silkscreen': ['Silkscreen', 'cursive'],
