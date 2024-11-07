@@ -1,10 +1,28 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from '../../ui/Button'
 import BgOverlay from '../../ui/BgOverlay'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
+import ConnectWallet from './connectWallet'
 import './index.css'
 
 const Hero = () => {
+
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
+    /**
+     * To Open the Modal
+     */
+    const openModal = () => {
+        setIsModalOpen(true);
+    }
+
+    /**
+     * To Close the Modal
+     */
+    const closeModal = () => {
+        setIsModalOpen(false);
+    }
+
   return (
     <div className='hero-sec' style={{backgroundImage:'url("hero_bg.webp")',backgroundSize:'cover'}}>
         {/* To Optimize Background Image Load */}
@@ -22,8 +40,13 @@ const Hero = () => {
             <p className='hstc-text'>
                 A Space Exploration Tap-to-Earn Game Powered By Crypto
             </p>
-            <Button className='play-button'>CONNECT WALLET</Button>
+            <Button className='play-button' onClick={openModal}>CONNECT WALLET</Button>
         </motion.div>
+        <AnimatePresence mode='wait'>
+            {
+                isModalOpen && <ConnectWallet closeModal={closeModal}/>
+            }
+        </AnimatePresence>
         <motion.img
             initial={{bottom:1000}}
             animate={{bottom:-100}}
