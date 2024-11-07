@@ -9,7 +9,7 @@ export default {
     extend: {
       colors:{
         btnLight:'rgb(123,0,255)',
-        secondary : 'rgba(225, 24, 51, 1)',
+        secondary : 'rgba(4, 2, 28, 1)',
         'transparent-white':'rgba(255, 255, 255, 0.41)',
         'brand-blue': 'rgba(40, 85, 173, 1)',
       },
