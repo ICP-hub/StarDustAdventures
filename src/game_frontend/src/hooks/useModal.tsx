@@ -8,7 +8,9 @@ const ModalContext = createContext<ModalContextProps | null>(null);
     * @version 1.0
     * @example
     * // Example usage of the useModal hook
-    * const modal = useModal();
+    * const {onClose} = useModal();
+    * @author Arjun Sharma
+    * @ArjunQBTech
 */
 export const useModal = () => useContext(ModalContext);
 /**
