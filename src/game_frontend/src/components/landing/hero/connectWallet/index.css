@@ -1,0 +1,19 @@
+.wallet-button{
+    @apply lg:w-[500px] mx-auto md:!min-w-[250px] relative
+}
+
+.wallet-icon{
+    @apply bg-white rounded-full p-2 object-cover object-center
+}
+
+.wallet-button-container{
+    @apply font-sf-pro-display !text-lg px-2;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.wallet-button-container span{
+    @apply text-center;
+}

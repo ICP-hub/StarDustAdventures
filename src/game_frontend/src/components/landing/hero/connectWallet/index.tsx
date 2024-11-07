@@ -1,5 +1,7 @@
+import Button from "../../../ui/Button";
 import Modal from "../../../ui/Modal";
 import { ModalHeader, ModalTitle, ModalCloseBtn, ModalBody } from "../../../ui/Modal/utils";
+import './index.css';
 
 const Wallets : WalletType[] = [
     {
@@ -28,13 +30,15 @@ export default function ConnectWallet({closeModal} : {closeModal:()=>void}) {
                 <ModalCloseBtn/>
             </ModalHeader>
             <ModalBody>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-4 w-full lg:py-6">
                     {
                         Wallets.map(wallet => (
-                            <div key={wallet.name} className="flex items-center gap-2">
-                                <img src={wallet.icon} alt={wallet.name} loading='lazy' width={30} height={30}/>
-                                <span>{wallet.name}</span>
-                            </div>
+                            <Button variant="secondary" key={wallet.name} className="wallet-button">
+                                <div className="wallet-button-container">
+                                    <img src={wallet.icon} alt={wallet.name} loading='lazy' width={40} height={40} className="wallet-icon"/>
+                                    <span>{wallet.name}</span>
+                                </div>
+                            </Button>
                         ))
                     }
                 </div>
