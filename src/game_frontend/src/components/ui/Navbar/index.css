@@ -1,18 +1,19 @@
-/* Main navbar container */
+/* Main navbar container chNG */
+
 .top-nav-bar {
-    @apply absolute top-[72px] left-[64px] right-[64px] w-[1400px] h-[72px] flex items-center justify-between bg-[#D9CCC1] opacity-60 p-2;
+    @apply  top-[72px] left-[64px] right-[64px] max-w-[900px] w-auto mx-auto h-[72px] flex items-center justify-between bg-[#D9CCC1] opacity-60 p-2;
   }
   
   /* Content wrapper */
   .nav-content {
-    @apply flex items-center w-full h-full space-x-2;
+    @apply flex items-center w-full h-full gap-x-2;
   }
   
   /* Icon container */
-  .nav-icon {
+  /* .nav-icon {
     @apply w-8 h-8;
   }
-  
+   */
   /* Vertical separator */
   .nav-separator {
     @apply bg-[#E3DEEA] rounded-lg h-[40px] w-1;
@@ -36,19 +37,19 @@
     @apply flex flex-row justify-start w-full;
   }
   
-  .profit-icon {
+  /* .profit-icon {
     @apply w-4 h-4;
   }
-  
+   */
   .profit-amount {
     @apply text-yellow-400 font-bold;
   }
   
   /* Character icon section */
-  .character-icon {
+  /* .character-icon {
     @apply w-6 h-6;
   }
-  
+   */
   .character-image {
     @apply w-full h-full;
   }

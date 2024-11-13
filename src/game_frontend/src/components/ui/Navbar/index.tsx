@@ -1,9 +1,6 @@
 import React from 'react';
 import './Navbar.css';
 
-interface NavbarProps {
-  profitPerHour?: number;
-}
 
 const Navbar: React.FC<NavbarProps> = ({ profitPerHour = 0.3 }) => {
   return (
@@ -15,6 +12,8 @@ const Navbar: React.FC<NavbarProps> = ({ profitPerHour = 0.3 }) => {
             src='/assets/images/wallets/ii.png'
             alt='icp-png'
             loading="lazy"
+            width={32}
+            height={32}
             />
           </div>
           
@@ -29,6 +28,8 @@ const Navbar: React.FC<NavbarProps> = ({ profitPerHour = 0.3 }) => {
                   src="/assets/ufo.svg" 
                   alt="ufo-icon" 
                   className="ufo-icon" 
+                  height={16}
+                  width={16}
                 />
                 <span className="profit-amount">+{profitPerHour}</span>
               </span>
@@ -38,6 +39,8 @@ const Navbar: React.FC<NavbarProps> = ({ profitPerHour = 0.3 }) => {
                 src="/assets/character.svg" 
                 alt="pixel character" 
                 className="character-image" 
+                height={24}
+                width={24}
               />
             </div>
           </div>
