@@ -1,5 +1,3 @@
-
-
 # Contributing Guidelines
 
 Thank you for your interest in contributing to our project! To maintain consistency and quality across the codebase, please follow these guidelines when contributing.
