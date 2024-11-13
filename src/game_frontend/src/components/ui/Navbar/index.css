@@ -1,12 +1,12 @@
 /* Main navbar container chNG */
 
 .top-nav-bar {
-    @apply  top-[72px] left-[64px] right-[64px] max-w-[900px] w-auto mx-auto h-[72px] flex items-center justify-between bg-[#D9CCC1] opacity-60 p-2;
+    @apply max-w-[900px] w-auto mx-auto h-[72px] flex items-center justify-between bg-[#D9CCC1] opacity-60 p-2;
   }
   
   /* Content wrapper */
   .nav-content {
-    @apply flex items-center w-full h-full gap-x-2;
+    @apply flex items-center w-full h-full gap-2;
   }
   
   /* Icon container */
