@@ -46,3 +46,8 @@
 .gcs-sc-title{
     @apply mb-3 xl:text-3xl md:text-xl font-semibold text-center
 }
+
+.gcs-sc-img {
+    @apply w-[25vw] lg:min-w-[350px];
+    filter: drop-shadow(0px 0px 50px rgba(255, 0, 0, 0.7)); /* Radial shadow effect */
+}
