@@ -49,5 +49,5 @@
 
 .gcs-sc-img {
     @apply w-[25vw] lg:min-w-[350px];
-    filter: drop-shadow(0px 0px 50px rgba(255, 0, 0, 0.7)); /* Radial shadow effect */
+    filter: drop-shadow(0px 0px 50px rgba(255, 0, 0, 0.7));
 }
