@@ -1,75 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './index.css';
 
-// TypeScript interfaces
-interface CardDataType {
-  id: number;
-  title: string;
-  subtitle: string;
-  profitPerHour: number;
-  clickPerHour: number;
-  level: number;
-  cost: number;
-}
 
-interface CardProps extends Omit<CardDataType, 'id'> {
-  image?: string;
-}
-
-interface TabsProps {
-  activeTab: string;
-  onTabChange: (tab: string) => void;
-}
-
-// Card data structure
-const cardData: CardDataType[] = [
-  {
-    id: 1,
-    title: "Market Manipulation",
-    subtitle: "You control the price",
-    profitPerHour: 0.3,
-    clickPerHour: 45,
-    level: 0,
-    cost: 2,
-  },
-  {
-    id: 2,
-    title: "Market Manipulation",
-    subtitle: "You control the price",
-    profitPerHour: 0.3,
-    clickPerHour: 45,
-    level: 0,
-    cost: 2,
-  },
-  {
-    id: 3,
-    title: "Market Manipulation",
-    subtitle: "You control the price",
-    profitPerHour: 0.3,
-    clickPerHour: 45,
-    level: 0,
-    cost: 2,
-  },
-  // ... other card data 
-];
-
-const Card: React.FC<CardProps> = ({ 
-  title, 
-  subtitle, 
-  profitPerHour, 
-  clickPerHour, 
-  level, 
-  cost, 
-  image 
-
+const Card: React.FC<CardProps> = ({
+  title,
+  subtitle,
+  profitPerHour,
+  clickPerHour,
+  level,
+  cost,
+  image
 }) => {
   return (
     <div className="mine-card-wrapper">
-      <div className="mine-card  card-css">
+      <div className="mine-card card-css">
         <div>
           <div className="mine-card-image-container">
-            <img 
-              src={image || 'https://cdn.pixabay.com/photo/2023/06/13/15/05/astronaut-8061095_640.png'}
+            <img
+              src={image}
               alt="Card-imgs"
               className="mine-card-image"
             />
@@ -104,10 +52,14 @@ const Card: React.FC<CardProps> = ({
           </div>
           
           <div className="mine-card-footer">
-            <span className="mine-card-level">Lvl {level}</span>
+            <span className="mine-card-level">Lvl. {level}</span>
             <div className="mine-card-vertical-divider"></div>
             <span className="mine-card-cost">
-              <span className="mine-card-icon">ic</span>
+              <img 
+                src="/assets/ufo.svg" 
+                alt="ufo-icon" 
+                className="mine-card-icon" 
+              />
               {cost}
             </span>
           </div>
@@ -117,28 +69,4 @@ const Card: React.FC<CardProps> = ({
   );
 };
 
-
-
-const MineCardsPage: React.FC = () => {
-
-
-  return (
-    
-          <div className="mine-cards-grid">
-            {cardData.map((card) => (
-              <Card 
-                key={card.id}
-                title={card.title}
-                subtitle={card.subtitle}
-                profitPerHour={card.profitPerHour}
-                clickPerHour={card.clickPerHour}
-                level={card.level}
-                cost={card.cost}
-              />
-            ))}
-          </div>
-        
-  );
-};
-
-export default MineCardsPage;
+export default Card;
