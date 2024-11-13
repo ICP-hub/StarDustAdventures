@@ -1,12 +1,17 @@
-/* Main navbar container chNG */
-
+.header{
+  @apply w-screen py-8 bg-transparent relative;
+}
 .top-nav-bar {
-    @apply max-w-[900px] w-auto mx-auto h-[72px] flex items-center justify-between bg-[#D9CCC1] opacity-60 p-2;
+    @apply w-[90vw] mx-auto bg-transparent p-2;
+    background: rgba( 255, 255, 255, 0.25 );
+    /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
   }
   
   /* Content wrapper */
   .nav-content {
-    @apply flex items-center w-full h-full gap-2;
+    @apply flex items-center w-full h-full gap-2 bg-opacity-60;
   }
   
   /* Icon container */
@@ -56,26 +61,26 @@
   
   
   .top-nav-bar{
-    margin: 9px auto;
-    display: inline-block;
+    /* margin: 9px auto;
+    display: inline-block; */
     text-align: center;
-    padding: 0.4em 1.3em;
+    padding: 0.4rem 1.3rem;
    
   
     /* First white border layer */
     box-shadow: 
     /* Step 1 - Inner white border */
-    5px 0 12px #D9CCC1,
-    -5px 0 12px #D9CCC1,
-    0 -5px 12px #D9CCC1,
-    0 5px 12px #D9CCC1,
+    5px 0 12px transparent,
+    -5px 0 12px transparent,
+    0 -5px 12px transparent,
+    0 5px 12px transparent,
     
     /* Step 2 - Second #D9CCC1 border */
-    10px 0 12px #D9CCC1,
-    -10px 0 12px #D9CCC1,
-    0 -10px 12px #D9CCC1,
-    0 10px 12px #D9CCC1,
-    0 0 0 5px #D9CCC1,
+    10px 0 12px transparent,
+    -10px 0 12px transparent,
+    0 -10px 12px transparent,
+    0 10px 12px transparent,
+    0 0 0 5px transparent,
     
     /* Step 3 - Third black border */
     15px 0 12px white,
