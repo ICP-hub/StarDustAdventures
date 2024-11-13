@@ -7,7 +7,7 @@ const Card: React.FC<CardProps> = ({
   subtitle,
   profitPerHour,
   clickPerHour,
-  level,
+  level = 0,  //default 0 level
   cost,
   image
 }) => {
