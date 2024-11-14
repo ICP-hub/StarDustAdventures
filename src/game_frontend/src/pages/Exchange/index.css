@@ -1,0 +1,3 @@
+.progressbar-container{
+    @apply fixed top-1/2 right-10 -translate-y-1/2 ;
+}
