@@ -7,11 +7,7 @@
 }
 
 .wallet-button-container{
-    @apply font-sf-pro-display !text-lg px-2;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 1rem;
-    align-items: center;
+    @apply font-sf-pro-display !text-lg px-2 flex justify-between items-center;
 }
 
 .wallet-button-container span{

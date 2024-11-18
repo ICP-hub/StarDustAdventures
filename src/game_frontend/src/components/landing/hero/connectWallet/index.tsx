@@ -35,8 +35,8 @@ export default function ConnectWallet({closeModal} : {closeModal:()=>void}) {
                         Wallets.map(wallet => (
                             <Button variant="secondary" key={wallet.name} className="wallet-button">
                                 <div className="wallet-button-container">
-                                    <img src={wallet.icon} alt={wallet.name} loading='lazy' width={40} height={40} className="wallet-icon"/>
                                     <span>{wallet.name}</span>
+                                    <img src={wallet.icon} alt={wallet.name} loading='lazy' width={40} height={40} className="wallet-icon"/>
                                 </div>
                             </Button>
                         ))

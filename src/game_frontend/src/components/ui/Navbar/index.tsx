@@ -1,12 +1,12 @@
 import React from 'react';
-import './Navbar.css';
+import './index.css';
 
 
 const Navbar: React.FC<NavbarProps> = ({ profitPerHour = 0.3 }) => {
   return (
-    <div>
+    <header className='header'>
       <div className="top-nav-bar">
-        <div className="nav-content">
+        <nav className="nav-content">
           <div className="nav-icon">
             <img 
             src='/assets/images/wallets/ii.png'
@@ -44,9 +44,9 @@ const Navbar: React.FC<NavbarProps> = ({ profitPerHour = 0.3 }) => {
               />
             </div>
           </div>
-        </div>
+        </nav>
       </div>
-    </div>
+    </header>
   );
 };
 
