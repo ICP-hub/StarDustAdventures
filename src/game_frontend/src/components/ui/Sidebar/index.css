@@ -3,7 +3,7 @@
 }
 
 .sidebar-children{
-    @apply h-[400px] min-w-28 bg-[#343434] rounded-tr-lg rounded-br-lg ml-2
-    flex flex-col justify-center items-center;
+    @apply min-h-[400px] min-w-28 bg-[#343434] rounded-tr-lg rounded-br-lg ml-2
+    flex flex-col justify-center items-center gap-2;
     ;
 }
