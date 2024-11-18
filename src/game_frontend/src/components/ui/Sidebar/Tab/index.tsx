@@ -1,8 +1,16 @@
 import  { memo } from 'react'
-const SidebarTab = memo(({ children } : SideBarChildren) => {
+import './index.css'
+
+const SidebarTab = memo(({title, icon} : SideBarChildren) => {
+    // Future Scope
+    // const currTab = useRouter().pathname
+    // const isActive = currTab === title.toLowerCase()
     return (
-        <div role='tab'>
-            {children}
-        </div>
+        <a role='tab' aria-selected="false" tabIndex={0} className='sidebar-tab-container'>
+            <img src={icon} alt={title} title={title}/>
+            <p className='sidebar-title'>{title}</p>
+        </a>
     )
 })
+
+export default SidebarTab
