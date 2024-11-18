@@ -1,0 +1,35 @@
+name : Build
+on : [pull_request_target]
+
+jobs:
+  deploy-ic:
+    name: "Run Build"
+    runs-on: ubuntu-latest
+    concurrency:
+      group: "website update"
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      
+      - run: git submodule update --init
+      
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install DFX
+        uses: dfinity/setup-dfx@main
+        with:
+          dfx-version: "0.22.0"
+
+
+      - name: Install Dependencies
+        run: npm install
+
+      -name: Start DFX
+        run: dfx start --background
+
+      - name: Create Build
+        run: dfx deploy
