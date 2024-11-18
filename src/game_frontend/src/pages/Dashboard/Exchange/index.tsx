@@ -1,5 +1,6 @@
-import ProgressBar from "../../components/ui/Progressbar"
-import Sidebar from "../../components/ui/Sidebar"
+import ProgressBar from "../../../components/ui/Progressbar"
+import Sidebar from "../../../components/ui/Sidebar"
+import '../index.css'
 
 const Exchange=()=>{
     return(

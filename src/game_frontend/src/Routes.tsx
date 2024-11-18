@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
-import Exchange from './pages/Exchange';
-import Layout from './pages/Exchange/layout';
+import Exchange from './pages/Dashboard/Exchange';
+import Layout from './pages/Dashboard/layout';
 export default function AppRoutes() {
     return (
         <Router>
