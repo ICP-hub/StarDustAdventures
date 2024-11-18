@@ -1,5 +1,6 @@
 import Navbar from "../../components/ui/Navbar"
 import ProgressBar from "../../components/ui/Progressbar"
+import Sidebar from "../../components/ui/Sidebar"
 import useDocumentTitle from "../../hooks/useDocumentTitle"
 import './index.css'
 const Layout =()=>{
@@ -10,6 +11,7 @@ const Layout =()=>{
         <div className="progressbar-container">
             <ProgressBar/>
         </div>
+        <Sidebar/>
         </>
     )
 }

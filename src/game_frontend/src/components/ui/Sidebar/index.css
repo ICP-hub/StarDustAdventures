@@ -1,0 +1,9 @@
+.sidebar{
+    @apply fixed w-auto min-h-screen h-auto left-0 top-0 flex flex-col justify-center;
+}
+
+.sidebar-children{
+    @apply h-[400px] min-w-28 bg-[#343434] rounded-tr-lg rounded-br-lg ml-2
+    flex flex-col justify-center items-center;
+    ;
+}
