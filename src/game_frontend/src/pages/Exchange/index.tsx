@@ -1,10 +1,14 @@
-import Layout from "./layout"
+import ProgressBar from "../../components/ui/Progressbar"
+import Sidebar from "../../components/ui/Sidebar"
 
 const Exchange=()=>{
     return(
-        <div className='exchange' style={{backgroundImage:'url("/assets/images/space-exchange-bg.webp"), url("/assets/images/firefly.webp")'}}>
-        <Layout/>
+        <main>
+        <div className="progressbar-container">
+            <ProgressBar/>
         </div>
+        <Sidebar/>
+        </main>
     )
 }
 

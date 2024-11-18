@@ -1,18 +1,16 @@
+import { Outlet } from "react-router-dom"
 import Navbar from "../../components/ui/Navbar"
-import ProgressBar from "../../components/ui/Progressbar"
 import Sidebar from "../../components/ui/Sidebar"
 import useDocumentTitle from "../../hooks/useDocumentTitle"
 import './index.css'
 const Layout =()=>{
     useDocumentTitle('Dashboard | StarDust Adventures')
     return(
-        <>
+        <div className="exchange" style={{backgroundImage:'url("/assets/images/space-exchange-bg.webp"), url("/assets/images/firefly.webp")'}}>
         <Navbar/>
-        <div className="progressbar-container">
-            <ProgressBar/>
-        </div>
         <Sidebar/>
-        </>
+        <Outlet/>
+        </div>
     )
 }
 
