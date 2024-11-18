@@ -1,3 +1,12 @@
 .progressbar-container{
     @apply fixed top-1/2 right-10 -translate-y-1/2 ;
 }
+.exchange-container{
+    @apply flex flex-1 flex-col justify-center items-center;
+}
+.exchange-container > section {
+    @apply flex flex-row items-center lg:text-6xl;
+}
+.exchange-points{
+    @apply  font-bold font-coin;
+}
