@@ -12,6 +12,7 @@ export default {
         secondary : 'rgba(4, 2, 28, 1)',
         'transparent-white':'rgba(255, 255, 255, 0.41)',
         'brand-blue': 'rgba(40, 85, 173, 1)',
+        'light-grey':'#656565'
       },
       fontFamily:{
         'silkscreen': ['Silkscreen', 'cursive'],
