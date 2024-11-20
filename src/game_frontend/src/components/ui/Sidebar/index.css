@@ -1,5 +1,5 @@
 .sidebar{
-    @apply fixed w-auto min-h-screen h-auto left-0 top-0 flex flex-col justify-center;
+    @apply fixed w-auto min-h-screen h-auto left-[-12px] top-0 flex flex-col justify-center;
 }
 
 .sidebar-children{
