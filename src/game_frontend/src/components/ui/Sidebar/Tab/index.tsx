@@ -1,7 +1,7 @@
 import  { memo } from 'react'
 import './index.css'
 
-const SidebarTab = memo(({title, icon} : SideBarChildren) => {
+const SidebarTab = memo(({title, icon} : SideBarChildren) =>{
     // Future Scope
     // const currTab = useRouter().pathname
     // const isActive = currTab === title.toLowerCase()
