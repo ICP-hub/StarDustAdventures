@@ -22,7 +22,7 @@ const INCENTIVES_DETAILS = [
         type : 'Acheivements'
     },
     {
-        icon : '',
+        icon : '🔑',
         points : 0,
         type : 'Keys'
     }
@@ -35,11 +35,13 @@ const INCENTIVES_DETAILS = [
  */
 const IncentiveCard=({icon, points = 0, type} : Incentives)=>{
     return(
-        <div role='group'>
+        <div role='group' className='incentive-card'>
             {/* Future Scope : Use IMAGES */}
             <p>{icon}</p>
-            <p>{type}</p>
-            <p>🛸 {points.toString()}</p>
+            <div className='incentive-card-type'>
+                <p>{type}</p>
+                <p>🛸 {points.toString()}</p>
+            </div>
         </div>
     )
 }
