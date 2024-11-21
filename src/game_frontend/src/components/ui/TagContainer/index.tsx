@@ -5,7 +5,7 @@ import './index.css';
 
 const TagContainer: React.FC<TagProps> = ({ children }) => {
   return (
-    <div className='dost-container'>
+    <div className='friends-container'>
       <div className='friends-wrapper'>
         {children}
       </div>

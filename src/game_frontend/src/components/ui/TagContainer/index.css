@@ -36,6 +36,6 @@
     @apply min-h-[76px] min-w-[480px];
   }
   
-  .dost-container {
+  .friends-container {
     @apply flex top-7 m-4 justify-center items-center;
   }
