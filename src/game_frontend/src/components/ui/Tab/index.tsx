@@ -1,7 +1,8 @@
 import React, { memo } from "react";
 import { TabsProps, TabProps, TabPanelProps } from "../../../types/Tab";
 import { useTab, TabProvider } from "../../../hooks/useTab";
-
+import TagContainer from "../TagContainer";
+import './index.css';
 /**
  * Main `Tabs` component to wrap Tab and TabPanel components.
  * @param {TabsProps} props - Props for the Tabs component
@@ -10,7 +11,7 @@ import { useTab, TabProvider } from "../../../hooks/useTab";
 export const Tabs: React.FC<TabsProps> = ({ children }) => {
     return (
         <TabProvider>
-            <div role="tablist" aria-label="Tab List">
+            <div role="tablist" aria-label="Tab List" className="tablist">
                 {children}
             </div>
         </TabProvider>
@@ -58,7 +59,9 @@ export const Tab: React.FC<TabProps> = memo(({ children, index }) => {
             onKeyDown={handleKeyDown}
             className={activeTab === index ? "active-tab" : ""}
         >
-            {children}
+            <TagContainer>
+                {children}
+            </TagContainer>
         </button>
     );
 });
@@ -77,6 +80,7 @@ export const TabPanel: React.FC<TabPanelProps> = memo(({ children, index }) => {
             role="tabpanel"
             id={`tab-panel-${index}`}
             aria-labelledby={`tab-${index}`}
+            className="tab-panel"
         >
             {children}
         </div>
