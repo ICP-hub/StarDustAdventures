@@ -5,12 +5,12 @@
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('./fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
+    src: url('/assets/fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
 }
 
   @font-face {
     font-family: 'Coin Ding Dong';
-    src: url('./fonts/CoinDingDong.ttf') format('truetype');
+    src: url('/assets/fonts/CoinDingDong.ttf') format('truetype');
 }
 
 
