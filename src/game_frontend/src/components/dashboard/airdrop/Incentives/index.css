@@ -1,0 +1,6 @@
+.incentive-card{
+    @apply flex flex-row items-start gap-4 font-coin text-lg;
+}
+.incentive-card-type{
+    @apply flex flex-col;
+}
