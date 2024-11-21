@@ -1,42 +1,21 @@
 import Incentives from '../../../components/dashboard/airdrop/Incentives'
-import { Tab, TabPanel, Tabs } from '../../../components/ui/Tab'
+import AirdropTab from '../../../components/dashboard/airdrop/Tab'
 import './index.css'
 
 const Airdrop=()=>{
     return(
         <main className='main-container'>
-            <section>
-                <h2>We did it!</h2>
-                <div>
-                    <img src="/assets/images/ufo.svg" alt="ufo" />
+            <section className='main-header'>
+                <h2 className='page-title'>We did it!</h2>
+                <div className='ufo-container'>
+                    <img src="/assets/images/ufo-bg.svg" alt="ufo" loading='lazy' width={100} height={100} />
                 </div>
                 <p>token is on the market</p>
             </section>
             <section className='airdrop-body'>
-            <Tabs>
-                <Tab index={0}>
-                    <p>Tab 0</p>
-                </Tab>
-                <Tab index={1}>
-                    <p>Tab 1</p>
-                </Tab>
-                <TabPanel index={0}>
-                        <>
-                            <h3>Claim your tokens</h3>
-                            <p>Claim your tokens by connecting your wallet</p>
-                            <button>Connect Wallet</button>
-                        </>
-                    </TabPanel>
-                <TabPanel index={1}>
-                        <>
-                            <h3>Claim your Locals</h3>
-                            <p>Claim your tokens by connecting your wallet</p>
-                            <button>Connect Wallet</button>
-                        </>
-                </TabPanel>
-            </Tabs>
-           <div className='spacer'></div>
-            <Incentives/>
+                <AirdropTab/>
+                <div className='spacer'></div>
+                <Incentives/>
             </section>
         </main>
     )
