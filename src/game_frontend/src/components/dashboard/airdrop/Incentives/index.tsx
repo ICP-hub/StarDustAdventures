@@ -2,27 +2,27 @@ import './index.css'
 
 const INCENTIVES_DETAILS = [
     {
-        icon: '🚀',
+        icon: '/assets/images/HODL.svg',
         points: 100,
         type: 'Passive Income'
     },
     {
-        icon: '🎁',
+        icon: '/assets/images/Review.svg',
         points: 50,
         type: 'Earn Tasks'
     },
     {
-        icon: '🎉',
+        icon: '/assets/images/Vested.svg',
         points: 25,
         type: 'Friends'
     },
     {
-        icon : '🚀',
+        icon : '/assets/images/rocket.svg',
         points: 0,
         type : 'Acheivements'
     },
     {
-        icon : '🔑',
+        icon : '/assets/images/Review.svg',
         points : 0,
         type : 'Keys'
     }
@@ -36,11 +36,13 @@ const INCENTIVES_DETAILS = [
 const IncentiveCard=({icon, points = 0, type} : Incentives)=>{
     return(
         <div role='group' className='incentive-card'>
-            {/* Future Scope : Use IMAGES */}
-            <p>{icon}</p>
+            <img src={icon} title={type} alt={type} width={30} height={30} loading='lazy'/>
             <div className='incentive-card-type'>
                 <p>{type}</p>
-                <p>🛸 {points.toString()}</p>
+                <div className='incentive-card-type-points'>
+                    <img src='/assets/images/ufo.svg' alt='ufo' width={20} height={20} loading='lazy'/>
+                    <p>{points.toString()}</p>
+                </div>
             </div>
         </div>
     )

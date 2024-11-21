@@ -1,6 +1,12 @@
 .incentive-card{
-    @apply flex flex-row items-start gap-4 font-coin text-lg;
+    @apply flex flex-row items-start gap-4 font-coin text-sm border-b-[1px] border-white self-stretch p-2;
 }
 .incentive-card-type{
     @apply flex flex-col;
+}
+.incentive-card-type-points{
+    @apply flex gap-2 text-amber-400;
+}
+.incentive-group{
+    @apply border-l-[1px] border-white px-2; 
 }
