@@ -1,6 +1,5 @@
 .friends-wrapper {
     position: relative;
-    margin-top: 10px;
     box-shadow:
         /* First layer - white background */
         6px 0 0 0px rgba(255, 255, 255, 0.493), /*left side */
