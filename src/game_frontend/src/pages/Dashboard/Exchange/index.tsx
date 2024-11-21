@@ -15,10 +15,12 @@ const Exchange=()=>{
             Else We'll show a loading spinner till the data is fetched
         */}
         <section>
-            <img src='/assets/images/ufo.svg' alt="ufo" width={50} height={50}/>
+            <img src='/assets/images/ufo.svg' alt="ufo" width={50} height={50} loading="lazy"/>
             <h3 className="exchange-points">0.3</h3>
         </section>
         <Sidebar/>
+        <section className="click-to-earn" style={{backgroundImage: 'url("/assets/images/firefly.webp")'}}>
+        </section>
         </main>
     )
 }
