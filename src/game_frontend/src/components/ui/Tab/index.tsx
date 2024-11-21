@@ -57,11 +57,11 @@ export const Tab: React.FC<TabProps> = memo(({ children, index }) => {
             tabIndex={activeTab === index ? 0 : -1}
             onClick={() => setActiveTab(index)}
             onKeyDown={handleKeyDown}
-            className={activeTab === index ? "active-tab" : ""}
+            className={activeTab === index ? "active-tab" : "tab"}
         >
-            <TagContainer>
-                {children}
-            </TagContainer>
+            {
+                activeTab === index ? <TagContainer>{children}</TagContainer> : children
+            }
         </button>
     );
 });
