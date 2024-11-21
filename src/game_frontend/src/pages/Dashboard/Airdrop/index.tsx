@@ -1,3 +1,4 @@
+import Incentives from '../../../components/dashboard/airdrop/Incentives'
 import { Tab, TabPanel, Tabs } from '../../../components/ui/Tab'
 import './index.css'
 
@@ -11,6 +12,7 @@ const Airdrop=()=>{
                 </div>
                 <p>token is on the market</p>
             </section>
+            <section className='airdrop-body'>
             <Tabs>
                 <Tab index={0}>
                     <p>Tab 0</p>
@@ -33,6 +35,9 @@ const Airdrop=()=>{
                         </>
                 </TabPanel>
             </Tabs>
+           <div className='spacer'></div>
+            <Incentives/>
+            </section>
         </main>
     )
 }
