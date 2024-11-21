@@ -1,10 +1,22 @@
 .main-container{
-    @apply flex flex-col items-center justify-center lg:w-1/2 mx-auto relative;
+    @apply flex flex-col items-center justify-center gap-4 mx-auto relative;
 }
 
 .airdrop-body{
-    @apply flex justify-between items-start w-full gap-4 relative;
+    @apply flex justify-center items-start w-full gap-4 relative;
 }
 .spacer{
     @apply self-stretch bg-white w-0.5;
+}
+.page-title{
+    @apply font-bold text-5xl;
+}
+.main-header{
+    @apply font-coin text-center flex flex-col items-center justify-center gap-4;
+}
+.ufo-container{
+    @apply min-w-6 min-h-6 aspect-square;
+}
+.ufo-container > img{
+    image-rendering: pixelated;
 }
