@@ -33,7 +33,7 @@
 
 
 .friends-wrapper {
-    @apply min-h-[76px] min-w-[480px];
+    @apply min-h-[44px] min-w-[160px];
   }
   
   .friends-container {
