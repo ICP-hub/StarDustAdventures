@@ -6,7 +6,7 @@ import './index.css'
 const Layout =()=>{
     useDocumentTitle('Dashboard | StarDust Adventures')
     return(
-        <div className="exchange" style={{backgroundImage:'url("/assets/images/space-exchange-bg.webp"), url("/assets/images/firefly.webp")'}}>
+        <div className="exchange" style={{backgroundImage:'url("/assets/images/space-exchange-bg.webp")'}}>
         <Navbar/>
         <Sidebar/>
         <Outlet/>
