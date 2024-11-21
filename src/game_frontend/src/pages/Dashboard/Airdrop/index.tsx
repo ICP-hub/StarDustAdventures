@@ -14,7 +14,7 @@ const Airdrop=()=>{
             </section>
             <section className='airdrop-body'>
                 <AirdropTab/>
-                <div className='spacer'></div>
+                {/* <div className='spacer'></div> */}
                 <Incentives/>
             </section>
         </main>
