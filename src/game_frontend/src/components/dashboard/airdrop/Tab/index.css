@@ -1,0 +1,12 @@
+.tokenpanel-body,
+.tokenpanel,
+.tokenpanel-body > tr{
+    @apply w-full;
+}
+.tokenpanel-body > tr{
+    @apply flex justify-between items-center gap-4 font-coin text-2xl;
+}
+
+.withdrawal-button{
+    @apply !w-[474px] text-2xl mt-4;
+}
