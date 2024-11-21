@@ -1,4 +1,10 @@
 .main-container{
-    @apply flex flex-col items-center justify-center;
+    @apply flex flex-col items-center justify-center lg:w-1/2 mx-auto relative;
 }
 
+.airdrop-body{
+    @apply flex justify-between items-start w-full gap-4 relative;
+}
+.spacer{
+    @apply self-stretch bg-white w-0.5;
+}
