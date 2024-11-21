@@ -33,7 +33,12 @@
 
 
 .friends-wrapper {
-    @apply min-h-[44px] min-w-[160px];
+    @apply min-h-[44px] min-w-[160px] flex justify-center items-center font-coin;
+    /* Should use Pixelon */
+    background: rgba( 255, 255, 255, 0.25 );
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
   }
   
   .friends-container {
