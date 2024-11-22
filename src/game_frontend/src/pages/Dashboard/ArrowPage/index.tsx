@@ -47,13 +47,24 @@ const TaskItem: React.FC<TaskItemProps> = ({ icon, children, tokenCount }) => (
   <div className="flex items-center justify-between py-4 px-4 border-b border-gray-700/30">
     <div className="flex items-center gap-3">
       <TokenIcon>{icon}</TokenIcon>
-      <span className="text-white text-sm font-medium">{children}</span>
+      <div className='flex flex-col'>
+        <span className="text-white text-sm font-medium">{children}</span>
+        <div className="flex items-center gap-1">
+
+            <span>
+                <img 
+                    src="/assets/ufo.svg"
+                    className="ufo-image"
+                    loading="lazy"
+                    alt="ufo"
+                />
+            </span>
+        
+            <span className="text-yellow-400 text-xs ">+{tokenCount}</span>
+        </div>
+      </div>
     </div>
     <div className="flex items-center gap-2">
-      <div className="flex items-center gap-1">
-       
-        <span className="text-blue-400 text-xs">+{tokenCount}</span>
-      </div>
       <svg
         className="w-5 h-5 text-gray-400"
         fill="none"
