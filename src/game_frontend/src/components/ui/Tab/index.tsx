@@ -8,7 +8,7 @@ import './index.css';
  * @param {TabsProps} props - Props for the Tabs component
  * @returns {JSX.Element}
  */
-export const Tabs: React.FC<TabsProps> = ({ children }) => {
+export const Tabs: React.FC<TabsProps> = ({ children }) =>{
     return (
         <TabProvider>
             <div role="tablist" aria-label="Tab List" className="tablist">
