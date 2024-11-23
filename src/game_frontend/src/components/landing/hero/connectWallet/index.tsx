@@ -1,6 +1,7 @@
 import Button from "../../../ui/Button";
 import Modal from "../../../ui/Modal";
 import { ModalHeader, ModalTitle, ModalCloseBtn, ModalBody } from "../../../ui/Modal/utils";
+import { useAuth } from "../../../../hooks/useAuth";
 import './index.css';
 
 const Wallets : WalletType[] = [
@@ -23,6 +24,7 @@ const Wallets : WalletType[] = [
 ]
 
 export default function ConnectWallet({closeModal} : {closeModal:()=>void}) {
+    const auth = useAuth();
     return (
         <Modal onClose={closeModal}>
             <ModalHeader>
