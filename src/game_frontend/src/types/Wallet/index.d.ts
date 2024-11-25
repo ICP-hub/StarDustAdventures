@@ -27,5 +27,6 @@ type WalletName= 'NFID' | 'BIFINITY' | 'PLUG' | 'INTERNET IDENTITY'
  */
 interface WalletType{
     icon : string,
-    name : WalletName
+    name : WalletName,
+    method : 'ii' | 'plug'
 }
