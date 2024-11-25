@@ -64,4 +64,4 @@ export const TaskItem = ({ icon, children, tokenCount }: TaskItemProps) => (
       <ChevronRight />
     </div>
   </div>
-);
+); 
