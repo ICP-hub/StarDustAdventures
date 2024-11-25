@@ -1,0 +1,15 @@
+.task-content-wrapper {
+    @apply flex items-center justify-center  p-4;
+  }
+  
+  .task-content-inner {
+    @apply flex justify-between bg-black/30 p-4 rounded-lg items-center min-w-[30%];
+  }
+  
+  .task-content-body {
+    @apply flex-1;
+  }
+  
+  .task-content-arrow {
+    @apply w-5 h-5 text-white;
+  }
