@@ -1,6 +1,7 @@
 import Button from "../../../ui/Button";
 import Modal from "../../../ui/Modal";
 import { ModalHeader, ModalTitle, ModalCloseBtn, ModalBody } from "../../../ui/Modal/utils";
+import { useAuth } from "../../../../hooks/useAuth";
 import './index.css';
 
 const Wallets : WalletType[] = [
@@ -23,6 +24,7 @@ const Wallets : WalletType[] = [
 ]
 
 export default function ConnectWallet({closeModal} : {closeModal:()=>void}) {
+    const auth = useAuth();
     return (
         <Modal onClose={closeModal}>
             <ModalHeader>
@@ -33,7 +35,7 @@ export default function ConnectWallet({closeModal} : {closeModal:()=>void}) {
                 <div className="flex flex-col gap-4 w-full lg:py-6">
                     {
                         Wallets.map(wallet => (
-                            <Button variant="secondary" key={wallet.name} className="wallet-button">
+                            <Button variant="secondary" key={wallet.name} className="wallet-button" onClick={()=>auth?.login("ii")}>
                                 <div className="wallet-button-container">
                                     <span>{wallet.name}</span>
                                     <img src={wallet.icon} alt={wallet.name} loading='lazy' width={40} height={40} className="wallet-icon"/>

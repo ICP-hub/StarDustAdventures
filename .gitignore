@@ -24,3 +24,6 @@ dist/
 # environment variables
 .env
 canister_ids.json
+
+# deps folder
+deps/
