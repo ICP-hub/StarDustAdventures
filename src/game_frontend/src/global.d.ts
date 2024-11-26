@@ -12,4 +12,13 @@ declare global {
         }
       };
     }
+
+    interface User{
+      name:string;
+      id:Principal;
+      points:bigint;
+      clickLimitHour:bigint;
+      prizePerHour:bigint;
+      status:{active:null, banned:null};
+    }
   }
