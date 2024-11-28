@@ -1,13 +1,17 @@
 import { memo } from "react";
-import { useLocation, Link } from "react-router-dom"; 
+import { Link, useMatch } from "react-router-dom"; 
 import "./index.css";
 
 const SidebarTab = memo(({ title, icon }: SideBarChildren)  => {
-    const location = useLocation();
-    const isActive = location.pathname === `/${title.toLowerCase()}`;
+    const basePath = "/dashboard";
+    const targetPath = `${basePath}/${title.toLowerCase().split(' ').join('-')}`;
+    
+    // Check if the targetPath matches the current URL
+    const match = useMatch(targetPath);
+    const isActive = !!match;
 
     return (
-        <Link to={`/${title.toLowerCase()}`}>
+        <Link to={targetPath}>
             <div
                 role="tab"
                 aria-selected={isActive ? "true" : "false"}

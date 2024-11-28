@@ -4,7 +4,7 @@ import SidebarTab from './Tab'
 const SIDEBAR_ITEMS = [
     {
         icon : '/assets/images/coin.svg',
-        title : 'Exchange'
+        title : 'Exchange',
     },
     {
         icon : '/assets/images/article.svg',
