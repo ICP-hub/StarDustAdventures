@@ -1,5 +1,5 @@
-import { Section, TaskItem } from '../../../components/ui/TaskCard';
-import './index.css';
+import { Section, TaskItem } from "../../../components/ui/TaskCard";
+import "./index.css";
 
 const Header = () => (
   <div className="header-container">
@@ -18,13 +18,13 @@ const Header = () => (
 
 // Data structure for tasks
 const YOUTUBE_TASKS = [
-  { title: 'Dominate Crpto Monitoring', tokenCount: 1 },
-  { title: 'C2 earn $24m a day?', tokenCount: 1 },
+  { title: "Dominate Crpto Monitoring", tokenCount: 1 },
+  { title: "C2 earn $24m a day?", tokenCount: 1 },
 ];
 
 const SOCIAL_TASKS = [
-  { title: 'Follow us on Instagram', tokenCount: 1 },
-  { title: 'Join our TG channel', tokenCount: 1 },
+  { title: "Follow us on Instagram", tokenCount: 1 },
+  { title: "Join our TG channel", tokenCount: 1 },
 ];
 
 // Main component
@@ -33,8 +33,8 @@ const RewardsList = () => {
     <div className="rewards-container">
       <div className="rewards-inner">
         <Header />
-        
-        <Section title="Hamster Youtube">
+
+        <Section title="Hamster Youtube" className="section-title">
           {YOUTUBE_TASKS.map((task, index) => (
             <TaskItem key={index} icon="#" tokenCount={task.tokenCount}>
               <h4 className="task-title">{task.title}</h4>
@@ -42,10 +42,10 @@ const RewardsList = () => {
           ))}
         </Section>
 
-        <Section title="Tasks list">
+        <Section title="Tasks list" className="section-title">
           {SOCIAL_TASKS.map((task, index) => (
             <TaskItem key={index} icon="#" tokenCount={task.tokenCount}>
-              {task.title}
+              <h4 className="task-title">{task.title}</h4>
             </TaskItem>
           ))}
         </Section>
