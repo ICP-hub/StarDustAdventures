@@ -16,11 +16,11 @@ interface CardData {
 }
 
 interface MineCardTabSwitchProps {
-  myCardsData: CardData[];
-  missedCardsData: CardData[];
+  MyCardsData: CardData[];
+  MissedCardsData: CardData[];
 }
 
-const MineCardTabSwitch: React.FC<MineCardTabSwitchProps> = ({ myCardsData, missedCardsData }) => {
+const MineCardTabSwitch: React.FC<MineCardTabSwitchProps> = ({ MyCardsData, MissedCardsData }) => {
   return (
     <div className="mine-card-container">
       <div className="mine-card-inner">
@@ -29,11 +29,11 @@ const MineCardTabSwitch: React.FC<MineCardTabSwitchProps> = ({ myCardsData, miss
           <Tab index={1}><p>Missed Card</p></Tab>
 
           <TabPanel index={0}>
-            <MyCardsPanel myCardsData={myCardsData} />
+            <MyCardsPanel MyCardsData={MyCardsData} />
           </TabPanel>
 
           <TabPanel index={1}>
-            <MissedCardsPanel missedCardsData={missedCardsData} />
+            <MissedCardsPanel MissedCardsData={MissedCardsData} />
           </TabPanel>
         </Tabs>
       </div>

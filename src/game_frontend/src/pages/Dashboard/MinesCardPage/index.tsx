@@ -2,7 +2,7 @@ import React from 'react';
 import MineCardTabSwitch from '../../../components/dashboard/Earn/MineCardTabSwitch';
 import './index.css';
 
-const myCardsData = [
+const MyCardsData = [
   {
     id: 1,
     title: "Market Manipulation",
@@ -65,7 +65,7 @@ const myCardsData = [
   }
 ];
 
-const missedCardsData = [
+const MissedCardsData = [
   {
     id: 4,
     title: "Stock Analysis Pro",
@@ -105,8 +105,8 @@ const CardContainer: React.FC = () => {
         <h2 className="card-title">Mine cards</h2>
       </div>
       <MineCardTabSwitch
-        myCardsData={myCardsData}
-        missedCardsData={missedCardsData}
+        MyCardsData={MyCardsData}
+        MissedCardsData={MissedCardsData}
       />
     </div>
   );

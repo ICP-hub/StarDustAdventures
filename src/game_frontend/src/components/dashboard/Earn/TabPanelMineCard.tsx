@@ -14,13 +14,13 @@ interface CardData {
 }
 
 interface MyCardsPanelProps {
-  myCardsData: CardData[];
+  MyCardsData: CardData[];
 }
 
-export const MyCardsPanel: React.FC<MyCardsPanelProps> = ({ myCardsData }) => {
+export const MyCardsPanel: React.FC<MyCardsPanelProps> = ({ MyCardsData }) => {
   return (
     <div className="card-grid">
-      {myCardsData.map((card) => (
+      {MyCardsData.map((card) => (
         <Card
           key={card.id}
           title={card.title}
@@ -38,13 +38,13 @@ export const MyCardsPanel: React.FC<MyCardsPanelProps> = ({ myCardsData }) => {
 
 // MissedCardsPanel.tsx
 interface MissedCardsPanelProps {
-  missedCardsData: CardData[];
+  MissedCardsData: CardData[];
 }
 
-export const MissedCardsPanel: React.FC<MissedCardsPanelProps> = ({ missedCardsData }) => {
+export const MissedCardsPanel: React.FC<MissedCardsPanelProps> = ({ MissedCardsData }) => {
   return (
     <div className="card-grid">
-      {missedCardsData.map((card) => (
+      {MissedCardsData.map((card) => (
         <Card
           key={card.id}
           title={card.title}
