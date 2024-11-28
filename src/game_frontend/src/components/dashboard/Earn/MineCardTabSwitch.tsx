@@ -1,6 +1,7 @@
+// MineCardTabSwitch.tsx
 import React from 'react';
-import Card from '../../ui/Minecard';
 import { Tabs, Tab, TabPanel } from '../../ui/Tab';
+import { MyCardsPanel, MissedCardsPanel } from './TabPanelMineCard';
 import './index.css';
 
 interface CardData {
@@ -28,37 +29,11 @@ const MineCardTabSwitch: React.FC<MineCardTabSwitchProps> = ({ myCardsData, miss
           <Tab index={1}><p>Missed Card</p></Tab>
 
           <TabPanel index={0}>
-            <div className="card-grid">
-              {myCardsData.map((card) => (
-                <Card
-                  key={card.id}
-                  title={card.title}
-                  subtitle={card.subtitle}
-                  profitPerHour={card.profitPerHour}
-                  clickPerHour={card.clickPerHour}
-                  level={card.level}
-                  cost={card.cost}
-                  image={card.image}
-                />
-              ))}
-            </div>
+            <MyCardsPanel myCardsData={myCardsData} />
           </TabPanel>
 
           <TabPanel index={1}>
-            <div className="card-grid">
-              {missedCardsData.map((card) => (
-                <Card
-                  key={card.id}
-                  title={card.title}
-                  subtitle={card.subtitle}
-                  profitPerHour={card.profitPerHour}
-                  clickPerHour={card.clickPerHour}
-                  level={card.level}
-                  cost={card.cost}
-                  image={card.image}
-                />
-              ))}
-            </div>
+            <MissedCardsPanel missedCardsData={missedCardsData} />
           </TabPanel>
         </Tabs>
       </div>
