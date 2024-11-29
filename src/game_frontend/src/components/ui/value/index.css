@@ -19,3 +19,11 @@
         0px -20px 0 0 white
 
 }
+
+.main-value{
+    @apply flex justify-center items-center
+}
+
+.two-step-border {
+    @apply  min-h-16 bg-blue-500/50 min-w-[550px]
+}

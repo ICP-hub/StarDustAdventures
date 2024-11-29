@@ -1,13 +1,16 @@
 import React, { ReactNode } from 'react';
 import './index.css'
-// interface ValueProps {
-//     children: ReactNode;
-// } <ValueProps>
 
-const Value: React.FC = ({  }) => {
+interface ValueProps {
+    children: ReactNode;
+} 
+
+const Value: React.FC<ValueProps>  =  ({ children }) => {
     return (
-        <div className='w-full mt-4 h-screen flex justify-center justify-item-center'>
-            <div className='two-step-border h-16 bg-blue-500/50 w-[550px]'>
+        <div className='main-value '>
+            <div className='two-step-border '>
+
+            {children}
             
         </div>
         </div>
