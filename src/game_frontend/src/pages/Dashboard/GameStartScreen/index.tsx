@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Button from '../../../components/ui/Button';
-import Container from '../../../components/ui/Container';
+import Input from '../../../components/ui/Input';
 
 const GameStartScreen = () => {
   const [playerName, setPlayerName] = useState('');
@@ -35,7 +35,7 @@ const GameStartScreen = () => {
         </h1>
         
         <form onSubmit={handleSubmit} className="space-y-6">
-          <>
+          <Input>
           <div className="p-20">
             {/* Pixelated input border */}
             <input
@@ -46,7 +46,7 @@ const GameStartScreen = () => {
               placeholder="Type your name..."
             />
           </div>
-          </>
+          </Input>
           
           <div className="flex justify-center">
             <Button
