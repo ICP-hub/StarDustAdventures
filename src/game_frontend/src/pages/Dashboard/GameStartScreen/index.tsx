@@ -35,20 +35,24 @@ const GameStartScreen = () => {
         </h1>
         
         <form onSubmit={handleSubmit} className="space-y-6">
+          
+          {/* Pixelated input border */}
+          <div className="m-28">
           <Input>
-          <div className="p-20">
-            {/* Pixelated input border */}
+            
             <input
               type="text"
               value={playerName}
               onChange={(e) => setPlayerName(e.target.value)}
-              className="w-full px-4 py-3 bg-blue-900/50 bg text-white placeholder-blue-300 border-2 border-blue-400 rounded-lg focus:outline-none focus:border-blue-300"
-              placeholder="Type your name..."
+              className="w-full h-full flex items-center justify-center bg-blue-900/50 bg text-white text-xl  rounded-lg focus:outline-none "
+              
             />
+           
+            </Input>
           </div>
-          </Input>
           
-          <div className="flex justify-center">
+          
+          <div className="flex pt-10 justify-center">
             <Button
               type="submit"
             >
