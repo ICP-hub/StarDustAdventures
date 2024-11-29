@@ -5,7 +5,7 @@ interface ValueProps {
     children: ReactNode;
 } 
 
-const Value: React.FC<ValueProps>  =  ({ children }) => {
+const Input: React.FC<ValueProps>  =  ({ children }) => {
     return (
         <div className='main-value '>
             <div className='two-step-border '>
@@ -17,4 +17,4 @@ const Value: React.FC<ValueProps>  =  ({ children }) => {
     );
 }
 
-export default Value;
+export default Input;
