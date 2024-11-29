@@ -4,7 +4,13 @@ import Error "mo:base/Error";
 import Constants "constants";
 import Result "mo:base/Result";
 import Buffer "mo:base/Buffer";
+import Debug "mo:base/Debug";
+import Iter "mo:base/Iter";
+import Time "mo:base/Time";
+import Int "mo:base/Int";
+import Timer "mo:base/Timer";
 import Types "types";
+
 actor {
  
   // this map contains list of users
@@ -12,6 +18,9 @@ actor {
 
   // referral map, contains list of people referred by user
   let friendMap=TrieMap.TrieMap<Principal,[(Principal,Text)]>(Principal.equal,Principal.hash); 
+
+  let errorLogs:Buffer.Buffer<Text> = Buffer.fromArray([]);
+
 
   // Registering new users
   public shared({caller}) func createUser(user:Types.User,refBy:?Principal):async Result.Result<Types.User,Text>{
@@ -189,8 +198,52 @@ actor {
     }
 
   };
+
+  func getAllUserIds():async [Principal]{
+      return Iter.toArray(userMap.keys());
+  };
+
+  func updatePointsHourly():async (){
+    try{
+      let userIdList=await getAllUserIds();
+
+      for(i in Iter.range(0,userIdList.size()-1)){
+        let oldUser=userMap.get(userIdList[i]);
+        switch(oldUser) {
+          case(null) {
+            errorLogs.add( Constants.ERRORS.userNotFound # "_" # Int.toText(Time.now()));
+          };
+          case(?val) {
+            let user:Types.User={
+              id=userIdList[i];
+              name=val.name;
+              points=val.points + val.prizePerHour;
+              clickLimitHour=val.clickLimitHour;
+              prizePerHour=val.prizePerHour;
+              status=val.status;
+            };
+
+            ignore userMap.replace(userIdList[i],user);
+          };
+        };
+      }
+
+    }catch(err){
+      errorLogs.add(Error.message(err) # "_" # Int.toText(Time.now()));
+    }
+  };
   
   public shared query({caller}) func whoami():async Text{
     return Principal.toText(caller);
   };
+
+  ignore Timer.setTimer<system>(#seconds (Constants.SECONDS_IN_HOUR - Int.abs(Time.now() / 1_000_000_000) % Constants.SECONDS_IN_HOUR),
+
+    func () : async () {
+      let nextTime=Constants.SECONDS_IN_HOUR;
+      ignore Timer.recurringTimer<system>(#seconds nextTime, updatePointsHourly);
+      await updatePointsHourly();
+    }
+  );
+
 };
