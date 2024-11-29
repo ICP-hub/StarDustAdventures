@@ -1,13 +1,16 @@
 /* Main container */
 .mine-card-container {
-    @apply h-full w-full flex justify-center items-center;
-  }
-  
-  .mine-card-inner {
-    @apply w-[80%];
-  }
-  
-  /* Card grid container */
-  .card-grid {
-    @apply flex flex-wrap;
-  }
+  @apply h-full w-full flex justify-center items-center;
+}
+
+.mine-card-inner {
+  @apply w-[80%];
+}
+.min-card-tab {
+  @apply flex;
+}
+
+/* Card grid container */
+.card-grid {
+  @apply flex flex-wrap;
+}
