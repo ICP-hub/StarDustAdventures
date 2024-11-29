@@ -1,6 +1,8 @@
 import Nat "mo:base/Nat";
 module{
-    public let PRIZE_DECIMALS:Nat=4;
+    public let PRIZE_DECIMALS:Nat=8;
+
+    public let SECONDS_IN_HOUR = 3600;
 
     public let ERRORS={
         userNotFound="User not found";
