@@ -1,0 +1,16 @@
+.two-step-border {
+    margin: 8px auto;
+    display: inline-block;
+    text-align: center;
+    padding: 0.4em 1.3em;
+    box-shadow:
+        4px 0 white,
+        -4px 0 white,
+        0 -4px white,
+        0 4px white,
+        8px 0 blue,
+        -8px 0 blue,
+        0 -8px blue,
+        0 8px blue,
+        0 0 0 4px blue;
+}
