@@ -18,18 +18,20 @@ const GameStartScreen = () => {
   };
   
   return (
-    <div className="min-h-screen flex flex-col relative items-center">
+    <div className="min-h-screen bg-[url('/Firefly-bg.webp')] bg-contain bg-repeat-round flex flex-col relative items-center">
       {/* Background image */}
-      <div className="fixed inset-0 w-full h-full">
+      {/* <div className="fixed inset-0 w-full h-full">
         <img
           src="./hero_bg.webp"
           className="w-full h-full object-cover"
           alt="Background"
         />
-      </div>
+      </div> */}
       
       {/* Main content */}
       <div className="relative w-full max-w-md z-10">
+        
+        {/* page-title */}
         <h1 className="text-4xl md:text-5xl text-white text-center mt-14 my-10 font-coin">
           Enter your Name
         </h1>
@@ -44,7 +46,7 @@ const GameStartScreen = () => {
               type="text"
               value={playerName}
               onChange={(e) => setPlayerName(e.target.value)}
-              className="w-full h-full flex items-center justify-center bg-blue-900/50 bg text-white text-xl  rounded-lg focus:outline-none "
+              className="w-full h-full flex items-center justify-center bg-blue-900/30 bg text-white text-xl  rounded-lg focus:outline-none "
               
             />
            
