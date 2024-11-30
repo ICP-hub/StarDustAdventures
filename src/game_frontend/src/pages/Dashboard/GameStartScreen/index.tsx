@@ -3,7 +3,7 @@ import Button from '../../../components/ui/Button';
 import Input from '../../../components/ui/Input';
 import './index.css';
 
-const GameStartScreen = () => {
+const RegisterScreen = () => {
   const [playerName, setPlayerName] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -48,4 +48,4 @@ const GameStartScreen = () => {
   );
 };
 
-export default GameStartScreen;
+export default RegisterScreen;
