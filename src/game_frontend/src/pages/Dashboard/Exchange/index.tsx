@@ -1,8 +1,12 @@
+import { useLoaderData } from "react-router-dom"
 import ProgressBar from "../../../components/ui/Progressbar"
 import Sidebar from "../../../components/ui/Sidebar"
+import { GET_USER_POINTS } from "../../../utils/api/query"
 import '../index.css'
 
 const Exchange=()=>{
+    const data = useLoaderData()
+    console.log(data)
     return(
         <main className="exchange-container">
         <div className="progressbar-container">
@@ -23,6 +27,20 @@ const Exchange=()=>{
         </section>
         </main>
     )
+}
+
+export const ExchangeLoader=async(_: any, actors: any)=>{
+    if (!actors) {
+        return { error: "User is not authenticated." };
+    }
+
+    try {
+        const { data, error } = await GET_USER_POINTS(actors); // Fetch user data
+        return data;
+    } catch (error) {
+        console.error("Error fetching user data:", error);
+        return { error: "Failed to fetch user data." };
+    }
 }
 
 export default Exchange
