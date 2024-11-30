@@ -19,7 +19,7 @@ const GameStartScreen = () => {
   };
 
   return (
-    <div className="game-container">
+    <div className="game-container " style={{ backgroundImage: 'url("/Firefly-bg.webp")', backgroundSize: 'cover' }}>
       <div className="game-content">
         <h1 className="game-title">
           Enter your Name
