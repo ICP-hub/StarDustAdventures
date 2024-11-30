@@ -12,7 +12,6 @@ import Timer "mo:base/Timer";
 import Types "types";
 
 actor {
- 
   // this map contains list of users
   let userMap=TrieMap.TrieMap<Principal,Types.User>(Principal.equal,Principal.hash); 
 
@@ -23,7 +22,7 @@ actor {
 
 
   // Registering new users
-  public shared({caller}) func createUser(user:Types.User,refBy:?Principal):async Result.Result<Types.User,Text>{
+  public shared({caller}) func createUser(user:Types.UserInput,refBy:?Principal):async Result.Result<Types.User,Text>{
     try{
       let oldUser=userMap.get(caller);
       
@@ -60,6 +59,26 @@ actor {
 
       return #ok(newUser)
     }catch(err){
+      return #err(Error.message(err));
+    }
+  };
+
+  public shared query ({caller}) func getUser() : async Result.Result<Types.User, Text> {
+    try{
+      let user = userMap.get(caller);
+
+      switch user {
+        case(null){
+          return #err(Constants.ERRORS.userNotFound)
+        };
+        case(?value) {
+          if(caller!=value.id){
+            return #err(Constants.ERRORS.notAuthorized);
+          };
+          return #ok(value);
+        };
+      }
+    } catch(err){
       return #err(Error.message(err));
     }
   };
@@ -125,6 +144,26 @@ actor {
         }
       }
     }catch(err){
+      return #err(Error.message(err));
+    }
+  };
+
+  public shared query ({caller}) func getPoints():async Result.Result<Nat, Text>{
+    try{
+      let user = userMap.get(caller);
+
+      switch user {
+        case(null){
+          return #err(Constants.ERRORS.userNotFound)
+        };
+        case(?value) {
+          if(caller!=value.id){
+            return #err(Constants.ERRORS.cannotUpdateOtherUser)
+          };
+          return #ok(value.points);
+        };
+      }
+    } catch(err){
       return #err(Error.message(err));
     }
   };

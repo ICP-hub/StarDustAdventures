@@ -6,6 +6,7 @@ module{
 
     public let ERRORS={
         userNotFound="User not found";
+        notAuthorized="You are not authorized to perform this action";
         anonymous="anonymous users are not allowed";
         useralreadyExists="User already exists with id : ";
         cannotUpdateOtherUser="You cannot update someone else's profile";
