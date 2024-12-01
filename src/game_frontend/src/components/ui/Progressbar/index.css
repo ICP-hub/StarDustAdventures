@@ -26,7 +26,26 @@
           3px 0 0 3px white,
           -3px 0 0 3px white;
       }
-
+      .progress-wrapper {
+        @apply flex flex-col items-center;
+    }
+    
+    .progress-bar {
+        @apply w-6 h-64 relative overflow-hidden sm:rotate-0 rotate-90;
+    }
+    
+    .progress-fill {
+        @apply absolute left-0 bottom-0 w-full transition-all duration-300 ease-out;
+    }
+    
+@media (max-width: 768px) {
+    .progress-bar {
+        @apply w-6 h-[22rem] relative overflow-hidden sm:rotate-0 rotate-90 mr-[10.8rem] mt-[60rem];
+    }
+   
+    }
+    
+/*
 .progress-wrapper {
     @apply flex flex-col items-center ;
 }
@@ -37,4 +56,13 @@
     
 .progress-fill {
     @apply absolute left-0 bottom-0 w-full transition-all duration-300 ease-out;
-}
+}*/
+/*
+@media (max-width: 768px) {
+    .progress-bar {
+        @apply w-[26.5rem] h-[3.5rem] relative overflow-hidden mr-4 mt-[57.5rem] ;
+
+    }
+    }
+
+*/
