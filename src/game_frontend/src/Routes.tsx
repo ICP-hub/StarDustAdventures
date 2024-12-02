@@ -19,7 +19,7 @@ export default function AppRoutes() {
         {
             path: '/dashboard',
             element: <Layout />,
-            loader:(args)=>LayoutLoader(args, auth?.actors),
+            // loader:(args)=>LayoutLoader(args, auth?.actors),
             children: [
                 {
                     index: true,
@@ -29,6 +29,7 @@ export default function AppRoutes() {
                 {
                     path: 'exchange',
                     element: <Exchange />,
+                    loader: (args) => ExchangeLoader(args, auth?.actors)
                 },
                 {
                     path: 'airdrop',
