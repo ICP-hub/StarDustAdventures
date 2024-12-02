@@ -24,11 +24,12 @@ const SpaceTokens: React.FC = () => {
   const nextData: TokenData[] = [
     {
       tokens: 0,
-      image: "👾",
+      image: "/assets/ufo.svg",
       title: "Tokens earned",
       subtitle: "Click anywhere..."
     }
   ];
+
 
   const [currentData, setCurrentData] = useState<TokenData[]>(initialData);
   const [hasClicked, setHasClicked] = useState(false);
@@ -49,16 +50,25 @@ const SpaceTokens: React.FC = () => {
     <div
       onClick={handleClick}
       className="min-h-screen flex items-center justify-center p-4"
+      style={{ backgroundImage: 'url("/Firefly-bg.webp")', backgroundSize: 'cover' }}
     >
       <div className="relative">
         {/* Main content */}
         <div className="relative">
           {currentData.map((item, index) => (
             <div key={index} className="text-center space-y-4">
-              <div className="flex items-center justify-center mb-10 space-x-2">
+              <div className="flex items-center justify-center mb-10 ">
                 <span className="text-white text-8xl font-coin ">{item.tokens}</span>
                 {item.image && (
-                  <span className="text-4xl">{item.image}</span>
+                    <div className='flex jusity-center items-center m-2'>
+                        <img 
+                        src={item.image} 
+                        alt="UFO"
+                        width={85}// Adjust size as needed
+                        height={85}
+                        className=''
+                    />
+                    </div>
                 )}
               </div>
               <div className="space-y-2">
