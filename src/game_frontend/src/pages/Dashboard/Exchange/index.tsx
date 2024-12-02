@@ -3,10 +3,21 @@ import ProgressBar from "../../../components/ui/Progressbar"
 import Sidebar from "../../../components/ui/Sidebar"
 import { GET_USER_POINTS } from "../../../utils/api/query"
 import '../index.css'
+import { useEffect, useState } from "react"
+import { bigIntToNumber } from "../../../utils"
+import usePoints from "../../../hooks/usePoints"
 
 const Exchange=()=>{
-    const data = useLoaderData()
-    console.log(data)
+    const data : any = useLoaderData()
+    const {points, setPoints, incrementPoints} = usePoints(0)
+
+    useEffect(()=>{
+        if(data.ok){
+            const _points = bigIntToNumber(data.ok) * 0.001
+            setPoints(_points)
+        }
+    },[data])
+
     return(
         <main className="exchange-container">
         <div className="progressbar-container">
@@ -20,10 +31,12 @@ const Exchange=()=>{
         */}
         <section>
             <img src='/assets/images/ufo.svg' alt="ufo" width={50} height={50} loading="lazy"/>
-            <h3 className="exchange-points">0.3</h3>
+            <h3 className="exchange-points">{points.toString()}</h3>
         </section>
         <Sidebar/>
-        <section className="click-to-earn" style={{backgroundImage: 'url("/assets/images/firefly.webp")'}}>
+        <section
+        onClick={()=>incrementPoints}
+        className="click-to-earn" style={{backgroundImage: 'url("/assets/images/firefly.webp")'}}>
         </section>
         </main>
     )
@@ -31,16 +44,10 @@ const Exchange=()=>{
 
 export const ExchangeLoader=async(_: any, actors: any)=>{
     if (!actors) {
-        return { error: "User is not authenticated." };
+        return null;
     }
-
-    try {
-        const { data, error } = await GET_USER_POINTS(actors); // Fetch user data
-        return data;
-    } catch (error) {
-        console.error("Error fetching user data:", error);
-        return { error: "Failed to fetch user data." };
-    }
+    const { data, error } = GET_USER_POINTS(actors); // Fetch user data
+    return data as {ok : Number; err : any};
 }
 
 export default Exchange
