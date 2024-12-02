@@ -1,14 +1,11 @@
-import React, { ReactNode } from 'react';
-import './index.css';
+import React, { ReactNode } from "react";
+import "./index.css";
 
-
-const TaskContent = ({ children, className = '' }: ContentBoxProps) => {
+const TaskContent = ({ children, className = "" }: ContentBoxProps) => {
   return (
     <div className={`task-content-wrapper ${className}`}>
-      <div className='task-content-inner'>
-        <div className="task-content-body">
-          {children}
-        </div>
+      <div className="task-content-inner">
+        <div className="task-content-body">{children}</div>
         <svg
           className="task-content-arrow"
           fill="none"
