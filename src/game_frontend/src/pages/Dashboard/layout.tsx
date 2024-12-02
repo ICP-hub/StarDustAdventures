@@ -16,17 +16,8 @@ const Layout =()=>{
 }
 
 export const LayoutLoader=async(_: any, actors: any)=>{
-    if (!actors) {
-        return { error: "User is not authenticated." };
-    }
-
-    try {
-        const { data, error } = await GET_USER(actors); // Fetch user data
-        return data;
-    } catch (error) {
-        console.error("Error fetching user data:", error);
-        return { error: "Failed to fetch user data." };
-    }
+    const { data, error } = GET_USER(actors); // Fetch user data
+    return data;
 }
 
 export default Layout
