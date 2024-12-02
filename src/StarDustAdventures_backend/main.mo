@@ -25,7 +25,6 @@ actor {
   public shared({caller}) func createUser(user:Types.UserInput,refBy:?Principal):async Result.Result<Types.User,Text>{
     try{
       let oldUser=userMap.get(caller);
-      
       if(oldUser!=null){
         return #err(Constants.ERRORS.useralreadyExists # Principal.toText(caller));
       };
@@ -58,6 +57,22 @@ actor {
       };
 
       return #ok(newUser)
+    }catch(err){
+      return #err(Error.message(err));
+    }
+  };
+
+  public shared({caller}) func incrementPoints():async Result.Result<Text,Text> {
+    try{
+      let incrementResult = await addPointsToUser(caller,1);
+      switch(incrementResult){
+        case(#ok){
+          return #ok("Points added successfully");
+        };
+        case(#err(error)){
+          return #err(error);
+        }
+      }
     }catch(err){
       return #err(Error.message(err));
     }
@@ -271,7 +286,7 @@ actor {
       errorLogs.add(Error.message(err) # "_" # Int.toText(Time.now()));
     }
   };
-  
+
   public shared query({caller}) func whoami():async Text{
     return Principal.toText(caller);
   };
