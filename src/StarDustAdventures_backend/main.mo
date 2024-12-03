@@ -201,6 +201,7 @@ actor {
   };
 
     // internal function, adds new points. will be used in future improvements
+    //Future : New Map for Points <Principal, Nat>
   func addPointsToUser(id:Principal,points:Nat):async Result.Result<(),Text>{
     try{
       let oldUser=userMap.get(id);
