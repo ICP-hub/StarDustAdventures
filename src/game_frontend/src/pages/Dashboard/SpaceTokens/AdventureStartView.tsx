@@ -1,19 +1,18 @@
 import React from 'react';
-import SpaceTokensUi from "./SpaceTokensUi";
+import AdventureStartViewUi from './AdventureStartViewUi';
 
-interface TokenData {
+interface  adventureData {
   tokens: number;
-  image: string;
   title: string;
   subtitle: string;
 }
 
 interface AdventureStartViewProps {
-  data: TokenData[];
+  data:  adventureData[];
 }
 
 const AdventureStartView: React.FC<AdventureStartViewProps> = ({ data }) => {
-  return <SpaceTokensUi data={data} />;
+  return <AdventureStartViewUi data={data} />;
 };
 
 export default AdventureStartView;

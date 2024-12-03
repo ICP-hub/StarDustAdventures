@@ -1,5 +1,5 @@
 import React from 'react';
-import SpaceTokensUi from "./SpaceTokensUi";
+import SpaceTokensUi from "./RewardTokensUi";
 
 interface TokenData {
   tokens: number;
