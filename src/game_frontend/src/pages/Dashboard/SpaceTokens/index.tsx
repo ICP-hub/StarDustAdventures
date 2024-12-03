@@ -13,7 +13,7 @@
 //     title: string;
 //     subtitle: string;
 //   }
-  
+
 
 //   // Game Data
 //   const adventureStartData: TokenData[] = [
@@ -39,7 +39,7 @@
 //   const handleClick = () => {
 //     setClickCount(prev => {
 //       const newCount = prev + 1;
-      
+
 //       // Update display based on click count
 //       switch(newCount) {
 //         case 1:
@@ -51,7 +51,7 @@
 //         default:
 //           break;
 //       }
-      
+
 //       return newCount;
 //     });
 //   };
@@ -106,25 +106,21 @@ const SpaceTokens: React.FC = () => {
     }
   ];
 
-  const handleClick = () => {
-    setClickCount(prev => {
-      const newCount = prev + 1;
-      
-      if (newCount === 2) {
-        navigate('/dashboard');
-      }
-      
-      return newCount;
-    });
+  const handleClick = () => {     
+    setClickCount(prev => prev + 1);          
+    
+    if (clickCount + 1 === 2) {       
+      navigate('/dashboard');     
+    }   
   };
-
+  
   return (
     <div
       onClick={handleClick}
       className="min-h-screen flex items-center justify-center p-4"
-      style={{ 
-        backgroundImage: 'url("/Firefly-bg.webp")', 
-        backgroundSize: 'cover' 
+      style={{
+        backgroundImage: 'url("/Firefly-bg.webp")',
+        backgroundSize: 'cover'
       }}
     >
       {clickCount === 0 ? (
