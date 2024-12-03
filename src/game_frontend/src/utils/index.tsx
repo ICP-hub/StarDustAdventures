@@ -9,5 +9,11 @@
  * @author Arjun Sharma
  */
 export const bigIntToNumber = (bigInt: BigInt) => {
-    return Number(bigInt.toString());
+    const convertedValue = Number(bigInt.toString()).toFixed(3);
+    return parseFloat(convertedValue);
+}
+
+export const validateName = (name: string) => {
+    const regex = /^[a-zA-Z0-9_]+$/;
+    return regex.test(name);
 }
