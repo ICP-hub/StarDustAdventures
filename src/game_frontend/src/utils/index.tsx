@@ -9,8 +9,8 @@
  * @author Arjun Sharma
  */
 export const bigIntToNumber = (bigInt: BigInt) => {
-    const convertedValue = Number(bigInt.toString()).toFixed(3);
-    return parseFloat(convertedValue);
+    const convertedValue = Number(bigInt.toString());
+    return convertedValue;
 }
 
 export const validateName = (name: string) => {
