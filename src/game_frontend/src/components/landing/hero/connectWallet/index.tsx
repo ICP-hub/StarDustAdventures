@@ -32,34 +32,26 @@ const Wallets : WalletType[] = [
 export default function ConnectWallet({closeModal} : {closeModal:()=>void}) {
     const auth = useAuth();
     const navigate = useNavigate()
-    
-    const {mutateAsync, data} = CREATE_USER(auth?.actors, {
-        user:{name:"Test"}, 
-        refBy:[]
-    });
-
-    console.log("Data : ", data)
     // Temporary Function : Register User on Successfull Login
     const handleLogin = async (method: "ii" | "plug") => {
         if (!auth) {
-            console.error("Auth context is not available.");
-            return;
+            throw new Error("Auth not initialized");
         }
+
+        let targetPath = ""
     
         try {
-            const loginStatus = await auth.login(method);
-            if(loginStatus) {
-                const response : any = await mutateAsync();
-                if(response.ok){
-                    console.log("User Registered Successfully");
-                    closeModal();
-                }
-                navigate('/dashboard');
+            const actor = await auth.login(method);
+            if(actor) {
+                const response : any = await actor.getUser();
+                targetPath = response.ok ? 'dashboard' : 'register';
             }
             
         } catch (error) {
             console.error("Login failed:", error);
-            // Handle user feedback on error
+        } finally {
+            closeModal();
+            navigate(targetPath, {replace:true});
         }
     };
     
