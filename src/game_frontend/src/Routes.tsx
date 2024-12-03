@@ -1,35 +1,37 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Landing from './pages/Landing';
-import Exchange, { ExchangeLoader } from './pages/Dashboard/Exchange';
-import Layout, { LayoutLoader } from './pages/Dashboard/layout';
+import Exchange from './pages/Dashboard/Exchange';
+import Layout from './pages/Dashboard/layout';
 import Airdrop from './pages/Dashboard/Airdrop';
 import InviteFriends from './pages/Dashboard/InviteFriends';
 import RewardsList from './pages/Dashboard/RewardsList';
 import MineCard from './pages/Dashboard/MineCard';
 import { useAuth } from './hooks/useAuth';
+import ProfileTabs from './pages/Dashboard/ProfilePage';
+import RegisterScreen from './pages/Register';
 
 
 export default function AppRoutes() {
-    const auth = useAuth()
     const router = createBrowserRouter([
         {
             path: '/',
             element: <Landing />,
         },
         {
+            path : '/register',
+            element : <RegisterScreen/>
+        },
+        {
             path: '/dashboard',
             element: <Layout />,
-            // loader:(args)=>LayoutLoader(args, auth?.actors),
             children: [
                 {
                     index: true,
                     element: <Exchange />,
-                    loader: (args) => ExchangeLoader(args, auth?.actors)
                 },
                 {
                     path: 'exchange',
                     element: <Exchange />,
-                    loader: (args) => ExchangeLoader(args, auth?.actors)
                 },
                 {
                     path: 'airdrop',
@@ -47,6 +49,10 @@ export default function AppRoutes() {
                     path: 'mine-cards',
                     element: <MineCard />,
                 },
+                {
+                    path : 'profile',
+                    element : <ProfileTabs/>
+                }
             ],
         },
     ]);
