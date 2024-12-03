@@ -2,6 +2,7 @@ import Incentives from "../../../components/dashboard/airdrop/Incentives";
 import AirdropTab from "../../../components/dashboard/airdrop/Tab";
 import Button from "../../../components/ui/Button";
 import "./index.css";
+import astrouant from "../.../../../../../public/assets/images/astronaut.webp";
 
 const Airdrop = () => {
   return (
@@ -19,6 +20,7 @@ const Airdrop = () => {
             />
           </div>
           <p>token is on the market</p>
+          <img src={astrouant} alt="astrouant" className="astrouant-img" />
         </section>
         <section className="airdrop-body">
           <AirdropTab />
