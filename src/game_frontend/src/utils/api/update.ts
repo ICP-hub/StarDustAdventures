@@ -25,3 +25,12 @@ export const UPDATE_USER = (actor : ActorSubclass<_SERVICE>, data : User)=>{
 export const DISABLE_USER = (actor : ActorSubclass<_SERVICE>)=>{
     return useMutation('user',async()=>api.update(()=>actor.disableUser()))
 }
+
+export const INCREMENT_POINTS = (actor : ActorSubclass<_SERVICE>)=>{
+    const queryClient = useQueryClient()
+    return useMutation('points', async()=>api.update(()=>actor.incrementPoints()),{
+        onSuccess : ()=>{
+            queryClient.invalidateQueries('points')
+        }  
+    })
+}
