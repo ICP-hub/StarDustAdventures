@@ -1,5 +1,5 @@
-import './index.css'
-import SidebarTab from './Tab'
+import './index.css';
+import SidebarTab from './Tab';
 
 const SIDEBAR_ITEMS = [
     {
@@ -24,16 +24,16 @@ const SIDEBAR_ITEMS = [
     }
 ]
 
-const Sidebar=()=>{
-    return(
-        <aside className="sidebar">
-            <div className="sidebar-children" aria-orientation='horizontal'>
-                {
-                    SIDEBAR_ITEMS.map((item, idx) => <SidebarTab key={idx} {...item} />)
-                }
-            </div>
-        </aside>
-    )
-}
+const Sidebar = () => {
+  return (
+    <aside className="sidebar">
+      <div className="sidebar-children" aria-orientation="horizontal">
+        {SIDEBAR_ITEMS.map((item, idx) => (
+          <SidebarTab key={idx} {...item} />
+        ))}
+      </div>
+    </aside>
+  );
+};
 
-export default Sidebar
+export default Sidebar;
