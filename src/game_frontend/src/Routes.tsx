@@ -6,7 +6,6 @@ import Airdrop from './pages/Dashboard/Airdrop';
 import InviteFriends from './pages/Dashboard/InviteFriends';
 import RewardsList from './pages/Dashboard/RewardsList';
 import MineCard from './pages/Dashboard/MineCard';
-import { useAuth } from './hooks/useAuth';
 import ProfileTabs from './pages/Dashboard/ProfilePage';
 import RegisterScreen from './pages/Register';
 
