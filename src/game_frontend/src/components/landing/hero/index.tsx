@@ -3,7 +3,6 @@ import Button from '../../ui/Button'
 import BgOverlay from '../../ui/BgOverlay'
 import { AnimatePresence, motion } from 'framer-motion'
 import ConnectWallet from './connectWallet'
-import {AuthProvider} from '../../../hooks/useAuth'
 import './index.css'
 
 const Hero = () => {
@@ -43,13 +42,11 @@ const Hero = () => {
             </p>
             <Button className='play-button' onClick={openModal}>CONNECT WALLET</Button>
         </motion.div>
-        <AuthProvider>
             <AnimatePresence mode='wait'>
                 {
                     isModalOpen && <ConnectWallet closeModal={closeModal}/>
                 }
         </AnimatePresence>
-        </AuthProvider>
         <motion.img
             initial={{bottom:1000}}
             animate={{bottom:-100}}

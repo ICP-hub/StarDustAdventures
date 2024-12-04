@@ -1,22 +1,11 @@
 import { useState } from 'react';
-import Button from '../../../components/ui/Button';
-import Input from '../../../components/ui/Input';
+import Button from '../../components/ui/Button';
+import Input from '../../components/ui/Input';
 import './index.css';
+import useRegister from '../../hooks/useRegister';
 
 const RegisterScreen = () => {
-  const [playerName, setPlayerName] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!playerName.trim()) {
-      alert("Please Enter Your Name");
-      return;
-    }
-    
-    alert("your name is submitted");
-    // Handle game-start logic here
-    console.log('Starting game with player:', playerName);
-  };
+  const {playerName, handleSubmit, onChange, isLoading} = useRegister()
 
   return (
     <div className="game-container " style={{ backgroundImage: 'url("/Firefly-bg.webp")', backgroundSize: 'cover' }}>
@@ -31,14 +20,14 @@ const RegisterScreen = () => {
               <input
                 type="text"
                 value={playerName}
-                onChange={(e) => setPlayerName(e.target.value)}
+                onChange={onChange}
                 className="game-input"
               />
             </Input>
           </div>
           
           <div className="button-wrapper">
-            <Button type="submit">
+            <Button type="submit" disabled={isLoading} aria-disabled={isLoading}>
               Let's Play
             </Button>
           </div>

@@ -13,5 +13,9 @@ module{
         clickLimitHour:Nat;
         prizePerHour:Nat;
         status:UserStatus;
+    };
+
+    public type UserInput={
+        name : Text;
     }
 }
