@@ -2,7 +2,7 @@ import { useState } from "react";
 import { validateName } from "../utils";
 import { useAuth } from "./useAuth";
 import { CREATE_USER } from "../utils/api/update";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const useRegister = ()=>{
     const auth = useAuth();
