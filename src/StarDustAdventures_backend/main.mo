@@ -9,6 +9,7 @@ import Iter "mo:base/Iter";
 import Time "mo:base/Time";
 import Int "mo:base/Int";
 import Timer "mo:base/Timer";
+import Text "mo:base/Text";
 import Types "types";
 
 actor {
@@ -200,6 +201,26 @@ actor {
     }
   };
 
+  public shared({caller}) func generateRefId(): async Result.Result<Text, Text>{
+    try {
+      let user = userMap.get(caller);
+
+      switch user {
+        case(null){
+          return #err(Constants.ERRORS.userNotFound)
+        };
+        case(?value) {
+          if(caller!=value.id){
+            return #err(Constants.ERRORS.notAuthorized);
+          };
+          return #ok(generateReferralId(caller));
+        }
+      };
+    } catch(err){
+      return #err(Error.message(err));
+    }
+  };
+
     // internal function, adds new points. will be used in future improvements
     //Future : New Map for Points <Principal, Nat>
   func addPointsToUser(id:Principal,points:Nat):async Result.Result<(),Text>{
@@ -252,6 +273,10 @@ actor {
        return #err(Error.message(err));
     }
 
+  };
+
+  private func generateReferralId(id : Principal):  Text {
+    return Text.concat("ref_", Principal.toText(id));
   };
 
   func getAllUserIds():async [Principal]{
