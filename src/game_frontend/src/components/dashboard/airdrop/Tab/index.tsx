@@ -1,7 +1,9 @@
 // import Button from "../../../ui/Button";
+import usePoints from "../../../../hooks/usePoints";
 import { Tabs, Tab, TabPanel } from "../../../ui/Tab";
 import "./index.css";
 const TokenPanel = () => {
+  const {points} = usePoints()
   return (
     <TabPanel index={0}>
       <table className="tokenpanel">
@@ -16,7 +18,7 @@ const TokenPanel = () => {
           </tr>
           <tr>
             <td>Vesting</td>
-            <td>0</td>
+            <td>{points.toFixed(3)}</td>
           </tr>
           <tr>
             <td>Available at October 6th</td>

@@ -8,7 +8,7 @@ const useRegister = ()=>{
     const auth = useAuth();
     const navigate = useNavigate();
     const [playerName, setPlayerName] = useState<string>('');
-    const {data, mutateAsync, isLoading}  = CREATE_USER(auth?.actors, {user : {name : playerName}, refBy : []})
+    const {mutateAsync, isLoading,error,reset}  = CREATE_USER(auth?.actors, {user : {name : playerName}, refBy : []})
 
     const handleSubmit = async(e : React.FormEvent)=>{
         e.preventDefault();
@@ -16,13 +16,14 @@ const useRegister = ()=>{
             if(validateName(playerName) && auth){
                 await mutateAsync()
             }
-        } catch (error) {
-            console.error(error)
+        } catch (err) {
+            console.error(err)
         } finally {
-            setPlayerName('')
-            if((data as any).ok){
-                navigate('dashboard', {replace:true})
+            if(!error){
+                navigate('/dashboard', {replace : true})
             }
+            setPlayerName('')
+            reset()
         }
     }
 

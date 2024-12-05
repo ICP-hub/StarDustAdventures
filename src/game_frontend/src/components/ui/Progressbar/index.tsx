@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
 import './index.css';
+import usePoints from '../../../hooks/usePoints';
 
-const ProgressBar: React.FC<ProgressBarProps> = ({ 
-    initialProgress = 0.5 
-}) => {
-    const [progress, setProgress] = useState<number>(initialProgress);
+/**
+ * Progress Bar
+ * Maximum Value of Progress Bar is 1
+ * We call the usePoints hook to get the points accumulated by the user
+ * We divide the points by 10 to get the progress value
+ * @returns A Progress Bar Component
+ */
 
-    const handleProgressChange = (newProgress: number): void => {
-        setProgress(newProgress);
-    };
+const ProgressBar: React.FC<ProgressBarProps> = () => {
+    const {points} = usePoints()
+    /**
+     * Max Value of Bar is 1
+     * So, we divide the Points accumulated by 10
+     */
+    const progress = points!==0 ? (points / 10) : 0;
 
     return (
         <div className="progress-wrapper">
