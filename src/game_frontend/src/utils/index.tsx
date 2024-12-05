@@ -8,7 +8,7 @@
  * console.log(typeof number) // Output: number
  * @author Arjun Sharma
  */
-export const bigIntToNumber = (bigInt: BigInt) => {
+export const bigIntToNumber = (bigInt: BigInt): number => {
     const convertedValue = Number(bigInt.toString());
     return convertedValue;
 }
