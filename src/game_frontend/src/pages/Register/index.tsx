@@ -31,13 +31,10 @@ const RegisterScreen = () => {
           </div>
 
           <div className="button-wrapper">
-            <Button
-              type="submit"
-              disabled={isLoading}
-              aria-disabled={isLoading}
-              className="button-text"
+            <Button type="submit" disabled={isLoading} aria-disabled={isLoading} className="button-text"
             >
               Let's Play
+              
             </Button>
           </div>
         </form>
