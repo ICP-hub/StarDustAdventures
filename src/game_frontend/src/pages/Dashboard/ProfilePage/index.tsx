@@ -34,13 +34,15 @@ const SettingsData: Setting[] = [
 
 const ProfileTabs: React.FC = () => {
   return (
-    <div className="w-full h-full flex justify-center items-center">
-      <div className="lg:w-[85%] md:w-[70%] w-full sm:mx-6  ">
-      <TabSwitch
-        achievementsData={AchievementsData}
-        settingsData={SettingsData}
-      />
-    </div>
+    <div className="w-full min-h-full flex  px-4">
+      <div className="w-full max-w-7xl mx-auto sm:px-6 lg:px-6">
+        <div className="sm:w-11/12 md:w-4/5 lg:w-[85%] xl:w-[95%] xl:mx-14 2xl:mx-0 2xl:w-full 2xl:mx-0 mx-auto">
+          <TabSwitch
+            achievementsData={AchievementsData}
+            settingsData={SettingsData}
+          />
+        </div>
+      </div>
     </div>
   );
 };
