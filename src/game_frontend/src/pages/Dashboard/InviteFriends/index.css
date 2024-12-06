@@ -62,7 +62,10 @@
 
 /* Referral button container */
 .referral-button-container {
-  @apply w-full flex justify-center items-center;
+  @apply w-full flex justify-center items-center text-sm;
+}
+.referral-button{
+  @apply !text-sm md:!text-2xl lg:!text-4xl ;
 }
 
 /* Bottom buttons container */
@@ -71,7 +74,7 @@
 }
 
 .invite-button {
-  @apply bg-purple-600;
+  @apply bg-purple-600 !text-sm md:!text-2xl lg:!text-4xl;
 }
 
 /* Image styles */
@@ -84,5 +87,5 @@
 }
 
 .copy-image {
-  @apply w-[30px] h-[30px];
+  @apply w-[30px] h-[40px];
 }
