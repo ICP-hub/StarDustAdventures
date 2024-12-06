@@ -3,8 +3,10 @@ import TagContainer from '../../../components/ui/TagContainer';
 import Button from '../../../components/ui/Button';
 import FriendsList from './FriendsList';
 import './index.css'
+import useReferral from '../../../hooks/useReferral';
 
 const InviteFriends: React.FC = () => {
+  const {generateReferralId,isLoading} = useReferral()
   return (
     <div className="invite-friends-container">
       <div className="invite-friends-background">
@@ -83,11 +85,11 @@ const InviteFriends: React.FC = () => {
         <FriendsList />
 
         <div className="bottom-buttons-container">
-          <Button className="invite-button">
+          <Button className="invite-button" disabled={isLoading}>
             INVITE A FRIEND
           </Button>
 
-          <Button>
+          <Button disabled={isLoading}>
             <img 
               src="/assets/images/text-copy.svg" 
               className="copy-image"
