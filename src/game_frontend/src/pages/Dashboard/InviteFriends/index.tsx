@@ -2,11 +2,14 @@ import React from 'react';
 import TagContainer from '../../../components/ui/TagContainer';
 import Button from '../../../components/ui/Button';
 import FriendsList from './FriendsList';
-import './index.css'
 import useReferral from '../../../hooks/useReferral';
+import { copyToClipBoard, share } from '../../../utils';
+import './index.css'
 
 const InviteFriends: React.FC = () => {
   const {generateReferralId,isLoading} = useReferral()
+  const referralLink = generateReferralId()
+
   return (
     <div className="invite-friends-container">
       <div className="invite-friends-background">
@@ -85,11 +88,11 @@ const InviteFriends: React.FC = () => {
         <FriendsList />
 
         <div className="bottom-buttons-container">
-          <Button className="invite-button" disabled={isLoading}>
+          <Button className="invite-button" disabled={isLoading} onClick={()=>share({title:"Join Us", text : "At SpaceAdventures",url : referralLink})}>
             INVITE A FRIEND
           </Button>
 
-          <Button disabled={isLoading}>
+          <Button disabled={isLoading} onClick={()=>copyToClipBoard(referralLink)}>
             <img 
               src="/assets/images/text-copy.svg" 
               className="copy-image"
