@@ -34,7 +34,7 @@ const RewardsList = () => {
       <div className="rewards-inner">
         <Header />
 
-        <Section title="Hamster Youtube" className="section-title">
+        <Section title="Hamster Youtube">
           {YOUTUBE_TASKS.map((task, index) => (
             <TaskItem key={index} icon="#" tokenCount={task.tokenCount}>
               <h4 className="task-title">{task.title}</h4>
@@ -42,7 +42,7 @@ const RewardsList = () => {
           ))}
         </Section>
 
-        <Section title="Tasks list" className="section-title">
+        <Section title="Tasks list">
           {SOCIAL_TASKS.map((task, index) => (
             <TaskItem key={index} icon="#" tokenCount={task.tokenCount}>
               <h4 className="task-title">{task.title}</h4>

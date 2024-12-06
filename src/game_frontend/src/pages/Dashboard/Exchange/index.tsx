@@ -1,28 +1,36 @@
 import ProgressBar from "../../../components/ui/Progressbar"
 import Sidebar from "../../../components/ui/Sidebar"
 import '../index.css'
+import usePoints from "../../../hooks/usePoints"
 
 const Exchange=()=>{
+    const {points, incrementPoints, isLoading} = usePoints(0)
+    // Future 
+    /**
+     * Batch Update after a set of interval
+     */
+
+
     return(
         <main className="exchange-container">
+       {isLoading ? <p>Loading...</p>: (
+        <>
         <div className="progressbar-container">
             <ProgressBar/>
         </div>
-        {/* 
-        Future Scope :
-            Will be a seperate component for exchange points
-            Will fetch the data from the backend and display the points or we'll fetch the data in the page and show it then
-            Else We'll show a loading spinner till the data is fetched
-        */}
         <section>
             <img src='/assets/images/ufo.svg' alt="ufo" width={50} height={50} loading="lazy"/>
-            <h3 className="exchange-points">0.3</h3>
+            <h3 className="exchange-points">{points.toFixed(3)}</h3>
         </section>
         <Sidebar/>
-        <section className="click-to-earn" style={{backgroundImage: 'url("/assets/images/firefly.webp")'}}>
+        <section
+        onClick={incrementPoints}
+        className="click-to-earn" style={{backgroundImage: 'url("/assets/images/firefly.webp")'}}>
         </section>
+    </>    
+    )
+        }
         </main>
     )
 }
-
 export default Exchange

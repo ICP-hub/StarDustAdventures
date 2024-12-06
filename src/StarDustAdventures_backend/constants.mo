@@ -6,8 +6,10 @@ module{
 
     public let ERRORS={
         userNotFound="User not found";
+        notAuthorized="You are not authorized to perform this action";
         anonymous="anonymous users are not allowed";
         useralreadyExists="User already exists with id : ";
+        clickLimitReached="You have reached your click limit for this hour";
         cannotUpdateOtherUser="You cannot update someone else's profile";
         invalidReferral="The referral code is invalid, please check if the user with this referral exists or not";
     };

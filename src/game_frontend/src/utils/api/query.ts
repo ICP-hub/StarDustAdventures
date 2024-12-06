@@ -3,10 +3,14 @@ import { _SERVICE } from "../../../../declarations/StarDustAdventures_backend/St
 import { useQuery } from "react-query"
 import api from "."
 
-export const GET_USER = (actor : ActorSubclass<_SERVICE>)=>{
-    return useQuery('user', async()=>api.query(()=>actor.whoami()))
+export const GET_USER = (actor : ActorSubclass<any>)=>{
+    return useQuery('user', async()=>api.query(()=>actor.getUser()))
 }
 
 export const GET_USER_FRIENDS = (actor : ActorSubclass<_SERVICE>)=>{
     return useQuery('user_friends',async()=>api.query(()=>actor.getUserFriends()))
+}
+
+export const GET_USER_POINTS = (actor : ActorSubclass<any>)=>{
+    return useQuery('user_points',async()=>api.query(()=>actor.getPoints()))
 }

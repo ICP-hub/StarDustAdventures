@@ -7,7 +7,7 @@ const defaults = {
 
 const api = (method : ()=>Promise<unknown>)=>{
     return new Promise((resolve, reject)=>{
-      method().then((res)=>resolve(res)).catch((err)=>reject(defaults.errors))
+      method().then((res)=>resolve(res)).catch((err)=>reject(err))
     })
 }
 

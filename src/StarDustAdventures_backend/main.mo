@@ -12,7 +12,6 @@ import Timer "mo:base/Timer";
 import Types "types";
 
 actor {
- 
   // this map contains list of users
   let userMap=TrieMap.TrieMap<Principal,Types.User>(Principal.equal,Principal.hash); 
 
@@ -23,10 +22,9 @@ actor {
 
 
   // Registering new users
-  public shared({caller}) func createUser(user:Types.User,refBy:?Principal):async Result.Result<Types.User,Text>{
+  public shared({caller}) func createUser(user:Types.UserInput,refBy:?Principal):async Result.Result<Types.User,Text>{
     try{
       let oldUser=userMap.get(caller);
-      
       if(oldUser!=null){
         return #err(Constants.ERRORS.useralreadyExists # Principal.toText(caller));
       };
@@ -60,6 +58,42 @@ actor {
 
       return #ok(newUser)
     }catch(err){
+      return #err(Error.message(err));
+    }
+  };
+
+  public shared({caller}) func incrementPoints():async Result.Result<Text,Text> {
+    try{
+      let incrementResult = await addPointsToUser(caller,1);
+      switch(incrementResult){
+        case(#ok){
+          return #ok("Points added successfully");
+        };
+        case(#err(error)){
+          return #err(error);
+        }
+      }
+    }catch(err){
+      return #err(Error.message(err));
+    }
+  };
+
+  public shared query ({caller}) func getUser() : async Result.Result<Types.User, Text> {
+    try{
+      let user = userMap.get(caller);
+
+      switch user {
+        case(null){
+          return #err(Constants.ERRORS.userNotFound)
+        };
+        case(?value) {
+          if(caller!=value.id){
+            return #err(Constants.ERRORS.notAuthorized);
+          };
+          return #ok(value);
+        };
+      }
+    } catch(err){
       return #err(Error.message(err));
     }
   };
@@ -129,6 +163,26 @@ actor {
     }
   };
 
+  public shared query ({caller}) func getPoints():async Result.Result<Nat, Text>{
+    try{
+      let user = userMap.get(caller);
+
+      switch user {
+        case(null){
+          return #err(Constants.ERRORS.userNotFound)
+        };
+        case(?value) {
+          if(caller!=value.id){
+            return #err(Constants.ERRORS.cannotUpdateOtherUser)
+          };
+          return #ok(value.points);
+        };
+      }
+    } catch(err){
+      return #err(Error.message(err));
+    }
+  };
+
 
   // returns the list of friends of the caller
   public shared query({caller}) func getUserFriends():async Result.Result<?[(Principal,Text)],Text>{
@@ -147,6 +201,7 @@ actor {
   };
 
     // internal function, adds new points. will be used in future improvements
+    //Future : New Map for Points <Principal, Nat>
   func addPointsToUser(id:Principal,points:Nat):async Result.Result<(),Text>{
     try{
       let oldUser=userMap.get(id);
@@ -232,7 +287,7 @@ actor {
       errorLogs.add(Error.message(err) # "_" # Int.toText(Time.now()));
     }
   };
-  
+
   public shared query({caller}) func whoami():async Text{
     return Principal.toText(caller);
   };
