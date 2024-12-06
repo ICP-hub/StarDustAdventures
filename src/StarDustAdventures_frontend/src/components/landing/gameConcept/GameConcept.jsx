@@ -26,13 +26,14 @@ const GameConcept = () => {
             }
 
         </div>
-        <div className="gcs-sub-center" >
-            <img src="red_planet.png" alt="red planet" className="gcs-sc-img" />
-            <div className="gcs-sc-text-item" data-aos="fade-up" data-aos-duration={1500}>
-                <h4 className="gcs-sc-title">{gameConceptText.center.title}</h4>
-                <p className="gcs-sc-text">{gameConceptText.center.text}</p>
-            </div>
-        </div>
+        <div className="gcs-sub-center">
+    <img src="red_planet.png" alt="red planet" className="gcs-sc-img" />
+    <div className="gcs-sc-text-item" data-aos="fade-up" data-aos-duration={1500}>
+        <h4 className="gcs-sc-title">{gameConceptText.center.title}</h4>
+        <p className="gcs-sc-text">{gameConceptText.center.text}</p>
+    </div>
+</div>
+
         <div className="gcs-sub-right">
            {
                 gameConceptText.right.map((item,index)=>(
