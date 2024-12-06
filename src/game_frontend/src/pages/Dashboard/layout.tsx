@@ -11,6 +11,9 @@ const Layout = () => {
       className="exchange"
       style={{
         backgroundImage: 'url("/assets/images/space-exchange-bg.webp")',
+        width: '100vw',           // Full viewport width
+        height: '100vh',         // Full viewport height
+        overflow: 'hidden',     // Ensures no extra space
       }}
     >
       <Navbar />
