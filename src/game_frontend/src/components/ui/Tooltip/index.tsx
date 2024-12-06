@@ -1,11 +1,11 @@
 import React from "react";
 
-interface InfoTooltipProps {
+interface TooltipProps {
   title: string; // Tooltip content as a  string 
   children: React.ReactNode; // The element triggering the tooltip
 }
 
-const InfoTooltip: React.FC<InfoTooltipProps> = ({ title, children }) => {
+const Tooltip: React.FC<TooltipProps> = ({ title, children }) => {
   return (
     <div className="relative flex items-center group">
       {children}
@@ -21,4 +21,4 @@ const InfoTooltip: React.FC<InfoTooltipProps> = ({ title, children }) => {
   );
 };
 
-export default InfoTooltip;
+export default Tooltip;
