@@ -75,7 +75,7 @@ const InviteFriends: React.FC = () => {
         </div>
 
         <div className="referral-button-container">
-          <Button>
+          <Button className="referral-button ">
             BECOME A REFERRAL
           </Button>
         </div>
@@ -87,7 +87,7 @@ const InviteFriends: React.FC = () => {
             INVITE A FRIEND
           </Button>
 
-          <Button>
+          <Button >
             <img 
               src="/assets/images/text-copy.svg" 
               className="copy-image"
