@@ -8,12 +8,11 @@ const Layout = () => {
   useDocumentTitle("Dashboard | StarDust Adventures");
   return (
     <div
-      className="exchange"
+      className="exchange overflow-hide  scrollbar-hide "
       style={{
         backgroundImage: 'url("/assets/images/space-exchange-bg.webp")',
         width: '100vw',           // Full viewport width
-        height: '100vh',         // Full viewport height
-        overflow: 'hidden',     // Ensures no extra space
+        height: '100vh',         // Full viewport height  
       }}
     >
       <Navbar />
