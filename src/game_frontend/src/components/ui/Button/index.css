@@ -7,6 +7,7 @@
     @apply bg-secondary text-white;
 }
  */
+
  .button {
   background: rgba(165, 17, 159, 1);
   box-shadow: 
@@ -31,11 +32,12 @@
     /* TOP */
     4px -5px 0 10px white;
   
-  @apply font-coin min-h-4 min-w-4 max-h-6 outline-none flex items-center justify-center;
+  @apply font-coin min-h-4 min-w-4 max-h-6 outline-none focus:outline-none active:outline-none;
 }
 
 .button:active {
-  animation: white-shadow-shrink 0.2s ease-in-out forwards;
+  animation: white-shadow-shrink 0.3s ease-in-out forwards;
+  outline: none;
 }
 
 @keyframes white-shadow-shrink {
