@@ -46,3 +46,7 @@
 .gcs-sc-title{
     @apply mb-3 xl:text-3xl md:text-xl font-semibold text-center
 }
+.gcs-sc-img {
+    box-shadow: 0 0 50px 35px rgba(255, 0, 0, 0.21); /* Uniform, light red shadow */
+    border-radius: 50%; /* Optional: Makes the shadow blend better with circular images */
+}
