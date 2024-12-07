@@ -41,3 +41,7 @@ export const share = async (data: {title: string, text: string, url: string})=>{
         throw err
     }
 }
+
+export const isArray = (value : any) : Boolean=>{
+    return Array.isArray(value)
+}
