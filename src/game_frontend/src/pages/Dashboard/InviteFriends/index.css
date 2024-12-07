@@ -65,9 +65,7 @@
   @apply w-full flex justify-center items-center;
 }
 
-.button-text{
-  @apply text-sm md:text-2xl lg:text-9xl
-}
+
 /* Bottom buttons container */
 .bottom-buttons-container {
   @apply flex  flex-row justify-center items-center ;
