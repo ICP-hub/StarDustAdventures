@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import TagContainer from '../../../components/ui/TagContainer';
 import Button from '../../../components/ui/Button';
 import FriendsList from './FriendsList';
@@ -9,6 +9,22 @@ import './index.css'
 const InviteFriends: React.FC = () => {
   const {generateReferralId,isLoading} = useReferral()
   const referralLink = generateReferralId()
+
+  const handleCopy=useCallback(async()=>{
+    try{
+      await copyToClipBoard(referralLink)
+    }catch(err){
+      console.error(err)
+    }
+  },[referralLink])
+
+  const handleShare = useCallback(async()=>{
+    try{
+      await share({title:"Join Us", text : "At SpaceAdventures",url : referralLink})
+    }catch(err){
+      console.error(err)
+    }
+  },[referralLink])
 
   return (
     <div className="invite-friends-container">
@@ -88,11 +104,11 @@ const InviteFriends: React.FC = () => {
         <FriendsList />
 
         <div className="bottom-buttons-container">
-          <Button className="invite-button" disabled={isLoading} onClick={()=>share({title:"Join Us", text : "At SpaceAdventures",url : referralLink})}>
+          <Button className="invite-button" disabled={isLoading} onClick={handleShare}>
             INVITE A FRIEND
           </Button>
 
-          <Button disabled={isLoading} onClick={()=>copyToClipBoard(referralLink)}>
+          <Button disabled={isLoading} onClick={handleCopy}>
             <img 
               src="/assets/images/text-copy.svg" 
               className="copy-image"
