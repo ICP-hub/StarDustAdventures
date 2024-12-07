@@ -24,7 +24,6 @@
     "gsap": "^3.12.5",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.26.2",
-    "tailwind-scrollbar-hide": "^1.1.7",
     "vite-plugin-compression": "^0.5.1"
   }
 }
