@@ -1,3 +1,4 @@
+import InfoToolTip from '../../../ui/InfoToolTip/InfoTooltip'
 import './index.css'
 
 const INCENTIVES_DETAILS = [
@@ -36,14 +37,23 @@ const INCENTIVES_DETAILS = [
 const IncentiveCard=({icon, points = 0, type} : Incentives)=>{
     return(
         <div role='group' className='incentive-card'>
-            <img src={icon} title={type} alt={type} width={30} height={30} loading='lazy'/>
-            <div className='incentive-card-type'>
-                <p>{type}</p>
-                <div className='incentive-card-type-points'>
-                    <img src='/assets/images/ufo.svg' alt='ufo' width={20} height={20} loading='lazy'/>
-                    <p>{points.toString()}</p>
+            <div>
+                <div className='flex space-x-4'>
+                  <img src={icon} title={type} alt={type} width={30} height={30} loading='lazy'/>
+
+                  <div className='incentive-card-type'>
+                    <p>{type}</p>
+                    <div className='incentive-card-type-points'>
+                        <img src='/assets/images/ufo.svg' alt='ufo' width={20} height={20} loading='lazy'/>
+                        <p>{points.toString()}</p>
+                        
+                    </div>
+                  </div>
                 </div>
             </div>
+            <div className='incentive-info-svg'>
+                <InfoToolTip title ={type} />
+            </div>  
         </div>
     )
 }
