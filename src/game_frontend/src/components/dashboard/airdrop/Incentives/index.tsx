@@ -1,4 +1,4 @@
-import Tooltip from '../../../ui/Tooltip'
+import InfoToolTip from '../../../ui/InfoToolTip/InfoTooltip'
 import './index.css'
 
 const INCENTIVES_DETAILS = [
@@ -52,9 +52,7 @@ const IncentiveCard=({icon, points = 0, type} : Incentives)=>{
                 </div>
             </div>
             <div className='incentive-info-svg'>
-                <Tooltip title={type}>
-                     <img src="/assets/images/Info.svg" alt="info" loading='lazy' width={20} height={20} />
-                </Tooltip>
+                <InfoToolTip title ={type} />
             </div>  
         </div>
     )
