@@ -57,19 +57,22 @@
       /* BOTTOM */
       0px 8px 0 10px rgba(165, 17, 159, 1),
       /* TOP */
-      0px -8px 0 10px rgba(165, 17, 159, 1)
+      0px -8px 0 10px rgba(165, 17, 159, 1),
 
 
 
-    
-    
-
-  
-
-
+      3.5px 3.5px 0 14.5px white,
+      /* LEFT */
+      12px 4px 0 10px white,
+      /* RIGHT */
+      -5px 4px 0 10px white,
+      /* BOTTOM */
+      4px 12px 0 10px white,
+      /* TOP */
+      4px -5px 0 10px white
       
 }
 
 .button {
-  @apply font-coin min-h-4 min-w-4 max-h-2 outline-none flex items-center justify-center
+  @apply font-coin min-h-4 min-w-4 max-h-6 outline-none flex items-center justify-center
 }
