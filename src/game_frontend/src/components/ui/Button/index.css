@@ -30,7 +30,7 @@
     4px 12px 0 10px white,
     /* TOP */
     4px -5px 0 10px white;
-  @apply font-coin min-h-4 min-w-4 max-h-6 outline-none focus:outline-none active:outline-none;
+  @apply font-coin min-h-4 min-w-4 outline-none focus:outline-none active:outline-none;
 }
 
 .button.primary:active {
