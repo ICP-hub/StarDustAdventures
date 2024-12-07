@@ -20,7 +20,7 @@ const Airdrop = () => {
             />
           </div>
           <p>token is on the market</p>
-          <img src={astrouant} alt="astrouant" className="astrouant-img" />
+          <img src="../.../../../../../public/assets/images/astronaut.webp" alt="astrouant" className="astrouant-img" />
         </section>
         <section className="airdrop-body">
           <AirdropTab />
