@@ -75,7 +75,7 @@ const InviteFriends: React.FC = () => {
         </div>
 
         <div className="referral-button-container">
-          <Button className="text-sm md:text-2xl lg:text-4xl">
+          <Button className="text-responsive">
             BECOME A REFERRAL
           </Button>
         </div>
@@ -83,7 +83,7 @@ const InviteFriends: React.FC = () => {
         <FriendsList />
 
         <div className="bottom-buttons-container">
-          <Button className="invite-button text-sm md:text-2xl lg:text-4xl ">
+          <Button className="text-responsive ">
             INVITE A FRIEND
           </Button>
 
