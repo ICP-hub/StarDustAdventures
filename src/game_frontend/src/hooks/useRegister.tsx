@@ -1,15 +1,25 @@
-import { useState } from "react";
-import { validateName } from "../utils";
+import { useMemo, useState } from "react";
+import { extractPrincipal, validateName } from "../utils";
 import { useAuth } from "./useAuth";
 import { CREATE_USER } from "../utils/api/update";
 import { useNavigate } from "react-router-dom";
+import useQueryParams from "./useQueryParams";
 
 const useRegister = ()=>{
+    const [playerName, setPlayerName] = useState<string>('');
     const auth = useAuth();
     const navigate = useNavigate();
-    const [playerName, setPlayerName] = useState<string>('');
-    const {mutateAsync, isLoading,error,reset}  = CREATE_USER(auth?.actors, {user : {name : playerName}, refBy : []})
 
+    const ref_id = useQueryParams().get('ref');
+
+    const refPrincipal = useMemo(()=>{
+        return ref_id ? [extractPrincipal(ref_id.split('ref_')[1])] : []
+        }
+    ,[ref_id])
+
+    console.log(refPrincipal)
+
+    const {mutateAsync, isLoading,error,reset}  = CREATE_USER(auth?.actors, {user : {name : playerName}, refBy : refPrincipal})
     const handleSubmit = async(e : React.FormEvent)=>{
         e.preventDefault();
         try {
@@ -20,7 +30,8 @@ const useRegister = ()=>{
             console.error(err)
         } finally {
             if(!error){
-                navigate('/dashboard', {replace : true})
+                const targetPath = ref_id ? `/dashboard?ref=${ref_id}` : '/dashboard'
+                navigate(targetPath, {replace : true})
             }
             setPlayerName('')
             reset()
