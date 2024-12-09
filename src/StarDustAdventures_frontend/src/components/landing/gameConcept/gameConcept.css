@@ -46,3 +46,7 @@
 .gcs-sc-title{
     @apply mb-3 xl:text-3xl md:text-xl font-semibold text-center
 }
+.gcs-sc-img {
+    @apply shadow-[0_0_50px_35px_rgba(255,0,0,0.21)] rounded-full;
+    border-radius: 50%; /* Optional: Makes the shadow blend better with circular images */
+}

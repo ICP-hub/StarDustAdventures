@@ -3,8 +3,8 @@ import Modal from "../../../ui/Modal";
 import { ModalHeader, ModalTitle, ModalCloseBtn, ModalBody } from "../../../ui/Modal/utils";
 import { useAuth } from "../../../../hooks/useAuth";
 import './index.css';
-import { CREATE_USER } from "../../../../utils/api/update";
 import { useNavigate } from "react-router-dom";
+import useQueryParams from "../../../../hooks/useQueryParams";
 
 const Wallets : WalletType[] = [
     {
@@ -32,6 +32,7 @@ const Wallets : WalletType[] = [
 export default function ConnectWallet({closeModal} : {closeModal:()=>void}) {
     const auth = useAuth();
     const navigate = useNavigate()
+    const ref_id = useQueryParams().get('ref');
     // Temporary Function : Register User on Successfull Login
     const handleLogin = async (method: "ii" | "plug") => {
         if (!auth) {
@@ -44,7 +45,11 @@ export default function ConnectWallet({closeModal} : {closeModal:()=>void}) {
             const actor = await auth.login(method);
             if(actor) {
                 const response : any = await actor.getUser();
-                targetPath = response.ok ? 'dashboard' : 'register';
+                if(ref_id){
+                    targetPath = response.ok ? 'dashboard' : `register?ref=${ref_id}`;
+                } else {
+                    targetPath = response.ok ? 'dashboard' : 'register';
+                }
             }
             
         } catch (error) {

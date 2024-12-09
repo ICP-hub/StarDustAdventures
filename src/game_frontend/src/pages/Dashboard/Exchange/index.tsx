@@ -10,7 +10,6 @@ const Exchange=()=>{
      * Batch Update after a set of interval
      */
 
-
     return(
         <main className="exchange-container">
        {isLoading ? <p>Loading...</p>: (
