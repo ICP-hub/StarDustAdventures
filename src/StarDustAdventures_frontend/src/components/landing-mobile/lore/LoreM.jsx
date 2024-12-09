@@ -307,11 +307,11 @@ const LoreM = () => {
 
   return (
     <div 
-      id="lore-container" 
+      id="lore-container-second" 
       className="min-h-screen bg-black text-white p-4 relative overflow-hidden "
     >
       {/* Main Content */}
-      <main className="relative w-full space-y-12 flex flex-col items-center justify-center">
+      <main className="relative w-full mt-10 space-y-12 flex flex-col items-center justify-center">
         {/* Lore Header Section */}
         <header 
           ref={headerRef} 
@@ -333,7 +333,7 @@ const LoreM = () => {
           className='flex items-center justify-center top-10 my-8 absolute z-1'
         >
           <img
-            src='/assets/orange.png'
+            src='rotation.gif'
             width={557}
             height={557}
             loading='lazy'
