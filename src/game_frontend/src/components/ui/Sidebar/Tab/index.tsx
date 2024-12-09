@@ -1,14 +1,19 @@
 import { memo } from "react";
-import { Link, useMatch } from "react-router-dom"; 
+import { Link, useMatch, useLocation } from "react-router-dom";
 import "./index.css";
 
 const SidebarTab = memo(({ title, icon }: SideBarChildren)  => {
     const basePath = "/dashboard";
     const targetPath = `${basePath}/${title.toLowerCase().split(' ').join('-')}`;
+    const location = useLocation();
+    
+    // Check if current path is /dashboard and this is the Exchange tab
+    const isDashboardRoot = location.pathname === '/dashboard' && 
+                          title.toLowerCase() === 'exchange';
     
     // Check if the targetPath matches the current URL
     const match = useMatch(targetPath);
-    const isActive = !!match;
+    const isActive = !!match || isDashboardRoot;
 
     return (
         <Link to={targetPath}>
@@ -26,3 +31,4 @@ const SidebarTab = memo(({ title, icon }: SideBarChildren)  => {
 });
 
 export default SidebarTab;
+
