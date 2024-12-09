@@ -105,7 +105,7 @@ const InviteFriends: React.FC = () => {
 
         <div className="bottom-buttons-container">
 
-          <Button className="invite-button" disabled={isLoading} onClick={handleShare}>
+          <Button className="text-responsive" disabled={isLoading} onClick={handleShare}>
             INVITE A FRIEND
           </Button>
 
