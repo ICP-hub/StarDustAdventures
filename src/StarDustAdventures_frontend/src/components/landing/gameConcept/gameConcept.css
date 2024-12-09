@@ -47,6 +47,6 @@
     @apply mb-3 xl:text-3xl md:text-xl font-semibold text-center
 }
 .gcs-sc-img {
-    box-shadow: 0 0 50px 35px rgba(255, 0, 0, 0.21); /* Uniform, light red shadow */
+    @apply shadow-[0_0_50px_35px_rgba(255,0,0,0.21)] rounded-full;
     border-radius: 50%; /* Optional: Makes the shadow blend better with circular images */
 }

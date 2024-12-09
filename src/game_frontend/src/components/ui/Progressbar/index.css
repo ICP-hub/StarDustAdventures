@@ -60,7 +60,7 @@
     
 @media (max-width:640px) {
     .progress-bar {
-        @apply w-3 h-[22rem] relative overflow-hidden sm:rotate-0 rotate-90 mr-[12rem] mt-[60rem];
+        @apply w-[26rem] h-[2rem] relative overflow-hidden  sm:rotate-0 rotate-90 mr-[7rem] mt-[60rem] md:w-[26rem] md:h-[2rem] lg:w-3 lg:h-[22rem] lg:mr-[12rem] xl:mr-[7rem];
     }
    
     }
