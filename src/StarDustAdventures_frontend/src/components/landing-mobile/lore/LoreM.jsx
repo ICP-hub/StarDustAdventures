@@ -198,8 +198,8 @@ import React from 'react';
 const LoreM = () => {
   return (
     <div className="min-h-screen  text-white p-4 relative overflow-hidden">
-      {/* Header */}
-      <header className="relative flex justify-between items-center mb-8">
+      {/* Header navbar */}
+      <nav className="relative flex justify-between items-center mb-8">
         <h1 className="text-2xl font-bold font-coin">
           Star Dust
           <br />
@@ -208,12 +208,12 @@ const LoreM = () => {
         <button className="bg-purple-600 text-white px-6 py-2 rounded-lg font-mono hover:bg-purple-500 transition-colors">
           PLAY NOW
         </button>
-      </header>
+      </nav>
 
       {/* Main Content */}
       <main className="relative w-full space-y-12">
         {/* Lore Section */}
-        <section className="space-y-4 w-full flex justify-center items-center">
+        <header className="space-y-4 w-full flex justify-center items-center">
           <div className='flex flex-col jusity-center items-center'>
             <h2 className="text-4xl font-coin mb-4 flex items-center gap-2">
               Lore and
@@ -225,6 +225,44 @@ const LoreM = () => {
               Explore the Epic Quest for Star
               
               Dust in a Distant Future
+            </p>
+          </div>
+        </header>
+
+        {/*rotating image*/}
+        <div className=' flex items-center justify-center'>
+          <img 
+          src='rotation.gif'
+          width={557}
+          height={557}
+          loading='lazy'
+          
+          />
+        </div>
+
+        {/* setting Section */}
+        <section className="space-y-4">
+          <h2 className="text-3xl mb-2">
+            Setting in the 
+            <br />
+            Distant Future
+          </h2>
+          <p className="text-gray-300">
+          Humanity embarks on a quest to gather cosmic resources in a vast universe.
+          </p>
+        </section>
+
+        <section className="space-y-4 w-full ">
+          <div className='flex flex-col w-full '>
+            <h2 className="text-4xl  mb-4  w-60 mx-auto flex justify-start items-center gap-2">
+              Star Dust
+              <br />
+              as Currency
+            </h2>
+            
+            <p className="text-gray-300 w-72 mr-4 mx-auto">
+            Star Dust emerges as a vital energy source,
+             becoming the universal currency.
             </p>
           </div>
         </section>
