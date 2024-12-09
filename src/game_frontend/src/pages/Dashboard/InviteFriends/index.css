@@ -88,19 +88,7 @@
   @apply w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[45px] lg:h-[45px] p-1;
 }
 
-.text-responsive {
-  font-size: 0.875rem; /* text-sm */
-}
-
-@media (min-width: 768px) {
-  .text-responsive {
-    font-size: 1.5rem; /* md:text-2xl */
-  }
-}
-
-@media (min-width: 1024px) {
-  .text-responsive {
-    font-size: 2.25rem; /* lg:text-4xl */
-  }
+.text-responsive{
+  @apply !text-sm md:!text-2xl lg:!text-4xl
 }
 
