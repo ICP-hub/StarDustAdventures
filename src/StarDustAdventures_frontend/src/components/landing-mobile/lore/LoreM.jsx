@@ -192,27 +192,15 @@
 
 
 
-// StarDustUi.js
 import React from 'react';
 
 const LoreM = () => {
   return (
     <div className="min-h-screen  text-white p-4 relative overflow-hidden">
-      {/* Header navbar */}
-      <nav className="relative flex justify-between items-center mb-8">
-        <h1 className="text-2xl font-bold font-coin">
-          Star Dust
-          <br />
-          Adventures
-        </h1>
-        <button className="bg-purple-600 text-white px-6 py-2 rounded-lg font-mono hover:bg-purple-500 transition-colors">
-          PLAY NOW
-        </button>
-      </nav>
 
-      {/* Main Content */}
+      {/* main Content */}
       <main className="relative w-full space-y-12">
-        {/* Lore Section */}
+        {/* Lore header Section */}
         <header className="space-y-4 w-full flex justify-center items-center">
           <div className='flex flex-col jusity-center items-center'>
             <h2 className="text-4xl font-coin mb-4 flex items-center gap-2">
@@ -252,6 +240,7 @@ const LoreM = () => {
           </p>
         </section>
 
+        {/*StarDustMobile as currency/*/}
         <section className="space-y-4 w-full ">
           <div className='flex flex-col w-full '>
             <h2 className="text-4xl  mb-4  w-60 mx-auto flex justify-start items-center gap-2">
