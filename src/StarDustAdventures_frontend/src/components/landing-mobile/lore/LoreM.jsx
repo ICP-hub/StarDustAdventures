@@ -279,7 +279,7 @@ const LoreM = () => {
 
     // Bring in Challenges Section
     .fromTo(challengesRef.current, 
-        { y: 900, opacity: 0 }, 
+        { y: 600, opacity: 0 }, 
         { y: -420, opacity: 1, duration: 1 }
       )
 
@@ -291,11 +291,11 @@ const LoreM = () => {
     
     
     .to(challengesRef.current, 
-        { y: -990, opacity: 1, duration: 1 }
+        { y: -590, opacity: 1, duration: 1 }
     )
     // Fade out Challenges Section
     .to(challengesRef.current, 
-        { y: -1000, opacity: 0, duration: 1 }
+        { y: -600, opacity: 0, duration: 1 }
     )
 
     // Cleanup function
