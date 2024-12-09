@@ -68,7 +68,7 @@
 
 /* Bottom buttons container */
 .bottom-buttons-container {
-  @apply flex  flex-row justify-center items-center ;
+  @apply flex  flex-row justify-center items-center space-x-10 ;
 }
 
 /* .invite-button {

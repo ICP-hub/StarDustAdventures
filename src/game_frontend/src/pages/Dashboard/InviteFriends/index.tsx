@@ -105,11 +105,11 @@ const InviteFriends: React.FC = () => {
 
         <div className="bottom-buttons-container">
 
-          <Button className="text-responsive" disabled={isLoading} onClick={handleShare}>
+          <Button className="text-responsive" disabled={isLoading} onClick={handleShare} size={'sm'}>
             INVITE A FRIEND
           </Button>
 
-          <Button disabled={isLoading} onClick={handleCopy}>
+          <Button disabled={isLoading} onClick={handleCopy} size={'xs'}>
 
             <img 
               src="/assets/images/text-copy.svg" 
