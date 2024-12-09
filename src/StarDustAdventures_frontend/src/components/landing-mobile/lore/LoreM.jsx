@@ -197,10 +197,10 @@ import React from 'react';
 
 const LoreM = () => {
   return (
-    <div className="min-h-screen bg-purple-950 text-white p-4 relative overflow-hidden">
+    <div className="min-h-screen  text-white p-4 relative overflow-hidden">
       {/* Header */}
       <header className="relative flex justify-between items-center mb-8">
-        <h1 className="text-2xl font-bold font-mono">
+        <h1 className="text-2xl font-bold font-coin">
           Star Dust
           <br />
           Adventures
@@ -215,7 +215,7 @@ const LoreM = () => {
         {/* Lore Section */}
         <section className="space-y-4 w-full flex justify-center items-center">
           <div className='flex flex-col jusity-center items-center'>
-            <h2 className="text-4xl font-mono mb-4 flex items-center gap-2">
+            <h2 className="text-4xl font-coin mb-4 flex items-center gap-2">
               Lore and
               <br />
               Storyline
@@ -231,7 +231,7 @@ const LoreM = () => {
 
         {/* Commander Section */}
         <section className="space-y-4">
-          <h2 className="text-3xl font-mono mb-2">
+          <h2 className="text-3xl mb-2">
             Commander
             <br />
             Dom's Mission
@@ -242,15 +242,20 @@ const LoreM = () => {
         </section>
 
         {/* Challenges Section */}
-        <section className="space-y-4">
-          <h2 className="text-3xl font-mono mb-2">
-            Challenges
-            <br />
-            Ahead
-          </h2>
-          <p className="text-gray-300">
-            The mission involves navigating hostile planets & overcoming various obstacles.
-          </p>
+        <section className="space-y-4 w-full ">
+          <div className='flex flex-col w-full '>
+            <h2 className="text-4xl  mb-4  w-60 mx-auto flex justify-start items-center gap-2">
+              Challenges
+              <br />
+              Ahead
+            </h2>
+            
+            <p className="text-gray-300 w-72 mr-4 mx-auto">
+            The mission involves navigating hostile planets
+            
+            & overcoming various obstacles.
+            </p>
+          </div>
         </section>
       </main>
     </div>
