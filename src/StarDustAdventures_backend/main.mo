@@ -25,6 +25,7 @@ actor {
   // Registering new users
   public shared({caller}) func createUser(user:Types.UserInput,refBy:?Principal):async Result.Result<Types.User,Text>{
     try{
+      Debug.print("Creating user with name: " # user.name);
       let oldUser=userMap.get(caller);
       if(oldUser!=null){
         return #err(Constants.ERRORS.useralreadyExists # Principal.toText(caller));
@@ -48,6 +49,7 @@ actor {
           let addFriendResponse=await addFriend(val,newUser);
           switch(addFriendResponse){
             case(#ok){
+              userMap.put(caller,newUser);
               return #ok(newUser)
             };
             case(#err(error)){
@@ -56,9 +58,8 @@ actor {
           }
         }
       };
-
-      return #ok(newUser)
     }catch(err){
+      Debug.print("Error in creating user: " # Error.message(err));
       return #err(Error.message(err));
     }
   };
