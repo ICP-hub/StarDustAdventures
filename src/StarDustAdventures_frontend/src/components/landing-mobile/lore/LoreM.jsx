@@ -222,65 +222,84 @@ const LoreM = () => {
       }
     });
 
-    // Animation Sequence with adjusted timing and positions
+       // Animation Sequence
     tl.fromTo(headerRef.current, 
       { y: 50, opacity: 0 }, 
-      { y: 0, opacity: 1, duration: 0.5 }
+      { y: 0, opacity: 1, duration: 1 }
     )
     .fromTo(rotationImageRef.current, 
       { y: 100, opacity: 0 }, 
-      { y: 0, opacity: 1, duration: 0.5 }
+      { y: 0, opacity: 1, duration: 1 }
     )
     .to(rotationImageRef.current, 
-      { opacity: 0.3, scale: 0.9, duration: 0.5 }
+      { opacity: 0.3, scale: 0.9, duration: 1 }
     )
-    // Setting Section Animation with adjusted timing
+    // Setting Section Animation
     .fromTo(settingRef.current, 
       { y: 200, opacity: 0 }, 
-      { y: 0, opacity: 1, duration: 0.5 }
+      { y: 0, opacity: 1, duration: 1 }
     )
+
     .to(settingRef.current, 
-      { y: -50, opacity: 1, duration: 0.5 }
+        { y: -50, opacity: 1, duration: 1 }
     )
-    // Star Dust Section with proper sequencing
+
+    // stardust wala aniamtion
     .fromTo(starDustRef.current, 
-      { y: 150, opacity: 0 }, 
-      { y: -50, opacity: 1, duration: 0.5 }
+        { y: 150, opacity: 0 }, 
+        { y: -50, opacity: 1, duration: 1 }
     )
+
+    // Move Setting Section up and fade out while bringing in Star Dust Section
     .to(settingRef.current, 
-      { y: -60, opacity: 0, duration: 0.5 }
+      { y: -60, opacity: 0, duration: 1 }
     )
+    
     .to(starDustRef.current, 
-      { y: -100, opacity: 1, duration: 0.5 }
+        { y: -100, opacity: 1, duration: 1 }
     )
+    
     .to(starDustRef.current, 
-      { y: -200, opacity: 1, duration: 0.5 }
+        { y: -200, opacity: 1, duration: 1 }
     )
-    // Commander Section with adjusted positions
+
+     // Bring in Commander Section
     .fromTo(commanderRef.current, 
-      { y: 400, opacity: 0 }, 
-      { y: -200, opacity: 1, duration: 0.5 }
+        { y: 600, opacity: 0 }, 
+        { y:-200, opacity: 1, duration: 1 }
     )
-    .to(starDustRef.current, 
-      { y: -200, opacity: 0, duration: 0.5 }
+
+     // Move Star Dust Section up and fade out
+     .to(starDustRef.current, 
+        { y: -200, opacity: 0, duration: 1 }
     )
+
+
     .to(commanderRef.current, 
-      { y: -390, opacity: 1, duration: 0.5 }
+        { y: -390, opacity: 1, duration: 1 }
     )
-    // Challenges Section with proper timing
+
+    // Bring in Challenges Section
     .fromTo(challengesRef.current, 
-      { y: 400, opacity: 0 }, 
-      { y: -420, opacity: 1, duration: 0.5 }
-    )
+        { y: 600, opacity: 0 }, 
+        { y: -420, opacity: 1, duration: 1 }
+      )
+
     .to(commanderRef.current, 
-      { y: -400, opacity: 0, duration: 0.5 }
+        { y: -400, opacity: 0, duration: 1 }
     )
+    
+    
+    
+    
     .to(challengesRef.current, 
-      { y: -590, opacity: 1, duration: 0.5 }
+        { y: -590, opacity: 1, duration: 1 }
     )
+    // Fade out Challenges Section
     .to(challengesRef.current, 
-      { y: -600, opacity: 0, duration: 0.5 }
-    );
+        { y: -600, opacity: 0, duration: 1 }
+    )
+
 
     // Cleanup function
     return () => {
@@ -300,10 +319,10 @@ const LoreM = () => {
         {/* Lore Header Section */}
         <header 
           ref={headerRef} 
-          className="space-y-4 w-full flex justify-center items-center"
+          className="space-y-4 w-full flex justify-center items-center z-10"
         >
           <div className='flex flex-col justify-center items-center'>
-            <h2 className="text-4xl font-bold mb-4 flex items-center gap-2">
+            <h2 className="text-4xl font-bold font-coin mb-4 flex items-center gap-2">
               Lore and <br /> Storyline
             </h2>
             <p className="text-gray-300 w-52">
@@ -315,7 +334,7 @@ const LoreM = () => {
         {/* Rotating Image */}
         <div 
           ref={rotationImageRef} 
-          className='flex items-center justify-center top-10 my-8 absolute z-1'
+          className='flex items-center justify-center top-10 my-8 absolute z-0'
         >
           <img
             src='rotation.gif'
