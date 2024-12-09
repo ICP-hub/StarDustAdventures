@@ -13,13 +13,12 @@ const useRegister = ()=>{
     const ref_id = useQueryParams().get('ref');
 
     const refPrincipal = useMemo(()=>{
-        return ref_id ? [extractPrincipal(ref_id.split('ref_')[1])] : []
+        return ref_id ? [extractPrincipal(ref_id.split('ref_')[1])] : [] // ref_id is a string like 'ref_1234' if it's null return empty array else return [Principal]
         }
     ,[ref_id])
 
-    console.log(refPrincipal)
-
     const {mutateAsync, isLoading,error,reset}  = CREATE_USER(auth?.actors, {user : {name : playerName}, refBy : refPrincipal})
+    
     const handleSubmit = async(e : React.FormEvent)=>{
         e.preventDefault();
         try {
