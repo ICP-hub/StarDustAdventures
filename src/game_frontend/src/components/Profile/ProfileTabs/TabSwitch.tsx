@@ -23,8 +23,8 @@ const TabSwitch: React.FC<TabSwitchProps> = ({
   settingsData,
 }) => {
   return (
-    <div className="h-screen w-full">
-      <div className="flex justify-center mt-2">
+    <div className="h-full ">
+      <div className="flex  mt-2">
         <div className="h-full ">
           <Tabs>
             <div className="flex">

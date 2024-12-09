@@ -87,7 +87,8 @@ const InviteFriends: React.FC = () => {
             INVITE A FRIEND
           </Button>
 
-          <Button >
+          
+          <Button  >
             <img 
               src="/assets/images/text-copy.svg" 
               className="copy-image"
