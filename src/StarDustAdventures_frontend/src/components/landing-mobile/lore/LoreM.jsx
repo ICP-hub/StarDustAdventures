@@ -197,6 +197,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const LoreM = () => {
   // References for each section
+  const containerRef = useRef(null);
   const headerRef = useRef(null);
   const rotationImageRef = useRef(null);
   const settingRef = useRef(null);
@@ -208,99 +209,82 @@ const LoreM = () => {
     // Prevent default scroll behavior and hide scrollbar
     document.body.style.overflowX = 'hidden';
     
-    // Create GSAP timeline
+    // Create GSAP timeline with adjusted settings
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: "#lore-container",
+        trigger: "#lore-container-second",
         start: "top top",
-        end: "+=600%", 
+        end: "bottom bottom",
         scrub: 1,
         pin: true,
         anticipatePin: 1,
+        markers: true,
       }
     });
 
-    // Animation Sequence
+    // Animation Sequence with adjusted timing and positions
     tl.fromTo(headerRef.current, 
       { y: 50, opacity: 0 }, 
-      { y: 0, opacity: 1, duration: 1 }
+      { y: 0, opacity: 1, duration: 0.5 }
     )
     .fromTo(rotationImageRef.current, 
       { y: 100, opacity: 0 }, 
-      { y: 0, opacity: 1, duration: 1 }
+      { y: 0, opacity: 1, duration: 0.5 }
     )
     .to(rotationImageRef.current, 
-      { opacity: 0.3, scale: 0.9, duration: 1 }
+      { opacity: 0.3, scale: 0.9, duration: 0.5 }
     )
-    // Setting Section Animation
+    // Setting Section Animation with adjusted timing
     .fromTo(settingRef.current, 
       { y: 200, opacity: 0 }, 
-      { y: 0, opacity: 1, duration: 1 }
+      { y: 0, opacity: 1, duration: 0.5 }
     )
-
     .to(settingRef.current, 
-        { y: -50, opacity: 1, duration: 1 }
+      { y: -50, opacity: 1, duration: 0.5 }
     )
-
-    // stardust wala aniamtion
+    // Star Dust Section with proper sequencing
     .fromTo(starDustRef.current, 
-        { y: 150, opacity: 0 }, 
-        { y: -50, opacity: 1, duration: 1 }
+      { y: 150, opacity: 0 }, 
+      { y: -50, opacity: 1, duration: 0.5 }
     )
-
-    // Move Setting Section up and fade out while bringing in Star Dust Section
     .to(settingRef.current, 
-      { y: -60, opacity: 0, duration: 1 }
+      { y: -60, opacity: 0, duration: 0.5 }
     )
-    
     .to(starDustRef.current, 
-        { y: -100, opacity: 1, duration: 1 }
+      { y: -100, opacity: 1, duration: 0.5 }
     )
-    
     .to(starDustRef.current, 
-        { y: -200, opacity: 1, duration: 1 }
+      { y: -200, opacity: 1, duration: 0.5 }
     )
-
-     // Bring in Commander Section
+    // Commander Section with adjusted positions
     .fromTo(commanderRef.current, 
-        { y: 600, opacity: 0 }, 
-        { y:-200, opacity: 1, duration: 1 }
+      { y: 400, opacity: 0 }, 
+      { y: -200, opacity: 1, duration: 0.5 }
     )
-
-     // Move Star Dust Section up and fade out
-     .to(starDustRef.current, 
-        { y: -200, opacity: 0, duration: 1 }
+    .to(starDustRef.current, 
+      { y: -200, opacity: 0, duration: 0.5 }
     )
-
-
     .to(commanderRef.current, 
-        { y: -390, opacity: 1, duration: 1 }
+      { y: -390, opacity: 1, duration: 0.5 }
     )
-
-    // Bring in Challenges Section
+    // Challenges Section with proper timing
     .fromTo(challengesRef.current, 
-        { y: 600, opacity: 0 }, 
-        { y: -420, opacity: 1, duration: 1 }
-      )
-
+      { y: 400, opacity: 0 }, 
+      { y: -420, opacity: 1, duration: 0.5 }
+    )
     .to(commanderRef.current, 
-        { y: -400, opacity: 0, duration: 1 }
+      { y: -400, opacity: 0, duration: 0.5 }
     )
-    
-    
-    
-    
     .to(challengesRef.current, 
-        { y: -590, opacity: 1, duration: 1 }
+      { y: -590, opacity: 1, duration: 0.5 }
     )
-    // Fade out Challenges Section
     .to(challengesRef.current, 
-        { y: -600, opacity: 0, duration: 1 }
-    )
+      { y: -600, opacity: 0, duration: 0.5 }
+    );
 
     // Cleanup function
     return () => {
-      tl.kill();
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       document.body.style.overflowY = '';
     };
   }, []);
@@ -308,7 +292,8 @@ const LoreM = () => {
   return (
     <div 
       id="lore-container-second" 
-      className="min-h-screen bg-black text-white p-4 relative overflow-hidden "
+      ref={containerRef}
+      className="min-h-screen bg-black text-white p-4 relative overflow-hidden"
     >
       {/* Main Content */}
       <main className="relative w-full mt-10 space-y-12 flex flex-col items-center justify-center">
@@ -345,9 +330,9 @@ const LoreM = () => {
         {/* Setting Section */}
         <section 
           ref={settingRef} 
-          className="mt-10  w-full max-w-xl"
+          className="mt-10 w-full max-w-xl"
         >
-          <h2 className="text-3xl mb-4 ">
+          <h2 className="text-3xl mb-4">
             Setting in the <br /> Distant Future
           </h2>
           <p className="text-gray-300">
@@ -358,10 +343,10 @@ const LoreM = () => {
         {/* StarDust as Currency Section */}
         <section 
           ref={starDustRef} 
-          className="space-y-4 w-full  max-w-xl"
+          className="space-y-4 w-full max-w-xl"
         >
-          <div className='flex flex-col w-full '>
-            <h2 className="font-bold text-4xl  mb-4  w-60 mx-auto flex justify-start items-center gap-2">
+          <div className='flex flex-col w-full'>
+            <h2 className="font-bold text-4xl mb-4 w-60 mx-auto flex justify-start items-center gap-2">
               Star Dust <br /> as Currency
             </h2>
             <p className="text-gray-300 w-72 mr-4 mx-auto">
@@ -373,7 +358,7 @@ const LoreM = () => {
         {/* Commander Section */}
         <section 
           ref={commanderRef} 
-          className="space-y-4  w-full max-w-xl"
+          className="space-y-4 w-full max-w-xl"
         >
           <h2 className="text-3xl mb-4 font-bold">
             Commander <br /> Dom's Mission
@@ -389,7 +374,7 @@ const LoreM = () => {
           className="space-y-4 w-full max-w-xl"
         >
           <div className='flex flex-col w-full'>
-            <h2 className=" font-bold text-4xl  mb-4  w-60 mx-auto flex justify-start items-center gap-2">
+            <h2 className="font-bold text-4xl mb-4 w-60 mx-auto flex justify-start items-center gap-2">
               Challenges <br /> Ahead
             </h2>
             <p className="text-gray-300 w-72 mr-4 mx-auto">
