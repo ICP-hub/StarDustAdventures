@@ -1,3 +1,5 @@
+import { Principal } from "@dfinity/principal";
+
 /**
  * A function that converts a BigInt to a Number
  * @param bigInt - The BigInt to convert
@@ -29,7 +31,11 @@ export const copyToClipBoard = async(text : string)=>{
         throw err
     }
 }
-
+/**
+ * A Util function that shares content using the Web Share API
+ * @param data : An object containing the title, text and url to share
+ * @returns {Promise<void>}
+ */
 export const share = async (data: {title: string, text: string, url: string})=>{
     try {
         if(navigator.share){
@@ -41,7 +47,19 @@ export const share = async (data: {title: string, text: string, url: string})=>{
         throw err
     }
 }
-
+/**
+ * A Util function that checks if a value is an array
+ * @param value : A value to check if it is an array
+ * @returns {Boolean} : A boolean value indicating if the value is an array
+ */
 export const isArray = (value : any) : Boolean=>{
     return Array.isArray(value)
+}
+/**
+ * A Util function that converts a String to a Principal
+ * @param principal : A string representation of a principal
+ * @returns {Principal} : A Principal object
+ */
+export const extractPrincipal = (principal : string) : Principal=>{
+    return Principal.fromText(principal)
 }
