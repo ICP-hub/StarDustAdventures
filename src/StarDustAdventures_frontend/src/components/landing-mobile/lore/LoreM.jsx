@@ -187,6 +187,7 @@
 //     </div>
 //   );
 // }
+
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -243,8 +244,8 @@ const LoreM = () => {
 
     // stardust wala aniamtion
     .fromTo(starDustRef.current, 
-        { y: 100, opacity: 0 }, 
-        { y: 0, opacity: 1, duration: 1 }
+        { y: 150, opacity: 0 }, 
+        { y: -50, opacity: 1, duration: 1 }
     )
 
     // Move Setting Section up and fade out while bringing in Star Dust Section
@@ -262,26 +263,39 @@ const LoreM = () => {
 
      // Bring in Commander Section
     .fromTo(commanderRef.current, 
-        { y: 400, opacity: 0 }, 
-        { y: 0, opacity: 1, duration: 1 }
+        { y: 600, opacity: 0 }, 
+        { y:-200, opacity: 1, duration: 1 }
     )
+
+     // Move Star Dust Section up and fade out
+     .to(starDustRef.current, 
+        { y: -200, opacity: 0, duration: 1 }
+    )
+
+
     .to(commanderRef.current, 
-        { y: -100, opacity: 0, duration: 1 }
+        { y: -390, opacity: 1, duration: 1 }
     )
-    // Move Star Dust Section up and fade out
-    .to(starDustRef.current, 
-      { y: -200, opacity: 0, duration: 1 }
-    )
-    
-    
+
     // Bring in Challenges Section
     .fromTo(challengesRef.current, 
-      { y: 50, opacity: 0 }, 
-      { y: 0, opacity: 1, duration: 1 }
+        { y: 900, opacity: 0 }, 
+        { y: -420, opacity: 1, duration: 1 }
+      )
+
+    .to(commanderRef.current, 
+        { y: -400, opacity: 0, duration: 1 }
+    )
+    
+    
+    
+    
+    .to(challengesRef.current, 
+        { y: -990, opacity: 1, duration: 1 }
     )
     // Fade out Challenges Section
     .to(challengesRef.current, 
-        { y: -100, opacity: 0, duration: 1 }
+        { y: -1000, opacity: 0, duration: 1 }
     )
 
     // Cleanup function
