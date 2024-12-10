@@ -14,6 +14,6 @@
         @apply fixed w-full min-h-0 h-auto bottom-0 top-auto left-0 flex flex-row justify-evenly z-50;
     }
     .sidebar-children {
-        @apply w-full min-h-[80px] flex-row bg-[#343434] justify-center items-center rounded-t-2xl  ml-0;
+        @apply w-full min-h-[80px] flex-row bg-[#343434] justify-center items-center rounded-t-2xl md:rounded-t-3xl  ml-0;
     }
 }
