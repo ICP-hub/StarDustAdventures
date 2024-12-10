@@ -1,14 +1,16 @@
 import React from "react";
 import "./index.css";
+import useWallet from "../../../hooks/useWallet";
 
 const Navbar: React.FC<NavbarProps> = ({ profitPerHour = 0.3 }) => {
+  const WalletImage = useWallet() || "/assets/images/do-not-disturb.svg";
   return (
     <header className="header">
       <div className="top-nav-bar">
         <nav className="nav-content">
           <div className="nav-icon">
             <img
-              src="/assets/images/wallets/ii.png"
+              src={WalletImage}
               alt="icp-png"
               loading="lazy"
               width={32}
