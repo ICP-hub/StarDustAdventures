@@ -123,6 +123,7 @@ const LoreM = () => {
       id="lore-container-second" 
       ref={containerRef}
       className="min-h-screen bg-black text-white p-4 relative overflow-hidden"
+      style={{ backgroundImage: 'url("mbg.png")', backgroundSize: 'cover' }}
     >
       {/* Main Content */}
       <main className="relative w-full mt-10 space-y-12 flex flex-col items-center justify-center">
@@ -161,7 +162,7 @@ const LoreM = () => {
           ref={settingRef} 
           className="mt-10 w-full max-w-xl"
         >
-          <h2 className="text-3xl mb-4">
+          <h2 className="text-3xl font-bold mb-4">
             Setting in the <br /> Distant Future
           </h2>
           <p className="text-gray-300">
