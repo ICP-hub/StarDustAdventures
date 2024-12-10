@@ -55,7 +55,7 @@
   }
   
   .stardust-description {
-    @apply text-gray-300 w-72 mr-4 mx-auto;
+    @apply text-gray-300 w-60 mx-auto;
   }
   
   .commander-section {
@@ -83,7 +83,7 @@
   }
   
   .challenges-description {
-    @apply text-gray-300 w-72 mr-4 mx-auto;
+    @apply text-gray-300 w-60  mx-auto;
   }
   
   .uncovering-section {
