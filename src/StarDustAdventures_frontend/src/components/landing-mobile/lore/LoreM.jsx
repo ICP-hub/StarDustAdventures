@@ -14,6 +14,7 @@ const LoreM = () => {
   const starDustRef = useRef(null);
   const commanderRef = useRef(null);
   const challengesRef = useRef(null);
+  const uncoveringRef = useRef(null);
 
   useEffect(() => {
     // Prevent default scroll behavior and hide scrollbar
@@ -105,9 +106,24 @@ const LoreM = () => {
     .to(challengesRef.current, 
         { y: -600, opacity: 1, duration: 1 }
     )
+    // uncoveringRef start
+    .fromTo(uncoveringRef.current,
+      { y: 700, opacity: 0 }, 
+      { y: -620, opacity: 1, duration: 1 }
+    )
+
+
     // Fade out Challenges Section
     .to(challengesRef.current, 
         { y: -610, opacity: 0, duration: 1 }
+    )
+
+    .to(uncoveringRef.current, 
+      { y: -800, opacity: 1, duration: 1 }
+    )
+    // Fade out Challenges Section
+    .to(uncoveringRef.current, 
+      { y: -810, opacity: 0, duration: 1 }
     )
 
 
@@ -211,6 +227,19 @@ const LoreM = () => {
               The mission involves navigating hostile planets & overcoming various obstacles.
             </p>
           </div>
+        </section>
+
+        {/* Uncovering Section */}
+        <section 
+          ref={uncoveringRef} 
+          className="space-y-4 w-full max-w-xl"
+          >
+          <h2 className="text-3xl mb-4 font-bold">
+            Uncovering <br /> Ancient Secrets
+          </h2>
+          <p className="text-gray-300">
+            Elite astronaut Commander Dom leads a mission to mine Star Dust and upgrade gear.
+          </p>
         </section>
       </main>
     </div>
