@@ -3,7 +3,7 @@ import "./index.css";
 import useWallet from "../../../hooks/useWallet";
 
 const Navbar: React.FC<NavbarProps> = ({ profitPerHour = 0.3 }) => {
-  const WalletImage = useWallet() || "/assets/images/do-not-disturb.svg";
+  const WalletImage = useWallet();
   return (
     <header className="header">
       <div className="top-nav-bar">
