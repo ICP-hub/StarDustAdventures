@@ -14,3 +14,7 @@ export const GET_USER_FRIENDS = (actor : ActorSubclass<_SERVICE>)=>{
 export const GET_USER_POINTS = (actor : ActorSubclass<any>)=>{
     return useQuery('user_points',async()=>api.query(()=>actor.getPoints()))
 }
+
+export const GET_REFERAL_ID = (actor : ActorSubclass<_SERVICE>)=>{
+    return useQuery('ref_id',async()=>api.query(()=>actor.generateRefId()))
+}

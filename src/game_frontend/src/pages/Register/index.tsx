@@ -1,8 +1,7 @@
-import { useState } from "react";
-import Button from "../../components/ui/Button";
-import Input from "../../components/ui/Input";
-import "./index.css";
-import useRegister from "../../hooks/useRegister";
+import Button from '../../components/ui/Button';
+import Input from '../../components/ui/Input';
+import './index.css';
+import useRegister from '../../hooks/useRegister';
 
 const RegisterScreen = () => {
   const { playerName, handleSubmit, onChange, isLoading } = useRegister();

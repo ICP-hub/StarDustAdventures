@@ -1,32 +1,24 @@
 import React from "react";
+import useFriendList from "../../../hooks/useFriendList";
+import FriendCard from "../../../components/dashboard/invite/FriendCard";
+import List from "../../../components/dashboard/invite/List";
 
-interface Friend {
-  id: string;
-  name: string;
-  icon: string; // Changed from icons to icon
-}
 
 const FriendsList: React.FC = () => {
-  // Mock friends data inside the component
-  const friends: Friend[] = [
-    { id: "1", name: "ABCD", icon: "/assets/character.svg" }, // Fixed syntax
-    { id: "2", name: "JKLM", icon: "/assets/character.svg" }, // Fixed syntax
-  ];
-
-  const handleRefresh = () => {
-    console.log("Refreshing friends list...");
-  };
+  const { friendList, error,  refreshList } = useFriendList()
+  
+  if(error) return <p>{JSON.stringify(error)}</p>
 
   return (
     <div className="flex justify-start w-full">
       <div className="space-y-2 w-full">
         <div className="flex justify-between items-center">
           <h2 className="text-xl font-coin">
-            List of your friends ({friends.length})
+            List of your friends ({friendList?.length})
           </h2>
           <button
             className="text-gray-400 hover:text-white"
-            onClick={handleRefresh}
+            onClick={refreshList}
           >
             <svg
               className="w-5 h-5"
@@ -43,26 +35,7 @@ const FriendsList: React.FC = () => {
             </svg>
           </button>
         </div>
-
-        <div className="space-y-2">
-          {friends.map((friend, index) => (
-            <React.Fragment key={friend.id}>
-              <div className="flex items-center gap-3 p-2">
-                <img
-                  src={friend.icon} // Use the icon from friend object
-                  alt={`${friend.name}'s character`} // Improved alt text
-                  className="character-image w-6 h-6" // Using Tailwind for dimensions
-                  height={24}
-                  width={24}
-                />
-                <span className="font-coin text-sm">{friend.name}</span>
-              </div>
-              {index < friends.length - 1 && (
-                <div className="w-full border-t border-gray-600 my-8" />
-              )}
-            </React.Fragment>
-          ))}
-        </div>
+        <List/>
       </div>
     </div>
   );

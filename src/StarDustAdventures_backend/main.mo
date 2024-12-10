@@ -9,6 +9,7 @@ import Iter "mo:base/Iter";
 import Time "mo:base/Time";
 import Int "mo:base/Int";
 import Timer "mo:base/Timer";
+import Text "mo:base/Text";
 import Types "types";
 
 actor {
@@ -24,6 +25,7 @@ actor {
   // Registering new users
   public shared({caller}) func createUser(user:Types.UserInput,refBy:?Principal):async Result.Result<Types.User,Text>{
     try{
+      Debug.print("Creating user with name: " # user.name);
       let oldUser=userMap.get(caller);
       if(oldUser!=null){
         return #err(Constants.ERRORS.useralreadyExists # Principal.toText(caller));
@@ -47,6 +49,7 @@ actor {
           let addFriendResponse=await addFriend(val,newUser);
           switch(addFriendResponse){
             case(#ok){
+              userMap.put(caller,newUser);
               return #ok(newUser)
             };
             case(#err(error)){
@@ -55,9 +58,8 @@ actor {
           }
         }
       };
-
-      return #ok(newUser)
     }catch(err){
+      Debug.print("Error in creating user: " # Error.message(err));
       return #err(Error.message(err));
     }
   };
@@ -200,6 +202,26 @@ actor {
     }
   };
 
+  public shared({caller}) func generateRefId(): async Result.Result<Text, Text>{
+    try {
+      let user = userMap.get(caller);
+
+      switch user {
+        case(null){
+          return #err(Constants.ERRORS.userNotFound)
+        };
+        case(?value) {
+          if(caller!=value.id){
+            return #err(Constants.ERRORS.notAuthorized);
+          };
+          return #ok(generateReferralId(caller));
+        }
+      };
+    } catch(err){
+      return #err(Error.message(err));
+    }
+  };
+
     // internal function, adds new points. will be used in future improvements
     //Future : New Map for Points <Principal, Nat>
   func addPointsToUser(id:Principal,points:Nat):async Result.Result<(),Text>{
@@ -252,6 +274,10 @@ actor {
        return #err(Error.message(err));
     }
 
+  };
+
+  private func generateReferralId(id : Principal):  Text {
+    return Text.concat("ref_", Principal.toText(id));
   };
 
   func getAllUserIds():async [Principal]{
