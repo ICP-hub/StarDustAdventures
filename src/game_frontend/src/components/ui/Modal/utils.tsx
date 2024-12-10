@@ -3,7 +3,7 @@ import { useModal } from "../../../hooks/useModal";
 
 // Modal.Header
 export const ModalHeader = ({ children } : React.PropsWithChildren) => (
-    <div className="flex justify-between items-center mb-4 p-3 relative">
+    <div className="flex  items-center justify-evenly lg:space-x-52 space-x-24 md:space-x-48 mb-4  pb-5 relative">
       {children}
     </div>
   );
@@ -25,7 +25,7 @@ export const ModalHeader = ({ children } : React.PropsWithChildren) => (
   
   // Modal.Body
   export const ModalBody = ({ children }: React.PropsWithChildren) => (
-    <div className="modal-body flex flex-col justify-between items-center gap-3">
+    <div className="modal-body flex flex-col  gap-3">
       {children}
     </div>
   );
