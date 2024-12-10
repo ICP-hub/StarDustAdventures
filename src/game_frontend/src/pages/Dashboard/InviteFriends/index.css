@@ -25,7 +25,7 @@
 
 /* Invite buttons section */
 .invite-buttons-container {
-  @apply flex  flex-wrap md:flex-nowrap space-y-4 justify-center items-center;
+  @apply flex  flex-wrap md:flex-nowrap  justify-center items-center;
 }
 
 .tag-content {
@@ -37,7 +37,7 @@
 }
 
 .tag-info-container {
-  @apply flex flex-col;
+  @apply flex flex-col w-[80vw] md:w-full pl-2 py-2;
 }
 
 .tag-title {
