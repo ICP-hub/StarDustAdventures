@@ -13,6 +13,7 @@ const Layout = () => {
         backgroundImage: 'url("/assets/images/space-exchange-bg.webp")',
         width: '100vw',           // Full viewport width
         height: '100vh',         // Full viewport height  
+        backgroundSize: 'cover', // Scale the image to cover the container
       }}
     >
       <Navbar />
