@@ -38,8 +38,8 @@ const LoreM = () => {
       { y: 0, opacity: 1, duration: 1 }
     )
     .fromTo(rotationImageRef.current, 
-      { y: 100, opacity: 0 }, 
-      { y: 0, opacity: 1, duration: 1 }
+      { y: 200, opacity: 0 }, 
+      { y: 100, opacity: 1, duration: 1 }
     )
     .to(rotationImageRef.current, 
       { opacity: 0.3, scale: 0.9, duration: 1 }
@@ -51,7 +51,7 @@ const LoreM = () => {
     )
 
     .to(settingRef.current, 
-        { y: -50, opacity: 1, duration: 1 }
+        { y: -20, opacity: 1, duration: 1 }
     )
 
     // stardust wala aniamtion
@@ -62,7 +62,7 @@ const LoreM = () => {
 
     // Move Setting Section up and fade out while bringing in Star Dust Section
     .to(settingRef.current, 
-      { y: -60, opacity: 0, duration: 1 }
+      { y: -30, opacity: 0, duration: 1 }
     )
     
     .to(starDustRef.current, 
@@ -86,7 +86,7 @@ const LoreM = () => {
 
 
     .to(commanderRef.current, 
-        { y: -390, opacity: 1, duration: 1 }
+        { y: -420, opacity: 1, duration: 1 }
     )
 
     // Bring in Challenges Section
@@ -96,18 +96,18 @@ const LoreM = () => {
       )
 
     .to(commanderRef.current, 
-        { y: -400, opacity: 0, duration: 1 }
+        { y: -430, opacity: 0, duration: 1 }
     )
     
     
     
     
     .to(challengesRef.current, 
-        { y: -590, opacity: 1, duration: 1 }
+        { y: -600, opacity: 1, duration: 1 }
     )
     // Fade out Challenges Section
     .to(challengesRef.current, 
-        { y: -600, opacity: 0, duration: 1 }
+        { y: -610, opacity: 0, duration: 1 }
     )
 
 
