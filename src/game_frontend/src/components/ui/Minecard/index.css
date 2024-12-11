@@ -128,18 +128,18 @@
       0 50px 0 -24px #29354F,
 
       /* for white line */
-      0 2px 0 2px white,
-      0 18px 0 -6px white,
-      0 33px 0 -14px white,
-      0 50px 0 -22px white,
+      0 2px 0 2px #EADFDE,
+      0 18px 0 -6px #EADFDE,
+      0 33px 0 -14px #EADFDE,
+      0 50px 0 -22px #EADFDE,
 
 
       /* LEFT */
-      2px 0px 0 0px white,
+      2px 0px 0 0px #EADFDE,
       /* RIGHT */
-      -2px 0px 0 0px white,
+      -2px 0px 0 0px #EADFDE,
       /* TOP */
-      0px -2px 0 0px white;
+      0px -2px 0 0px #EADFDE;
    
   }
   
