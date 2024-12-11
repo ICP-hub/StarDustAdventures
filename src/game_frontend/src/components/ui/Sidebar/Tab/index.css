@@ -1,5 +1,5 @@
 .sidebar-tab-container{
-    @apply flex flex-col justify-center items-center py-4 px-2 min-w-[80px];
+    @apply flex flex-col justify-center items-center py-4 md:px-2 min-w-[17vw] md:min-w-[80px];
 }
 .sidebar-title{
     @apply font-sf-pro-display text-xs;
