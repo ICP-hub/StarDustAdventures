@@ -70,9 +70,6 @@
   @apply flex flex-wrap md:flex-nowrap flex-row justify-center items-center gap-5;
 }
 
-.invite-button {
-  @apply bg-purple-600;
-}
 
 /* Image styles */
 .winner-image {
