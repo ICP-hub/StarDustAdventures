@@ -8,3 +8,6 @@
 .modal-close{
     @apply focus:outline-brand-blue;
 }
+.button-container{
+    @apply  flex flex-col justify-center items-center  gap-y-10 ;
+}
