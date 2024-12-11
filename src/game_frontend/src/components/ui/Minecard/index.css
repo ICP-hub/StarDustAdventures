@@ -122,16 +122,16 @@
     background: #29354F;
     box-shadow: 
       /* CENTER */
-      0 13px 0 -0px #29354F,
-      0 28px 0 -8px #29354F,
-      0 43px 0 -16px #29354F,
-      0 60px 0 -24px #29354F,
+      0 2px 0 -0px #29354F,
+      0 18px 0 -8px #29354F,
+      0 33px 0 -16px #29354F,
+      0 50px 0 -24px #29354F,
 
       /* for white line */
-      0 13px 0 2px white,
-      0 28px 0 -6px white,
-      0 43px 0 -14px white,
-      0 60px 0 -22px white,
+      0 2px 0 2px white,
+      0 18px 0 -6px white,
+      0 33px 0 -14px white,
+      0 50px 0 -22px white,
 
 
       /* LEFT */
@@ -142,4 +142,5 @@
       0px -2px 0 0px white;
    
   }
+  
   
