@@ -1,20 +1,17 @@
 import React from "react";
 import useFriendList from "../../../hooks/useFriendList";
-import FriendCard from "../../../components/dashboard/invite/FriendCard";
 import List from "../../../components/dashboard/invite/List";
 
 
 const FriendsList: React.FC = () => {
-  const { friendList, error,  refreshList } = useFriendList()
-  
-  if(error) return <p>{JSON.stringify(error)}</p>
+  const { count, refreshList } = useFriendList()
 
   return (
     <div className="flex justify-start w-full">
       <div className="space-y-2 w-full">
         <div className="flex justify-between items-center">
           <h2 className="text-xl font-coin">
-            List of your friends ({friendList?.length})
+            List of your friends ({count})
           </h2>
           <button
             className="text-gray-400 hover:text-white"
