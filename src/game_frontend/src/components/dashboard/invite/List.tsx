@@ -4,11 +4,11 @@ import FriendCard from "./FriendCard"
 import { isArray } from "../../../utils"
 
 const List = ()=>{
-    const {friendList, isRefetching, isLoading} = useFriendList()
+    const {friendList, isRefetching, isLoading, count} = useFriendList()
     console.log(friendList)
     if(isLoading) return <p>Loading...</p>
     if(isRefetching) return <p>Refreshing...</p>
-    if(isArray(friendList) && (friendList?.length === 0)) return <p>No friends found</p>
+    if(count === 0) return <p>No friends found</p>
     else
     return (
         <div className="space-y-2 min-h-20">
