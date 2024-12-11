@@ -42,4 +42,19 @@ export default defineConfig({
       },
     ],
   },
+  rollupOptions: {
+    output: {
+      manualChunks: {
+        react: ["react"],
+        "react-dom": ["react-dom"],
+        "react-router-dom": ["react-router-dom"],
+        "react-query": ["react-query"],
+        "@dfinity/agent" : ["@dfinity/agent"],
+        "@dfinity/auth-client" : ["@dfinity/auth-client"],
+        "@dfinity/candid": ["@dfinity/candid"],
+        "@dfinity/principal" : ["@dfinity/principal"],
+        "react-icons" : ["react-icons"]
+      }
+  }
+}
 });
