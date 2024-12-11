@@ -1,4 +1,4 @@
-import InfoToolTip from '../../../ui/InfoToolTip/InfoTooltip'
+import InfoToolTip from '../InfoToolTip'
 import './index.css'
 
 const INCENTIVES_DETAILS = [
