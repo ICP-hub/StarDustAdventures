@@ -39,23 +39,23 @@
   
   /* Card styles */
   .mine-card-wrapper {
-    @apply m-6;
+    @apply m-2.5 mb-10;
   }
   
   .mine-card {
-    @apply w-48 bg-[#29354F] rounded-t-[1px] overflow-hidden shadow-lg;
+    @apply bg-[#29354F] rounded-t-[1px] overflow-hidden shadow-lg;
   }
   
   .mine-card-image-container {
-    @apply h-32 bg-cover bg-center relative;
+    @apply h-28 bg-cover bg-center relative;
   }
   
   .mine-card-image {
-    @apply w-full h-full absolute object-cover;
+    @apply w-full h-full  object-cover;
   }
   
   .mine-card-content {
-    @apply p-3 space-y-2;
+    @apply py-2.5 space-y-1;
   }
   
   .mine-card-header {
