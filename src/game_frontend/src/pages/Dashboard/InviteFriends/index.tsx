@@ -96,7 +96,7 @@ const InviteFriends: React.FC = () => {
         </div>
 
         <div className="referral-button-container">
-          <Button className="referral-button ">
+          <Button className="text-responsive">
             BECOME A REFERRAL
           </Button>
         </div>
@@ -104,12 +104,12 @@ const InviteFriends: React.FC = () => {
         <FriendsList />
 
         <div className="bottom-buttons-container">
-          <Button className="invite-button" disabled={isLoading} onClick={handleShare}>
+
+          <Button className="text-responsive" disabled={isLoading} onClick={handleShare} size={'sm'}>
             INVITE A FRIEND
           </Button>
-          
-          
-          <Button disabled={isLoading} onClick={handleCopy}>
+
+          <Button disabled={isLoading} onClick={handleCopy} size={'xs'}>
 
             <img 
               src="/assets/images/text-copy.svg" 

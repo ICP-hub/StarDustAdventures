@@ -9,6 +9,6 @@
  */
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: 'primary' | 'secondary';
-    size?: 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+    size?: 'xs' |'sm' | 'md' | 'lg' | 'xl' | 'xxl';
     className?: string;
   }
