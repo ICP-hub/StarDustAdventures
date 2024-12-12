@@ -12,4 +12,27 @@
 {
     @apply bg-light-grey border border-white text-white transition-all duration-300 ease-in;
     text-decoration: none;
+
+        background: #29354F;
+        box-shadow: 
+          /* CENTER */
+          2px 0 0 -0px #29354F,
+          18px 0 0 -8px #29354F,
+          33px 0 0 -16px #29354F,
+          50px 0 0 -24px #29354F,
+    
+          /* for white line */
+          2px 0 0 1px #EADFDE,
+          18px 0 0 -7px #EADFDE,
+          33px 0 0 -15px #EADFDE,
+          50px 0 0 -23px #EADFDE,
+    
+    
+          /* LEFT */
+          2px 0px 0 -1px #EADFDE,
+          /* RIGHT */
+          -2px 0px 0 -1px #EADFDE,
+          /* TOP */
+          0px -2px 0 -1px #EADFDE;
+       
 }
