@@ -13,7 +13,7 @@
     .sidebar-tab-container:visited,
     .sidebar-tab-container:focus,
     .sidebar-tab-container[aria-selected="true"] {
-        @apply bg-light-grey transition-all text-white font-bold no-underline duration-300 ease-in;
+        @apply bg-light-grey transition-all text-white font-bold !w-6 no-underline duration-300 ease-in;
         text-decoration: none;
         background: #5A5A5A;
         box-shadow: 
@@ -46,13 +46,13 @@
     .sidebar-tab-container:visited,
     .sidebar-tab-container:focus,
     .sidebar-tab-container[aria-selected="true"] {
-        @apply bg-light-grey transition-all text-white font-bold no-underline duration-300 ease-in;
+        @apply bg-light-grey transition-all h-10 text-white font-bold no-underline duration-300 ease-in;
         text-decoration: none;
         background: #5A5A5A;
         box-shadow: 
             /* left side */
-            0 14px -0px 0 #5A5A5A,
-            0 14px 1px 0 #EADFDE,
+            0 19px 0 -0px #5A5A5A,
+            0 17px 0 1px #EADFDE,
             /* CENTER */
             0 -1px 0 0px #5A5A5A,
             0 -10px 0 -4px #5A5A5A,
