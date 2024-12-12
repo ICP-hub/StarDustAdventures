@@ -10,22 +10,27 @@
 .sidebar-tab-container:focus,
 .sidebar-tab-container[aria-selected="true"]
 {
-    @apply bg-light-grey transition-all duration-300 ease-in;
+    @apply bg-light-grey transition-all text-white font-bold no-underline duration-300 ease-in;
     text-decoration: none;
 
         background: #5A5A5A;
         box-shadow: 
           /* CENTER */
           1px 0 0 -0px #5A5A5A,
+          -14px 0 0 -0px #5A5A5A,
           15px 0 0 -8px #5A5A5A,
           30px 0 0 -16px #5A5A5A,
           43px 0 0 -24px #5A5A5A,
+          
+         
     
           /* for white line */
           1px 0 0 1px #EADFDE,
+          -14px 0 0 1px #EADFDE,
           15px 0 0 -7px #EADFDE,
           30px 0 0 -15px #EADFDE,
           43px 0 0 -23px #EADFDE,
+
     
     
           /* LEFT */
