@@ -7,7 +7,7 @@
 }
 
 /* For large screens - original box shadow */
-@media (min-width: 1024px) {
+@media (min-width: 769px) {
     .sidebar-tab-container:active,
     .sidebar-tab-container:hover,
     .sidebar-tab-container:visited,
@@ -40,7 +40,7 @@
 }
 
 /* For small and medium screens - rotated box shadow */
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
     .sidebar-tab-container:active,
     .sidebar-tab-container:hover,
     .sidebar-tab-container:visited,
@@ -50,24 +50,28 @@
         text-decoration: none;
         background: #5A5A5A;
         box-shadow: 
-            /* top side (formerly left side) */
-            0 -14px -0px 0 #5A5A5A,
-            0 -14px 1px 0 #EADFDE,
+            /* left side */
+            0 14px -0px 0 #5A5A5A,
+            0 14px 1px 0 #EADFDE,
             /* CENTER */
-            0 1px 0px 0 #5A5A5A,
-            0 10px -4px 0 #5A5A5A,
-            0 20px -9px 0 #5A5A5A,
-            0 30px -14px 0 #5A5A5A,
+            0 -1px 0 0px #5A5A5A,
+            0 -10px 0 -4px #5A5A5A,
+            0 -20px 0 -9px #5A5A5A,
+            0 -30px 0 -14px #5A5A5A, 
             /* for white line */
-            0 1px 1px 0 #EADFDE,
-            0 10px -3px 0 #EADFDE,
-            0 20px -8px 0 #EADFDE,
-            0 30px -13px 0 #EADFDE,
-            /* TOP */
-            0 2px -1px 0 #EADFDE,
-            /* BOTTOM */
-            0 -2px -1px 0 #EADFDE,
+            0 -1px 0 1px #EADFDE,
+            0 -10px 0 -3px #EADFDE,
+            0 -20px 0 -8px #EADFDE,
+            0 -30px 0 -13px #EADFDE,
             /* LEFT */
-            -2px 0 -1px 0 #EADFDE;
+            2px 0px 0 -1px #EADFDE,
+            /* RIGHT */
+            -2px 0px 0 -1px #EADFDE,
+            /* TOP */
+            0 2px 0 -1px #EADFDE,
+            /* left */
+            -2px 0 0 -1px #EADFDE,
+            /* bottom */
+            0 -2px 0 -1px #EADFDE;
     }
 }
