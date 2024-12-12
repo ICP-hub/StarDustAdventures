@@ -6,7 +6,7 @@ import GameConcept from '../components/landing/gameConcept/GameConcept';
 import Lore from '../components/landing/loreStoryline/Lore';
 import GradientCover from '../components/landing/GradientCover';
 import GameConceptM from '../components/landing-mobile/gameConcept/GameConceptM';
-import LoreM from '../components/landing-mobile/lore/LoreM';
+import LoreM from '../components/landing-mobile/lore';
 import StarDustMobile from '../components/landing-mobile/star-mobile-landing/StarDustMobile'
 
 // const GamePlayMechanics = lazy(() => import('../components/landing/gamePlayMechanics'));

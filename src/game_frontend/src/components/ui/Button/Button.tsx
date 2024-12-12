@@ -38,6 +38,7 @@ export default function Button({
 }: ButtonProps): JSX.Element {
 
   const sizes = {
+    'xs' : '',
     'sm': 'text-sm min-w-[100px] text-[20px]',
     'md': 'min-w-[185px] text-[30px]',
     'lg': 'text-base px-6 py-2',
@@ -46,6 +47,7 @@ export default function Button({
   };
 
   const vSpacing = {
+    'xs' : '',
     'sm': 'my-1',
     'md': 'my-2',
     'lg': 'my-3',

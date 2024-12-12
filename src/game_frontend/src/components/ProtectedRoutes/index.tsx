@@ -10,7 +10,7 @@ const ProtectedRoutes = ({children} : React.PropsWithChildren)=>{
             </Suspense>
         )
     } else {
-        return <p>404</p>
+        return <p className="text-black">404</p>
     }
 }
 

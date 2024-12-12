@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme')
-const customScrollbarPlugin = require('./src/utils/tailwind-plugins/index.tsx');
+const customScrollbarPlugin = require('./src/utils/tailwind-plugins');
 export default {
   content: [
     "./index.html",

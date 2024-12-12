@@ -1,4 +1,4 @@
-module.exports = function ({ addUtilities }) {
+module.exports = function ({ addUtilities } : any) {
     addUtilities({
       '.scrollbar-hide': {
         /* IE and Edge */

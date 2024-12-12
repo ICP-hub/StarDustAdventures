@@ -24,7 +24,7 @@ const Wallets : WalletType[] = [
     },
     {
         icon:'/assets/images/wallets/ii.png',
-        name:'INTERNET IDENTITY',
+        name:'INTERNETIDENTITY',
         method:'ii'
     }
 ]
