@@ -1,61 +1,23 @@
-/* Main page styles */
-.mine-cards-page {
-    @apply min-h-screen bg-gray-900 text-white;
-  }
-  
-  .mine-cards-container {
-    @apply ml-16 p-6;
-  }
-  
-  .mine-cards-content {
-    @apply max-w-7xl mx-auto;
-  }
-  
-  /* change-font */
-  .mine-cards-title {
-    @apply text-2xl font-coin mb-6;
-  }
-  
-  .mine-cards-divider {
-    @apply w-[228px] border-t rounded-md;
-  }
-  
-  .mine-cards-grid {
-    @apply flex flex-wrap -m-2;
-  }
-  
-  /* Tabs styles */
-  .tabs-container {
-    @apply flex mb-4;
-  }
-  
-  .tab-button {
-    @apply px-4 py-2 rounded-lg mr-2 text-gray-400;
-  }
-  
-  .tab-button-active {
-    @apply bg-gray-700 text-white;
-  }
-  
+
   /* Card styles */
   .mine-card-wrapper {
-    @apply m-6;
+    @apply m-2.5 mb-10;
   }
   
   .mine-card {
-    @apply w-48 bg-[#29354F] rounded-t-[1px] overflow-hidden shadow-lg;
+    @apply bg-[#29354F] rounded-t-[1px] overflow-hidden shadow-lg;
   }
   
   .mine-card-image-container {
-    @apply h-32 bg-cover bg-center relative;
+    @apply h-28 bg-cover bg-center relative;
   }
   
   .mine-card-image {
-    @apply w-full h-full absolute object-cover;
+    @apply w-full h-full  object-cover;
   }
   
   .mine-card-content {
-    @apply p-3 space-y-2;
+    @apply py-2.5 space-y-1;
   }
   
   .mine-card-header {
@@ -64,7 +26,7 @@
 
   /* change font */
   .mine-card-title {
-    @apply text-sm text-white;
+    @apply text-sm  text-white font-coin;
   }
   
   .mine-card-subtitle {
@@ -72,7 +34,7 @@
   }
   
   .mine-card-stats {
-    @apply space-y-1 flex flex-col justify-center items-center;
+    @apply flex flex-col justify-center items-center;
   }
   
   .mine-card-stat-row {
@@ -93,7 +55,7 @@
   }
   
   .mine-card-divider-container {
-    @apply flex justify-center items-center py-2;
+    @apply flex justify-center items-center pt-1;
   }
   
   .mine-card-divider {
@@ -119,30 +81,28 @@
 
 
   .card-css {
+    background: #29354F;
     box-shadow: 
-      /* First step */
-      5px 0 #29354F,
-      -5px 0 #29354F,
-      0 5px #29354F,
-      /* Second step */
-      10px 0 #29354F,
-      -10px 0 #29354F,
-      0 10px #29354F,
-      0 0 0 5px #29354F,
-      /* Third step */
-      15px 0 #29354F,
-      -15px 0 #29354F,
-      0 15px #29354F,
-      0 5px 0 5px #29354F,
-      5px 0 0 5px #29354F,
-      -5px 0 0 5px #29354F,
-      /* Fourth step (slightly thinner white border, no top shadow) */
-      16px 0 white,
-      -16px 0 white,
-      0 16px white,
-      8px 0 0 4px white,
-      -8px 0 0 4px white,
-      0 8px 0 4px white,
-      0 0 0 7px white;
-    margin: 20px auto;
+      /* CENTER */
+      0 2px 0 -0px #29354F,
+      0 18px 0 -8px #29354F,
+      0 33px 0 -16px #29354F,
+      0 50px 0 -24px #29354F,
+
+      /* for white line */
+      0 2px 0 1px #EADFDE,
+      0 18px 0 -7px #EADFDE,
+      0 33px 0 -15px #EADFDE,
+      0 50px 0 -23px #EADFDE,
+
+
+      /* LEFT */
+      2px 0px 0 -1px #EADFDE,
+      /* RIGHT */
+      -2px 0px 0 -1px #EADFDE,
+      /* TOP */
+      0px -2px 0 -1px #EADFDE;
+   
   }
+  
+  

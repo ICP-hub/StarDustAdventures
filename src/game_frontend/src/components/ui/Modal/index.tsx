@@ -22,16 +22,27 @@ export default function Modal ({children, onClose, size='medium', style={}, ...p
   const dialogRef = useRef<HTMLDialogElement>(null)
 
   useEffect(()=>{
-    if(dialogRef.current){
-      dialogRef.current.showModal()
-    }
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
 
+    if(dialogRef.current){
+      dialogRef.current.showModal();
+      document.addEventListener('keydown', handleKeyDown);
+    }
+    // Cleanup function to remove the event listener and close the dialog
     return () => {
       if(dialogRef.current){
-        dialogRef.current.close()
+        dialogRef.current.close();
       }
+      // Cleanup the event listener 
+      document.removeEventListener('keydown', handleKeyDown);
     }
-  },[])
+  },[onclose])
+
+
 
   const handleOutsideClick = useCallback((e : React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if(dialogRef.current && !dialogRef.current.contains(e.target as Node)){

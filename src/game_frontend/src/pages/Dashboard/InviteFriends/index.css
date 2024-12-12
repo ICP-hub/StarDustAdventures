@@ -25,7 +25,7 @@
 
 /* Invite buttons section */
 .invite-buttons-container {
-  @apply flex  flex-wrap md:flex-nowrap space-y-4 justify-center items-center;
+  @apply flex  flex-wrap md:flex-nowrap  justify-center items-center;
 }
 
 .tag-content {
@@ -37,7 +37,7 @@
 }
 
 .tag-info-container {
-  @apply flex flex-col;
+  @apply flex flex-col w-[80vw] md:w-full pl-2 py-2;
 }
 
 .tag-title {
@@ -62,12 +62,16 @@
 
 /* Referral button container */
 .referral-button-container {
-  @apply w-full flex justify-center items-center;
+  @apply w-full flex justify-center items-center text-sm;
 }
+.referral-button{
+  @apply !text-sm md:!text-2xl lg:!text-4xl ;
+}
+
 
 /* Bottom buttons container */
 .bottom-buttons-container {
-  @apply flex flex-wrap md:flex-nowrap flex-row justify-center items-center gap-5;
+  @apply flex  flex-row justify-center items-center space-x-10 ;
 }
 
 
@@ -81,5 +85,12 @@
 }
 
 .copy-image {
-  @apply w-[30px] h-[30px];
+
+  @apply w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[45px] lg:h-[45px] p-1;
+
 }
+
+.text-responsive{
+  @apply !text-sm md:!text-2xl lg:!text-4xl
+}
+
