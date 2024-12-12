@@ -3,7 +3,7 @@ import Navbar from "../../components/ui/Navbar";
 import Sidebar from "../../components/ui/Sidebar";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
 import "./index.css";
-import { GET_USER } from "../../utils/api/query"
+import { Suspense } from "react";
 const Layout = () => {
   useDocumentTitle("Dashboard | StarDust Adventures");
   return (
@@ -15,14 +15,11 @@ const Layout = () => {
     >
       <Navbar />
       <Sidebar />
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
-
-export const LayoutLoader=async(_: any, actors: any)=>{
-    const { data, error } = GET_USER(actors); // Fetch user data
-    return data;
-}
 
 export default Layout;
