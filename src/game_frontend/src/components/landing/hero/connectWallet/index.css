@@ -1,9 +1,9 @@
 .wallet-button{
-    @apply lg:w-[500px] mx-auto md:!min-w-[250px] relative
+    @apply lg:w-[500px] w-[250px] md:w-[50vw]  ;
 }
 
 .wallet-icon{
-    @apply bg-white rounded-full p-2 object-cover object-center
+    @apply bg-white rounded-full p-2 object-cover object-center;
 }
 
 .wallet-button-container{

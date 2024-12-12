@@ -68,7 +68,7 @@ export default function ConnectWallet({closeModal} : {closeModal:()=>void}) {
                 <ModalCloseBtn/>
             </ModalHeader>
             <ModalBody>
-                <div className="flex flex-col gap-4 w-full lg:py-6">
+                <div className="button-container">
                     {
                         Wallets.map(wallet => (
                             <Button variant="secondary" key={wallet.name} className="wallet-button" onClick={()=>handleLogin(wallet.method)}>
