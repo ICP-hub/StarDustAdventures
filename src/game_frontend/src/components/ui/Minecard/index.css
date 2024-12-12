@@ -1,42 +1,4 @@
-/* Main page styles */
-.mine-cards-page {
-    @apply min-h-screen bg-gray-900 text-white;
-  }
-  
-  .mine-cards-container {
-    @apply ml-16 p-6;
-  }
-  
-  .mine-cards-content {
-    @apply max-w-7xl mx-auto;
-  }
-  
-  /* change-font */
-  .mine-cards-title {
-    @apply text-2xl font-coin mb-6;
-  }
-  
-  .mine-cards-divider {
-    @apply w-[228px] border-t rounded-md;
-  }
-  
-  .mine-cards-grid {
-    @apply flex flex-wrap -m-2;
-  }
-  
-  /* Tabs styles */
-  .tabs-container {
-    @apply flex mb-4;
-  }
-  
-  .tab-button {
-    @apply px-4 py-2 rounded-lg mr-2 text-gray-400;
-  }
-  
-  .tab-button-active {
-    @apply bg-gray-700 text-white;
-  }
-  
+
   /* Card styles */
   .mine-card-wrapper {
     @apply m-2.5 mb-10;
@@ -72,7 +34,7 @@
   }
   
   .mine-card-stats {
-    @apply space-y-1 flex flex-col justify-center items-center;
+    @apply flex flex-col justify-center items-center;
   }
   
   .mine-card-stat-row {
@@ -93,7 +55,7 @@
   }
   
   .mine-card-divider-container {
-    @apply flex justify-center items-center py-2;
+    @apply flex justify-center items-center pt-1;
   }
   
   .mine-card-divider {
