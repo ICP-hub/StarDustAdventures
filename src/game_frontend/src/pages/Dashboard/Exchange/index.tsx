@@ -12,12 +12,12 @@ const Exchange=()=>{
 
     return(
         <main className="exchange-container">
-       {isLoading ? <p>Loading...</p>: (
+       {/* {isLoading ? <p>Loading...</p>: ( */}
         <>
-        <div className="progressbar-container">
+        <div className="progressbar-container z-10">
             <ProgressBar/>
         </div>
-        <section>
+        <section className="z-10">
             <img src='/assets/images/ufo.svg' alt="ufo" width={50} height={50} loading="lazy"/>
             <h3 className="exchange-points">{points.toFixed(3)}</h3>
         </section>
@@ -35,13 +35,14 @@ const Exchange=()=>{
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center bottom',
+                zIndex:1
                 
             }}
         >
         </section>
     </>    
-    ) 
-    }
+    {/* ) 
+    } */}
         </main>
     )
 }
