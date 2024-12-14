@@ -1,8 +1,11 @@
 import { Suspense } from "react"
 import { useAuth } from "../../hooks/useAuth"
+import { Navigate } from "react-router-dom"
+import NotFound from "../../pages/Error"
 
-const ProtectedRoutes = ({children} : React.PropsWithChildren)=>{
+const ProtectedRoutes = ({children} : React.PropsWithChildren) => {
     const auth = useAuth()
+    
     if(auth?.isAuthenticated.plug || auth?.isAuthenticated.ii) {
         return (
             <Suspense fallback={<p>Loading...</p>}>
@@ -10,7 +13,7 @@ const ProtectedRoutes = ({children} : React.PropsWithChildren)=>{
             </Suspense>
         )
     } else {
-        return <p className="text-black">404</p>
+        return <Navigate to="/notfound" replace />
     }
 }
 
