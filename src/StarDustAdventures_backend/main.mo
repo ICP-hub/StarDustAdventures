@@ -10,6 +10,7 @@ import Time "mo:base/Time";
 import Int "mo:base/Int";
 import Timer "mo:base/Timer";
 import Text "mo:base/Text";
+import Array "mo:base/Array";
 import Types "types";
 
 actor {
@@ -20,6 +21,19 @@ actor {
   let friendMap=TrieMap.TrieMap<Principal,[(Principal,Text)]>(Principal.equal,Principal.hash); 
 
   let errorLogs:Buffer.Buffer<Text> = Buffer.fromArray([]);
+
+  let ALL_CARDS : Buffer.Buffer<Types.Card> = Buffer.fromArray([
+    {id=1; name="Card 1"; points=300;time=0},
+    {id=2; name="Card 2"; points=300;time=0},
+    {id=3; name="Card 3"; points=200;time=0},
+    {id=4; name="Card 4"; points=300;time=0},
+    {id=5; name="Card 5"; points=200;time=0},
+    {id=6; name="Card 6"; points=300;time=0},
+    {id=7; name="Card 7"; points=200;time=0},
+    {id=8; name="Card 8"; points=300;time=0},
+    {id=9; name="Card 9"; points=200;time=0},
+    {id=10; name="Card 10"; points=100;time=0},
+  ]);
 
 
   // Registering new users
@@ -38,6 +52,8 @@ actor {
         clickLimitHour=1000;
         prizePerHour=300;
         status=#active;
+        boost_value=0;
+        cards=[];
       };
 
       switch(refBy){
@@ -122,6 +138,8 @@ actor {
             clickLimitHour=val.clickLimitHour;
             prizePerHour=val.prizePerHour;
             status=user.status;
+            boost_value=user.boost_value;
+            cards=user.cards;
           };
           ignore userMap.replace(caller,updatedUser);
           return #ok(updatedUser)
@@ -154,6 +172,8 @@ actor {
             clickLimitHour=val.clickLimitHour;
             prizePerHour=val.prizePerHour;
             status=#disabled;
+            boost_value=val.boost_value;
+            cards=val.cards;
           };
 
           ignore userMap.replace(caller,user);
@@ -164,6 +184,118 @@ actor {
       return #err(Error.message(err));
     }
   };
+
+  private func get_card_list(): [Types.Card]{
+    return Buffer.toArray(ALL_CARDS);
+  };
+
+  private func get_card_by_id(id:Nat): ?Types.Card{
+    let ALL_CARDS_ARR = get_card_list();
+    for(i in Iter.range(0,ALL_CARDS.size()-1)){
+      if(ALL_CARDS_ARR[i].id==id){
+        return ?ALL_CARDS_ARR[i];
+      }
+    };
+    return null;
+  };
+
+  private func get_user_card(user_id : Principal) : [Types.Card]{
+    let ?user = userMap.get(user_id);
+    return user.cards;
+  };
+
+  private func add_card_to_user(user_id: Principal, card_id: Nat): async Result.Result<(), Text> {
+    let ?user = userMap.get(user_id) else return #err(Constants.ERRORS.userNotFound);
+    let ?card = get_card_by_id(card_id) else return #err(Constants.ERRORS.invalidCard);
+
+    let user_cards = get_user_card(user_id);
+
+    let new_card_list = Buffer.fromArray<Types.Card>(user_cards);
+
+    let new_boost_val = card.points + user.boost_value;
+
+    new_card_list.add(card);
+
+    let updated_user: Types.User = {
+      id = user_id;
+      name = user.name;
+      points = user.points;
+      clickLimitHour = user.clickLimitHour;
+      prizePerHour = user.prizePerHour;
+      status = user.status;
+      boost_value = new_boost_val;
+      cards = Buffer.toArray<Types.Card>(new_card_list);
+    };
+
+    ignore userMap.replace(user_id, updated_user);
+
+    return #ok();
+};
+
+  private func check_if_card_exist_in_user(user : Types.User, card_id: Nat): Bool {
+    let ?card = get_card_by_id(card_id);
+
+    if (user.cards.size() == 0) {
+      return false;
+    };
+
+    var flag = false;
+
+    label checker for (i in Iter.range(0, user.cards.size() - 1)) {
+      if (user.cards[i].id == card_id) {
+        flag := true;
+        break checker;
+      };
+    };
+
+    return flag;
+  };
+
+  public shared query func get_all_cards(): async Result.Result<[Types.Card], Text> {
+    return #ok(get_card_list());
+  };
+
+  public shared query func get_user_cards(user_id : Principal): async Result.Result<[Types.Card], Text> {
+    try{
+      let user = userMap.get(user_id);
+
+      switch user {
+        case(null){
+          return #err(Constants.ERRORS.userNotFound)
+        };
+        case(?value) {
+          return #ok(value.cards);
+        };
+      }
+    } catch(err){
+      return #err(Error.message(err));
+    }
+  };
+
+  public shared({caller}) func mineCard(card_id : Nat) : async Result.Result<Text, Text>{
+    try{
+      let ?user = userMap.get(caller) else return #err(Constants.ERRORS.userNotFound);
+      let ?card = get_card_by_id(card_id) else return #err(Constants.ERRORS.invalidCard);
+
+      if (check_if_card_exist_in_user(user, card_id)) {
+        return #err("Card already mined");
+      };
+
+      let add_card_result = await add_card_to_user(caller, card_id);
+
+      switch(add_card_result){
+        case(#ok){
+          return #ok("Card mined successfully");
+        };
+        case(#err(error)){
+          return #err(error);
+        }
+      }
+    }catch(err){
+      return #err(Error.message(err));
+    }
+  };
+
 
   public shared query ({caller}) func getPoints():async Result.Result<Nat, Text>{
     try{
@@ -230,13 +362,16 @@ actor {
       switch(oldUser) {
         case(null) { return #err(Constants.ERRORS.userNotFound) };
         case(?val) {
+          assert(val.clickLimitHour > 0);
           let user:Types.User={
             id=id;
             name=val.name;
             points=val.points + points;
-            clickLimitHour=val.clickLimitHour;
+            clickLimitHour=val.clickLimitHour - 1;
             prizePerHour=val.prizePerHour;
             status=val.status;
+            boost_value=val.boost_value;
+            cards=val.cards;
           };
 
           ignore userMap.replace(id,user);
@@ -298,10 +433,12 @@ actor {
             let user:Types.User={
               id=userIdList[i];
               name=val.name;
-              points=val.points + val.prizePerHour;
-              clickLimitHour=val.clickLimitHour;
+              points=val.points + val.prizePerHour + val.boost_value;
+              clickLimitHour=1000;
               prizePerHour=val.prizePerHour;
               status=val.status;
+              boost_value=val.boost_value;
+              cards=val.cards;
             };
 
             ignore userMap.replace(userIdList[i],user);
