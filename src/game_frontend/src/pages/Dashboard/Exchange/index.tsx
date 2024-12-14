@@ -12,7 +12,7 @@ const Exchange=()=>{
 
     return(
         <main className="exchange-container">
-       {/* {isLoading ? <p>Loading...</p>: ( */}
+       {isLoading ? <p>Loading...</p>: (
         <>
         <div className="progressbar-container">
             <ProgressBar/>
@@ -23,25 +23,25 @@ const Exchange=()=>{
         </section>
         <Sidebar/>
         <section
-    onClick={incrementPoints}
-    className="click-to-earn"
-    style={{
-        backgroundImage: 'url("/assets/images/firefly.webp")',
-        position: 'fixed',
-        bottom: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',  
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center bottom',
-        zIndex: 10 
-    }}
-    >
-    </section>
+            onClick={incrementPoints}
+            className="click-to-earn"
+            style={{
+                backgroundImage: 'url("/assets/images/firefly.webp")',
+                position: 'fixed',
+                bottom: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',  
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center bottom',
+                
+            }}
+        >
+        </section>
     </>    
-    {/* ) 
-        }*/}
+    ) 
+    }
         </main>
     )
 }
