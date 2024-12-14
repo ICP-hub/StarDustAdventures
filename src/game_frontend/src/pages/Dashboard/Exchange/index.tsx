@@ -12,7 +12,7 @@ const Exchange=()=>{
 
     return(
         <main className="exchange-container">
-       {/* {isLoading ? <p>Loading...</p>: ( */}
+       {isLoading ? <p>Loading...</p>: (
         <>
         <div className="progressbar-container z-10">
             <ProgressBar/>
@@ -41,8 +41,8 @@ const Exchange=()=>{
         >
         </section>
     </>    
-    {/* ) 
-    } */}
+    ) 
+    } 
         </main>
     )
 }
