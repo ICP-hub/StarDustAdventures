@@ -18,3 +18,11 @@ export const GET_USER_POINTS = (actor : ActorSubclass<any>)=>{
 export const GET_REFERAL_ID = (actor : ActorSubclass<_SERVICE>)=>{
     return useQuery('ref_id',async()=>api.query(()=>actor.generateRefId()))
 }
+
+export const GET_USER_CARDS = (actor : ActorSubclass<_SERVICE>, user_id : any)=>{
+    return useQuery('user_cards',async()=>api.query(()=>actor.get_user_cards(user_id)))
+}
+
+export const GET_ALL_CARDS = (actor : ActorSubclass<_SERVICE>)=>{
+    return useQuery('all_cards',async()=>api.query(()=>actor.get_all_cards()))
+}
