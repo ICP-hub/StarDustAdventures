@@ -63,3 +63,36 @@ export const isArray = (value : any) : Boolean=>{
 export const extractPrincipal = (principal : string) : Principal=>{
     return Principal.fromText(principal)
 }
+
+
+
+type DebouncedFunction<T extends (...args: any[]) => any> = (...args: Parameters<T>) => void;
+
+export const debounce = <T extends (...args: any[]) => any>(
+  fn: T,
+  wait: number = 0,
+  immediate: boolean = false
+): DebouncedFunction<T> => {
+  let timerId: NodeJS.Timeout | null = null;
+  
+  if (typeof fn !== 'function') {
+    throw new TypeError('Expected a function for first argument');
+  }
+
+  return (...args: Parameters<T>): void => {
+    if (timerId) {
+      clearTimeout(timerId);
+    }
+
+    if (immediate && !timerId) {
+      fn(...args);
+    }
+
+    timerId = setTimeout(() => {
+      timerId = null;
+      if (!immediate) {
+        fn(...args);
+      }
+    }, wait);
+  };
+};
