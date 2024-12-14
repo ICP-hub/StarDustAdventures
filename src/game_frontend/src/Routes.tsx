@@ -10,8 +10,9 @@ import Landing from './pages/Landing';
 import RegisterScreen from './pages/Register';
 import { lazy } from 'react';
 import ProtectedRoutes from './components/ProtectedRoutes';
-import NotFound from './pages/Error';
+import NotFound from './pages/Error/404/index';
 import { Navigate } from 'react-router-dom';
+import UnAuthorized from './pages/Error/UnAuthorized';
 
 const Layout = lazy(()=>import('./pages/Dashboard/layout'))
 const Exchange = lazy(()=>import('./pages/Dashboard/Exchange'))
@@ -32,8 +33,8 @@ export default function AppRoutes() {
             element: <RegisterScreen/>
         },
         {
-            path: '/notfound',
-            element: <NotFound/>
+            path: '/unauthorized',
+            element: <UnAuthorized/>
         },
         {
             path: '/dashboard',
@@ -77,6 +78,11 @@ export default function AppRoutes() {
                     element: <Navigate to="/notfound" replace />
                 },
             ],
+        },
+        // Global wildcard route for all other undefined paths
+        {
+            path: '*',
+            element: <NotFound/>
         },
         
     ]);
