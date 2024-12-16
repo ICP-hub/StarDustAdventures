@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 import useWallet from "../../../hooks/useWallet";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 
 const Navbar: React.FC<NavbarProps> = ({ profitPerHour = 0.3 }) => {
