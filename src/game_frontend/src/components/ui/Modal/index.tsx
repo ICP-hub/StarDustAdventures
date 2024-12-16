@@ -12,12 +12,15 @@ const modalVariants = {
   exit: { opacity: 0, transition: { duration: 0.3 } },
 };
 
-export default function Modal ({children, onClose, size='medium', style={}, ...props} : ModalProps) {
+export default function Modal ({children, onClose, size='small', style={}, ...props} : ModalProps) {
   const modalSize = {
-    small: 'w-1/3',
+    small: 'w-[40vw]  h-[40vh]  ',
     medium: 'w-1/2',
     large: 'w-2/3',
   }
+ 
+
+  
 
   const dialogRef = useRef<HTMLDialogElement>(null)
 

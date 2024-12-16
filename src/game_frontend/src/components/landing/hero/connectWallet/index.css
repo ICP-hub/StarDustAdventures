@@ -1,5 +1,6 @@
+
 .wallet-button{
-    @apply lg:w-[500px] w-[250px] md:w-[50vw]  ;
+    @apply  lg:w-[40vw] w-[70vw] md:w-[50vw] ;
 }
 
 .wallet-icon{
@@ -13,3 +14,8 @@
 .wallet-button-container span{
     @apply text-center;
 }
+
+.wallet-header{
+    @apply ml-[8vw] lg:ml-[4vw] w-[75vw] md:w-[52vw] lg:w-[40vw]
+}
+

@@ -7,16 +7,16 @@ import { useNavigate } from "react-router-dom";
 import useQueryParams from "../../../../hooks/useQueryParams";
 
 const Wallets : WalletType[] = [
-    {
-        icon:'/assets/images/wallets/nfid.png',
-        name:'NFID',
-        method:'ii'
-    },
-    {
-        icon:'/assets/images/wallets/bifinity.png',
-        name:'BIFINITY',
-        method:'ii'
-    },
+    // {
+    //     icon:'/assets/images/wallets/nfid.png',
+    //     name:'NFID',
+    //     method:'ii'
+    // },
+    // {
+    //     icon:'/assets/images/wallets/bifinity.png',
+    //     name:'BIFINITY',
+    //     method:'ii'
+    // },
     {
         icon:'/assets/images/wallets/plug.png',
         name:'PLUG',
@@ -63,10 +63,15 @@ export default function ConnectWallet({closeModal} : {closeModal:()=>void}) {
 
     return (
         <Modal onClose={closeModal}>
+            
             <ModalHeader>
+                <div className="wallet-header">
                 <ModalTitle>Connect Wallet</ModalTitle>
                 <ModalCloseBtn/>
+
+                </div>
             </ModalHeader>
+            
             <ModalBody>
                 <div className="button-container">
                     {
