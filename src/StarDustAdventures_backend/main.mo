@@ -22,17 +22,13 @@ actor {
 
   let errorLogs:Buffer.Buffer<Text> = Buffer.fromArray([]);
 
-  let ALL_CARDS : Buffer.Buffer<Types.Card> = Buffer.fromArray([
-    {id=1; name="Card 1"; points=300;time=0},
-    {id=2; name="Card 2"; points=300;time=0},
-    {id=3; name="Card 3"; points=200;time=0},
-    {id=4; name="Card 4"; points=300;time=0},
-    {id=5; name="Card 5"; points=200;time=0},
-    {id=6; name="Card 6"; points=300;time=0},
-    {id=7; name="Card 7"; points=200;time=0},
-    {id=8; name="Card 8"; points=300;time=0},
-    {id=9; name="Card 9"; points=200;time=0},
-    {id=10; name="Card 10"; points=100;time=0},
+  let ALL_CARDS: Buffer.Buffer<Types.Card> = Buffer.fromArray([
+    {id=1; name="Market Manipulation"; subtitle="You control the price"; points=30; time=0; level=0; image="/assets/images/mine01.svg"; cost=200},
+    {id=2; name="Day Trading"; subtitle="Quick profits, high risk"; points=500; time=0; level=0; image="/assets/images/mine02.svg"; cost=300},
+    {id=3; name="Crypto Mining"; subtitle="Digital gold rush"; points=700; time=0; level=0; image="/assets/images/mine03.svg"; cost=400},
+    {id=4; name="Stock Analysis Pro"; subtitle="Advanced market insights"; points=120; time=0; level=0; image="/assets/images/mine01.svg"; cost=500},
+    {id=5; name="AI Trading Bot"; subtitle="Automated trading system"; points=150; time=0; level=0; image="/assets/images/mine02.svg"; cost=600},
+    {id=6; name="Quantum Analytics"; subtitle="Future of trading"; points=200; time=0; level=0; image="/assets/images/mine03.svg"; cost=800}
   ]);
 
 
@@ -272,6 +268,23 @@ actor {
     }
   };
 
+  private func decrementPoints(user: Types.User, points: Nat): Result.Result<Types.User, Text> {
+    if (user.points < points) {
+      return #err("Insufficient points");
+    };
+    let updatedUser: Types.User = {
+      id = user.id;
+      name = user.name;
+      points = user.points - points;
+      clickLimitHour = user.clickLimitHour;
+      prizePerHour = user.prizePerHour;
+      status = user.status;
+      boost_value = user.boost_value;
+      cards = user.cards;
+    };
+    return #ok(updatedUser);
+  };
+
   public shared({caller}) func mineCard(card_id : Nat) : async Result.Result<Text, Text>{
     try{
       let ?user = userMap.get(caller) else return #err(Constants.ERRORS.userNotFound);
@@ -279,6 +292,15 @@ actor {
 
       if (check_if_card_exist_in_user(user, card_id)) {
         return #err("Card already mined");
+      };
+
+      switch (decrementPoints(user, card.cost)) {
+        case (#ok(updatedUser)) {
+          ignore userMap.replace(caller, updatedUser);
+        };
+        case (#err(error)) {
+          return #err(error);
+        };
       };
 
       let add_card_result = await add_card_to_user(caller, card_id);
