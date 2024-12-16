@@ -3,7 +3,7 @@ import { useModal } from "../../../hooks/useModal";
 
 // Modal.Header
 export const ModalHeader = ({ children } : React.PropsWithChildren) => (
-    <div className="flex  items-center justify-evenly lg:space-x-52 space-x-24 md:space-x-48 mb-4  pb-5 relative">
+    <div className=" mb-4 pb-5 relative">
       {children}
     </div>
   );
