@@ -63,3 +63,14 @@ export const isArray = (value : any) : Boolean=>{
 export const extractPrincipal = (principal : string) : Principal=>{
     return Principal.fromText(principal)
 }
+
+/**
+ * A Util function that filters an array based on a property
+ * @param array : The array to filter
+ * @param property : The property to filter by
+ * @param value : The value to filter for
+ * @returns {Array} : The filtered array
+ */
+export const filterArrayByProperty = (array: any[], property: string, value: any) => {
+    return array.filter(item => item[property] === value);
+};
