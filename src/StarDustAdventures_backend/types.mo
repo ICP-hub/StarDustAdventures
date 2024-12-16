@@ -4,8 +4,12 @@ module{
     public type Card={
         id:Nat;
         name:Text;
+        subtitle : Text;
         points:Nat;
         time : Nat;
+        level : Nat;
+        image : Text;
+        cost : Nat;
     };
 
     public type UserStatus={
