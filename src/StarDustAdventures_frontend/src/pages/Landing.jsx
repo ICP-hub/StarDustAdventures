@@ -6,60 +6,91 @@ import GameConcept from '../components/landing/gameConcept/GameConcept';
 import Lore from '../components/landing/loreStoryline/Lore';
 import GradientCover from '../components/landing/GradientCover';
 import GameConceptM from '../components/landing-mobile/gameConcept/GameConceptM';
-import LoreM from '../components/landing-mobile/lore';
-import StarDustMobile from '../components/landing-mobile/star-mobile-landing/StarDustMobile'
-
-// const GamePlayMechanics = lazy(() => import('../components/landing/gamePlayMechanics'));
-// const MobileGameplayView = lazy(() => import('../components/landing-mobile/gameplayMechanics'));
+import LoreM from '../components/landing-mobile/lore/index';
+import StarDustMobile from '../components/landing-mobile/star-mobile-landing/StarDustMobile';
 import GamePlayMechanics from '../components/landing/gamePlayMechanics';
 import MobileGameplayView from '../components/landing-mobile/gameplayMechanics';
-/**
- * PatternCover component dynamically renders gameplay mechanics based on screen width,
- * displaying a mobile or desktop view inside a gradient cover. It also includes the Lore component.
- *
- * @returns {JSX.Element} The PatternCover component wrapped in a GradientCover with dynamic content.
- */
-const PatternCover = ()=> {
+
+const PatternCover = () => {
+  // Add debouncing to prevent rapid state updates
   const [width, setWidth] = useState(window.innerWidth);
-
+  const [isMobile, setIsMobile] = useState(width <= 768);
+  
   useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
+    let timeoutId = null;
+    
+    const handleResize = () => {
+      // Clear previous timeout
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      
+      // Set new timeout
+      timeoutId = setTimeout(() => {
+        const newWidth = window.innerWidth;
+        setWidth(newWidth);
+        setIsMobile(newWidth <= 768);
+      }, 150); // 150ms delay
+    };
 
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
   }, []);
 
   return (
     <GradientCover>
       <Suspense fallback={<p>Loading...</p>}>
-        {width > 768 ? <GamePlayMechanics /> : <MobileGameplayView />}
-        {width > 768 ? <Lore /> : <LoreM />}
-      
+        <div key={isMobile ? 'mobile' : 'desktop'}>
+          {isMobile ? <MobileGameplayView /> : <GamePlayMechanics />}
+          {isMobile ? <LoreM /> : <Lore />}
+        </div>
       </Suspense>
     </GradientCover>
   );
 };
 
-/**
- * Landing component renders the main landing page, including the Hero, Game Concept, and Footer sections.
- * It dynamically switches between mobile and desktop versions of the GameConcept component based on screen width.
- *
- * @returns {JSX.Element} The complete landing page layout.
- */
-const Landing = ()=>{
+const Landing = () => {
+  // Add debouncing here as well
   const [width, setWidth] = useState(window.innerWidth);
-
+  const [isDesktop, setIsDesktop] = useState(width > 1024);
+  
   useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
+    let timeoutId = null;
+    
+    const handleResize = () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      
+      timeoutId = setTimeout(() => {
+        const newWidth = window.innerWidth;
+        setWidth(newWidth);
+        setIsDesktop(newWidth > 1024);
+      }, 150);
+    };
 
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
   }, []);
 
   return (
     <div className="page">
       <Hero />
-      {width > 1024 ? <GameConcept /> : <StarDustMobile />}
+      <div key={isDesktop ? 'desktop' : 'mobile'}>
+        {isDesktop ? <GameConcept /> : <StarDustMobile />}
+      </div>
       <PatternCover />
       <Footer />
     </div>

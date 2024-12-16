@@ -1,6 +1,6 @@
 import { Section, TaskItem } from "../../../components/ui/TaskCard";
 import "./index.css";
-
+import RewardsYoutube from "./RewardsYoutube";
 const Header = () => (
   <div className="header-container">
     <div className="header-image-wrapper">
@@ -16,11 +16,6 @@ const Header = () => (
   </div>
 );
 
-// Data structure for tasks
-const YOUTUBE_TASKS = [
-  { title: "Dominate Crpto Monitoring", tokenCount: 1 },
-  { title: "C2 earn $24m a day?", tokenCount: 1 },
-];
 
 const SOCIAL_TASKS = [
   { title: "Follow us on Instagram", tokenCount: 1 },
@@ -34,14 +29,7 @@ const RewardsList = () => {
       <div className="rewards-inner">
         <Header />
 
-        <Section title="Hamster Youtube">
-          {YOUTUBE_TASKS.map((task, index) => (
-            <TaskItem key={index} icon="#" tokenCount={task.tokenCount}>
-              <h4 className="task-title">{task.title}</h4>
-            </TaskItem>
-          ))}
-        </Section>
-
+        <RewardsYoutube />
         <Section title="Tasks list">
           {SOCIAL_TASKS.map((task, index) => (
             <TaskItem key={index} icon="#" tokenCount={task.tokenCount}>

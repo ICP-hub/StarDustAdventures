@@ -11,3 +11,6 @@
 .button-container{
     @apply  flex flex-col justify-center items-center  gap-y-10 ;
 }
+.wallet-header{
+    @apply w-[80vw] flex justify-between
+}

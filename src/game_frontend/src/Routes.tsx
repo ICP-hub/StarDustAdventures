@@ -10,6 +10,9 @@ import Landing from './pages/Landing';
 import RegisterScreen from './pages/Register';
 import { lazy } from 'react';
 import ProtectedRoutes from './components/ProtectedRoutes';
+import NotFound from './pages/Error/404/index';
+import { Navigate } from 'react-router-dom';
+import UnAuthorized from './pages/Error/UnAuthorized';
 
 const Layout = lazy(()=>import('./pages/Dashboard/layout'))
 const Exchange = lazy(()=>import('./pages/Dashboard/Exchange'))
@@ -19,7 +22,6 @@ const RewardsList = lazy(()=>import('./pages/Dashboard/RewardsList'))
 const MineCard = lazy(()=>import('./pages/Dashboard/MineCard'))
 const ProfileTabs = lazy(()=>import('./pages/Dashboard/ProfilePage'))
 
-
 export default function AppRoutes() {
     const router = createBrowserRouter([
         {
@@ -27,16 +29,20 @@ export default function AppRoutes() {
             element: <Landing />,
         },
         {
-            path : '/register',
-            element : <RegisterScreen/>
+            path: '/register',
+            element: <RegisterScreen/>
+        },
+        {
+            path: '/unauthorized',
+            element: <UnAuthorized/>
         },
         {
             path: '/dashboard',
             element: (
-            <ProtectedRoutes>
-                <Layout />
-            </ProtectedRoutes>
-        ),
+                <ProtectedRoutes>
+                    <Layout />
+                </ProtectedRoutes>
+            ),
             children: [
                 {
                     index: true,
@@ -63,11 +69,22 @@ export default function AppRoutes() {
                     element: <MineCard />,
                 },
                 {
-                    path : 'profile',
-                    element : <ProfileTabs/>
-                }
+                    path: 'profile',
+                    element: <ProfileTabs/>
+                },
+                // Add a catch-all route at the end
+                {
+                    path: '*',
+                    element: <Navigate to="/notfound" replace />
+                },
             ],
         },
+        // Global wildcard route for all other undefined paths
+        {
+            path: '*',
+            element: <NotFound/>
+        },
+        
     ]);
 
     return <RouterProvider router={router} />
