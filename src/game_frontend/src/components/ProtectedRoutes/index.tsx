@@ -1,7 +1,7 @@
 import { Suspense } from "react"
 import { useAuth } from "../../hooks/useAuth"
 import { Navigate } from "react-router-dom"
-import NotFound from "../../pages/Error"
+
 
 const ProtectedRoutes = ({children} : React.PropsWithChildren) => {
     const auth = useAuth()
@@ -13,7 +13,8 @@ const ProtectedRoutes = ({children} : React.PropsWithChildren) => {
             </Suspense>
         )
     } else {
-        return <Navigate to="/notfound" replace />
+        
+        return <Navigate to="/unauthorized" replace/>
     }
 }
 
