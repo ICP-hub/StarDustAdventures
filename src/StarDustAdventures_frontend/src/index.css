@@ -27,6 +27,7 @@ body {
     overflow-x: hidden;
     min-height: 100vh;
     font-family: 'SF-Pro-Display', sans-serif;
+    cursor: url('/assets/images/cursor.png') 16 16, auto !important;
   }
 .app{
   @apply min-h-screen bg-red-200
