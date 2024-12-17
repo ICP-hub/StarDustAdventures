@@ -3,27 +3,11 @@ import React from "react";
 import { Tabs, Tab, TabPanel } from "../../ui/Tab";
 import { MyCardsPanel, MissedCardsPanel } from "./TabPanelMineCard";
 import "./index.css";
+import { useAllCards } from "../../../hooks/useCards";
 
-interface CardData {
-  id: number;
-  title: string;
-  subtitle: string;
-  profitPerHour: number;
-  clickPerHour: number;
-  level: number;
-  cost: number;
-  image: string;
-}
 
-interface MineCardTabSwitchProps {
-  MyCardsData: CardData[];
-  MissedCardsData: CardData[];
-}
-
-const MineCardTabSwitch: React.FC<MineCardTabSwitchProps> = ({
-  MyCardsData,
-  MissedCardsData,
-}) => {
+const MineCardTabSwitch=()=>{
+  const {allCards, userCards, isLoading} = useAllCards()
   return (
     <div className="mine-card-container">
       <div className="mine-card-inner">
@@ -38,11 +22,11 @@ const MineCardTabSwitch: React.FC<MineCardTabSwitchProps> = ({
           </div>
 
           <TabPanel index={0}>
-            <MyCardsPanel MyCardsData={MyCardsData} />
+            {isLoading ? <p>Loading...</p>:<MyCardsPanel MyCardsData={userCards} />}
           </TabPanel>
 
           <TabPanel index={1}>
-            <MissedCardsPanel MissedCardsData={MissedCardsData} />
+            {isLoading?<p>Loading...</p>:<MissedCardsPanel MissedCardsData={allCards} />}
           </TabPanel>
         </Tabs>
       </div>

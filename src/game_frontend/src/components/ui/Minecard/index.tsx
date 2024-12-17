@@ -1,18 +1,30 @@
 import React from 'react';
 import './index.css';
+import { bigIntToNumber } from '../../../utils';
 
+interface CardProps {
+  name: string;
+  subtitle: string;
+  points: bigint;
+  time: bigint;
+  level?: bigint;
+  cost: bigint;
+  image: string;
+  onClick?: () => void; // Add onClick prop
+}
 
 const Card: React.FC<CardProps> = ({
-  title,
+  name,
   subtitle,
-  profitPerHour,
-  clickPerHour,
-  level = 0,  //default 0 level
+  points,
+  time,
+  level = BigInt(0),  //default 0 level
   cost,
-  image
+  image,
+  onClick
 }) => {
   return (
-    <div className="mine-card-wrapper">
+    <div className="mine-card-wrapper" onClick={onClick}>
       <div className="mine-card card-css">
         <div>
           <div className="mine-card-image-container">
@@ -25,7 +37,7 @@ const Card: React.FC<CardProps> = ({
         </div>
         <div className="mine-card-content">
           <div className="mine-card-header">
-            <h3 className="mine-card-title">{title}</h3>
+            <h3 className="mine-card-title">{name}</h3>
             <p className="mine-card-subtitle">{subtitle}</p>
           </div>
           
@@ -34,7 +46,7 @@ const Card: React.FC<CardProps> = ({
               <span className="mine-card-stat-label">Profit /hr</span>
               <span className="mine-card-stat-value">
                 <span className="mine-card-icon">⌛</span>
-                +{profitPerHour}
+                +{points.toString()}
               </span>
             </div>
             
@@ -42,7 +54,7 @@ const Card: React.FC<CardProps> = ({
               <span className="mine-card-stat-label">Click /hr</span>
               <span className="mine-card-stat-value">
                 <span className="mine-card-icon">⚡</span>
-                +{clickPerHour}
+                +{time.toString()}
               </span>
             </div>
           </div>
@@ -52,7 +64,7 @@ const Card: React.FC<CardProps> = ({
           </div>
           
           <div className="mine-card-footer">
-            <span className="mine-card-level">Lvl. {level}</span>
+            <span className="mine-card-level">Lvl. {bigIntToNumber(level)}</span>
             <div className="mine-card-vertical-divider"></div>
             <span className="mine-card-cost">
               <img 
@@ -60,7 +72,7 @@ const Card: React.FC<CardProps> = ({
                 alt="ufo-icon" 
                 className="mine-card-icon" 
               />
-              {cost}
+              {(bigIntToNumber(cost)*0.001).toString()}
             </span>
           </div>
         </div>
