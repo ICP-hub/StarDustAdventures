@@ -1,6 +1,7 @@
 import { Suspense } from "react"
 import { useAuth } from "../../hooks/useAuth"
 import { Navigate } from "react-router-dom"
+import Loader from "../ui/Loader"
 
 
 const ProtectedRoutes = ({children} : React.PropsWithChildren) => {
@@ -8,7 +9,7 @@ const ProtectedRoutes = ({children} : React.PropsWithChildren) => {
     
     if(auth?.isAuthenticated.plug || auth?.isAuthenticated.ii) {
         return (
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<Loader/>}>
                 {children}
             </Suspense>
         )

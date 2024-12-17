@@ -4,6 +4,7 @@ import Sidebar from "../../components/ui/Sidebar";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
 import "./index.css";
 import { Suspense } from "react";
+import Loader from "../../components/ui/Loader";
 const Layout = () => {
   useDocumentTitle("Dashboard | StarDust Adventures");
   return (
@@ -18,7 +19,7 @@ const Layout = () => {
     >
       <Navbar />
       <Sidebar />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader/>}>
         <Outlet />
       </Suspense>
     </div>
