@@ -2,19 +2,9 @@
 import React from 'react';
 import Card from '../../ui/Minecard';
 
-interface CardData {
-  id: number;
-  title: string;
-  subtitle: string;
-  profitPerHour: number;
-  clickPerHour: number;
-  level: number;
-  cost: number;
-  image: string;
-}
 
 interface MyCardsPanelProps {
-  MyCardsData: CardData[];
+  MyCardsData: Cards[];
 }
 
 export const MyCardsPanel: React.FC<MyCardsPanelProps> = ({ MyCardsData }) => {
@@ -23,13 +13,13 @@ export const MyCardsPanel: React.FC<MyCardsPanelProps> = ({ MyCardsData }) => {
       {MyCardsData.map((card) => (
         <Card
           key={card.id}
-          title={card.title}
+          name={card.name}
           subtitle={card.subtitle}
-          profitPerHour={card.profitPerHour}
-          clickPerHour={card.clickPerHour}
+          points={card.points}
           level={card.level}
           cost={card.cost}
           image={card.image}
+          time={card.time}
         />
       ))}
     </div>
@@ -38,22 +28,23 @@ export const MyCardsPanel: React.FC<MyCardsPanelProps> = ({ MyCardsData }) => {
 
 // MissedCardsPanel.tsx
 interface MissedCardsPanelProps {
-  MissedCardsData: CardData[];
+  MissedCardsData: Cards[];
 }
 
 export const MissedCardsPanel: React.FC<MissedCardsPanelProps> = ({ MissedCardsData }) => {
+  console.log("Mi ", MissedCardsData)
   return (
     <div className="card-grid">
       {MissedCardsData.map((card) => (
         <Card
           key={card.id}
-          title={card.title}
+          name={card.name}
           subtitle={card.subtitle}
-          profitPerHour={card.profitPerHour}
-          clickPerHour={card.clickPerHour}
+          points={card.points}
           level={card.level}
           cost={card.cost}
           image={card.image}
+          time={card.time}
         />
       ))}
     </div>

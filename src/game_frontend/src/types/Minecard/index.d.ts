@@ -9,8 +9,19 @@ interface CardDataType {
     cost: number;
     
   }
+
+  interface Cards{
+    id : bigint;
+    name:string;
+    subtitle : string;
+    points:bigint;
+    time : bigint;
+    level : bigint;
+    image : string;
+    cost : bigint;
+  }
   
-  interface CardProps extends Omit<CardDataType, 'id'> {
+  interface CardProps extends Omit<Cards, 'id'> {
     image?: string;
     icon?: string;
   }

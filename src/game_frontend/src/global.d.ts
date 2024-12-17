@@ -13,13 +13,6 @@ declare global {
       };
     }
 
-    interface Card{
-      id: Principal;
-      name : string;
-      points : bigint;
-      time : bigint;
-    }
-
     interface User{
       name:string;
       id:Principal;
@@ -28,6 +21,6 @@ declare global {
       prizePerHour:bigint;
       status:{active:null, banned:null};
       boost_value:bigint;
-      cards : [Card]
+      cards : Cards[]
     }
   }

@@ -21,7 +21,7 @@ const Exchange=()=>{
             <img src='/assets/images/ufo.svg' alt="ufo" width={50} height={50} loading="lazy"/>
             <h3 className="exchange-points">{points.toFixed(3)}</h3>
         </section>
-        <Sidebar/>
+        {/* <Sidebar/> */}
         <section
             onClick={incrementPoints}
             className="click-to-earn"
