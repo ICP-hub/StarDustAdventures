@@ -1,6 +1,8 @@
 import React from "react";
 import "./index.css";
 import useWallet from "../../../hooks/useWallet";
+import { Link } from "react-router-dom";
+
 
 const Navbar: React.FC<NavbarProps> = ({ profitPerHour = 0.3 }) => {
   const WalletImage = useWallet();
@@ -35,15 +37,19 @@ const Navbar: React.FC<NavbarProps> = ({ profitPerHour = 0.3 }) => {
                 <span className="profit-amount">+{profitPerHour}</span>
               </span>
             </div>
-            <div className="character-icon">
-              <img
-                src="/assets/character.svg"
-                alt="pixel character"
-                className="character-image"
-                height={24}
-                width={24}
-              />
-            </div>
+            <Link to="/dashboard/profile">
+              <div className="character-icon">
+
+                <img
+                  src="/assets/character.svg"
+                  alt="pixel character"
+                  className="character-image"
+                  height={24}
+                  width={24}
+                />
+              </div>
+            </Link>
+
           </div>
         </nav>
       </div>
