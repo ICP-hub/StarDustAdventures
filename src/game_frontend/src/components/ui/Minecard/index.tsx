@@ -2,6 +2,16 @@ import React from 'react';
 import './index.css';
 import { bigIntToNumber } from '../../../utils';
 
+interface CardProps {
+  name: string;
+  subtitle: string;
+  points: bigint;
+  time: bigint;
+  level?: bigint;
+  cost: bigint;
+  image: string;
+  onClick?: () => void; // Add onClick prop
+}
 
 const Card: React.FC<CardProps> = ({
   name,
@@ -10,10 +20,11 @@ const Card: React.FC<CardProps> = ({
   time,
   level = BigInt(0),  //default 0 level
   cost,
-  image
+  image,
+  onClick
 }) => {
   return (
-    <div className="mine-card-wrapper">
+    <div className="mine-card-wrapper" onClick={onClick}>
       <div className="mine-card card-css">
         <div>
           <div className="mine-card-image-container">
@@ -61,7 +72,7 @@ const Card: React.FC<CardProps> = ({
                 alt="ufo-icon" 
                 className="mine-card-icon" 
               />
-              {/* {cost.toString()} */}
+              {(bigIntToNumber(cost)*0.001).toString()}
             </span>
           </div>
         </div>

@@ -7,13 +7,14 @@ export const useAllCards = () => {
   const auth = useAuth();
   const [allCards, setAllCards] = useState<Cards[]>([]);
   const [userCards, setUserCards] = useState<Cards[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const {data : ALL_CARDS, isLoading : isAllCardLoading} = GET_ALL_CARDS(auth?.actors)
-  const {data : USER_CARDS, isLoading : isUserCardLoading} = GET_USER_CARDS(auth?.actors, auth?.principal)
+  const {data : ALL_CARDS} = GET_ALL_CARDS(auth?.actors)
+  const {data : USER_CARDS} = GET_USER_CARDS(auth?.actors, auth?.principal)
 
   const fetchCards = useCallback(async () => {
     try {
-
+      setIsLoading(true);
       // Extract card data
       const allCardsData : Array<Cards> = (ALL_CARDS as any)?.ok;
       const userCardsData : Array<Cards> = (USER_CARDS as any)?.ok;
@@ -27,13 +28,14 @@ export const useAllCards = () => {
     } catch (err) {
       console.error("Error fetching cards:", err);
     } finally {
+      setIsLoading(false);
       console.info("Data fetched")
     }
-  }, [auth]);
+  }, [auth, ALL_CARDS, USER_CARDS]);
 
   useEffect(() => {
     fetchCards();
-  }, [fetchCards]);
+  }, [fetchCards,, ALL_CARDS, USER_CARDS]);
 
-  return { allCards, userCards, isLoading : isAllCardLoading && isUserCardLoading};
+  return { allCards, userCards, isLoading};
 };

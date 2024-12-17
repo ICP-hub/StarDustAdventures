@@ -22,9 +22,7 @@ const MineCardTabSwitch=()=>{
           </div>
 
           <TabPanel index={0}>
-            {isLoading ? (
-              <p>Loading...</p>
-            ) :(<MyCardsPanel MyCardsData={userCards} />)}
+            {isLoading ? <p>Loading...</p>:<MyCardsPanel MyCardsData={userCards} />}
           </TabPanel>
 
           <TabPanel index={1}>

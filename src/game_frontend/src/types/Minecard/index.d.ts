@@ -21,7 +21,7 @@ interface CardDataType {
     cost : bigint;
   }
   
-  interface CardProps extends Omit<Cards, 'id'> {
+  interface CardProps extends Omit<Cards, 'id'>, React.HTMLAttributes<HTMLDivElement> {
     image?: string;
     icon?: string;
   }
