@@ -8,6 +8,7 @@
 *, *::before, *::after {
   box-sizing: border-box;
   /* outline: 2px solid red; */
+  
 }
 
 /* 2. Remove default margin */
@@ -19,6 +20,7 @@
 body {
   /* 4. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+  cursor: url('/assets/images/cursor.png') 16 16, auto !important;
 }
 
 /* 5. Improve media defaults */
@@ -30,6 +32,7 @@ img, picture, video, canvas, svg {
 /* 6. Inherit fonts for form controls */
 input, button, textarea, select {
   font: inherit;
+  cursor: url('/assets/images/cursor-click.png') 16 16, auto !important;
 }
 
 /* 7. Avoid text overflows */

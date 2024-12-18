@@ -96,3 +96,18 @@ export const debounce = <T extends (...args: any[]) => any>(
     }, wait);
   };
 };
+
+/**
+ * @description A function that finds difference between two arrays
+ * @param arr1 Array 
+ * @param arr2 Array
+ * @returns arr1 - arr2
+ */
+export const get_difference = <T>(arr1: Array<T>, arr2: Array<T>): Array<T> | [] => {
+    const set1 = new Set(arr1)
+    const set2 = new Set(arr2)
+    const difference = set1.difference(set2)
+    const result_arr : Array<any> = Array.from(difference)
+    console.log(result_arr)
+    return result_arr
+}

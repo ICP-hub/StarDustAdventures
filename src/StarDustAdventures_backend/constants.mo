@@ -8,6 +8,7 @@ module{
         userNotFound="User not found";
         notAuthorized="You are not authorized to perform this action";
         anonymous="anonymous users are not allowed";
+        invalidCard="Invalid card";
         useralreadyExists="User already exists with id : ";
         clickLimitReached="You have reached your click limit for this hour";
         cannotUpdateOtherUser="You cannot update someone else's profile";
@@ -16,6 +17,7 @@ module{
 
     public let RESPONSES={
         disabledUser="User successfully disabled";
-        userAddedProblemWithReferral="User added but cannot update referral"
+        userAddedProblemWithReferral="User added but cannot update referral";
+        cardAdded="Cards added successfully";
     };
 }

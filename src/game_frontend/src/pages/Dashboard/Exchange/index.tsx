@@ -12,13 +12,16 @@ const Exchange=()=>{
      */
 
     return(
+
         <main className="exchange-container relative w-screen h-full">
+
        {isLoading ? <Loader/>: (
         <>
         <section className="flex items-center justify-center w-screen font-coin z-10">
             <img src='/assets/images/ufo.svg' alt="ufo" width={50} height={50} loading="lazy"/>
             <h3 className="exchange-points font-bold text-4xl">{points.toFixed(3)}</h3>
         </section>
+
         {/* sm screen */}
         <div className="flex md:hidden rotate-90 z-20  t-10 w-[40%] absolute bottom-20 left-1/2 -translate-x-1/2">
         <ProgressBar />
@@ -30,6 +33,7 @@ const Exchange=()=>{
       </div>
         
         <Sidebar/>
+
         <section
             onClick={incrementPoints}
             className="click-to-earn"

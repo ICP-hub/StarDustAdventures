@@ -2,11 +2,12 @@ import React from "react"
 import useFriendList from "../../../hooks/useFriendList"
 import FriendCard from "./FriendCard"
 import { isArray } from "../../../utils"
+import Loader from "../../ui/Loader"
 
 const List = ()=>{
     const {friendList, isRefetching, isLoading, count} = useFriendList()
     console.log(friendList)
-    if(isLoading) return <p>Loading...</p>
+    if(isLoading) return <Loader/>
     if(isRefetching) return <p>Refreshing...</p>
     if(count === 0) return <p>No friends found</p>
     else

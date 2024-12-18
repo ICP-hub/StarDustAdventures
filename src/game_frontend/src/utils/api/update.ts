@@ -22,6 +22,15 @@ export const UPDATE_USER = (actor : ActorSubclass<_SERVICE>, data : User)=>{
     })
 }
 
+export const MINE_CARD = (actor : ActorSubclass<_SERVICE>, card_id : bigint)=>{
+    const queryClient = useQueryClient()
+    return useMutation('user_card', async()=>api.update(()=>actor.mineCard(card_id)),{
+        onSuccess : ()=>{
+            queryClient.invalidateQueries('user_cards')
+        }
+    })
+}
+
 export const DISABLE_USER = (actor : ActorSubclass<_SERVICE>)=>{
     return useMutation('user',async()=>api.update(()=>actor.disableUser()))
 }

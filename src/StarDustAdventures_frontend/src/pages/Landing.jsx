@@ -45,7 +45,7 @@ const PatternCover = () => {
 
   return (
     <GradientCover>
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<Loader/>}>
         <div key={isMobile ? 'mobile' : 'desktop'}>
           {isMobile ? <MobileGameplayView /> : <GamePlayMechanics />}
           {isMobile ? <LoreM /> : <Lore />}
