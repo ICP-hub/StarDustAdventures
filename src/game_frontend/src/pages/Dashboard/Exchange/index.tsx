@@ -1,6 +1,6 @@
 import ProgressBar from "../../../components/ui/Progressbar"
 import Sidebar from "../../../components/ui/Sidebar"
-import '../index.css'
+
 import usePoints from "../../../hooks/usePoints"
 
 const Exchange=()=>{
@@ -11,16 +11,23 @@ const Exchange=()=>{
      */
 
     return(
-        <main className="exchange-container">
+        <main className="exchange-container relative w-screen h-full">
        {isLoading ? <p>Loading...</p>: (
         <>
-        <div className="progressbar-container z-10">
-            <ProgressBar/>
-        </div>
-        <section className="z-10">
+        <section className="flex items-center justify-center w-screen font-coin z-10">
             <img src='/assets/images/ufo.svg' alt="ufo" width={50} height={50} loading="lazy"/>
-            <h3 className="exchange-points">{points.toFixed(3)}</h3>
+            <h3 className="exchange-points font-bold text-4xl">{points.toFixed(3)}</h3>
         </section>
+        {/* sm screen */}
+        <div className="flex md:hidden rotate-90 z-20  t-10 w-[40%] absolute bottom-20 left-1/2 -translate-x-1/2">
+        <ProgressBar />
+      </div>
+      
+      {/* Medium and Large Screen */}
+      <div className="hidden md:block absolute top-1/2 -bottom-1 -translate-y-1/2 right-10">
+        <ProgressBar />
+      </div>
+        
         <Sidebar/>
         <section
             onClick={incrementPoints}
