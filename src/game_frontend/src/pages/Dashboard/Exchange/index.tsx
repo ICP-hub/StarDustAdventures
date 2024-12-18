@@ -2,6 +2,7 @@ import ProgressBar from "../../../components/ui/Progressbar"
 import Sidebar from "../../../components/ui/Sidebar"
 import '../index.css'
 import usePoints from "../../../hooks/usePoints"
+import Loader from "../../../components/ui/Loader"
 
 const Exchange=()=>{
     const {points, incrementPoints, isLoading} = usePoints(0)
@@ -12,7 +13,7 @@ const Exchange=()=>{
 
     return(
         <main className="exchange-container relative w-screen h-full">
-       {isLoading ? <p>Loading...</p>: (
+       {isLoading ? <Loader/>: (
         <>
         <section className="flex items-center justify-center w-screen font-coin z-10">
             <img src='/assets/images/ufo.svg' alt="ufo" width={50} height={50} loading="lazy"/>
