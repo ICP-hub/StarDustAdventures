@@ -1,6 +1,6 @@
 import ProgressBar from "../../../components/ui/Progressbar"
 import Sidebar from "../../../components/ui/Sidebar"
-
+import '../index.css'
 import usePoints from "../../../hooks/usePoints"
 
 const Exchange=()=>{
