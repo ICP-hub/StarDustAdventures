@@ -3,7 +3,7 @@ import Button from '../../re-usables/Button'
 import './hero.css'
 import { motion } from 'framer-motion'
 
-const heroContext = () => {
+const HeroContext = () => {
     return (
         <div>
               <motion.div
@@ -28,4 +28,4 @@ const heroContext = () => {
     )
 }
 
-export default heroContext  
+export default HeroContext;  

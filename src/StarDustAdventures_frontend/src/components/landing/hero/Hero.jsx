@@ -3,7 +3,7 @@ import Button from '../../re-usables/Button'
 import './hero.css'
 import BgOverlay from '../../re-usables/BgOverlay'
 import { motion } from 'framer-motion'
-import heroContext from './heroContext'
+import HeroContext from './heroContext'
 import HeroText from './HeroText'
 const Hero = () => {
   return (
@@ -11,7 +11,7 @@ const Hero = () => {
         {/* To Optimize Background Image Load */}
         <img src="hero_bg.webp" alt="hero" style={{display:'none'}} fetchpriority='high'/>
         <BgOverlay/>
-        <heroContext/>
+        <HeroContext/>
         <motion.img
             initial={{y:-1000}}
             animate={{y:0}}
